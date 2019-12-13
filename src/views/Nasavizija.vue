@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="app">
+        Nasa vizija
+    </div>
 </template>
 
 <script>

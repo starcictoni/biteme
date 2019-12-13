@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="app">
+        Social Feed
+    </div>
 </template>
 
 <script>

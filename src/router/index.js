@@ -49,6 +49,16 @@ const routes = [
     path: '/trgovina',
     name: 'trgovina',
     component: () => import('../views/Trgovina.vue')
+  },
+  {
+    path: '/registracija',
+    name: 'registracija',
+    component: () => import('../views/Registracija.vue')
+  },  
+  {
+    path: '/prijava',
+    name: 'prijava',
+    component: () => import('../views/Prijava.vue')
   }
 ]
 

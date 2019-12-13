@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="app">
+        O Nama
+    </div>
 </template>
 
 <script>

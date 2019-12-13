@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="app">
+        Poklon  
+    </div>
 </template>
 
 <script>
