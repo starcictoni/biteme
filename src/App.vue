@@ -1,5 +1,10 @@
 <template>
   <v-app>
+    <!-- Navigation drawer upon authentication (Ono lijevo kao što je na Slacku)
+    <v-navigation-drawer app>
+      
+    </v-navigation-drawer>
+     -->
     <v-app-bar app color="secondary" dark>
         <v-btn class="mr-2">
           <router-link to="/">Home</router-link>
@@ -33,7 +38,7 @@
         </v-btn>    
     </v-app-bar>
 
-    <v-content>
+    <v-content class="p-0">
       <router-view/>
     </v-content>
     <v-footer app>

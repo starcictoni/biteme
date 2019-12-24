@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
+  <v-app>
+    <v-content>
+        Trgovina
     <h1>This is a login page</h1>
     <div class="container">
       <div class="row">
@@ -20,6 +22,15 @@
               <label for="passwordField">Password</label>
               <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="Password"/>
             </div>
+              <div class="text-center">
+    <v-btn class="ma-2" outlined color="indigo">Outlined Button</v-btn>
+    <v-btn class="ma-2" outlined fab color="teal">
+      <v-icon>mdi-format-list-bulleted-square</v-icon>
+    </v-btn>
+    <v-btn class="ma-2" outlined large fab color="indigo">
+      <v-icon>mdi-pencil</v-icon>
+    </v-btn>
+  </div>
             <button type="submit" class="btn btn-primary mt-5">Submit</button>
           </form>
           
@@ -27,7 +38,10 @@
         <div class="col"></div>
       </div>
     </div>
-  </div>
+
+          <router-view></router-view>
+    </v-content>
+  </v-app>
 </template>
 
 <script>

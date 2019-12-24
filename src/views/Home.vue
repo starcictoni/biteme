@@ -18,27 +18,16 @@
                 <img src="olive2.jpg" class="rounded image-fluid" alt="..." />
               </div>
             </div>
-            <a
-              class="carousel-control-prev"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="prev"
-            >
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a
-              class="carousel-control-next"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="next"
-            >
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
           </div>
-          <svg class="neka" alt="Vuetify Logo" src="/testg.svg" />
-    
+          <!-- <svg class="neka" alt="Vuetify Logo" src="/testg.svg" /> -->
     </v-content>
   </v-app>
 </template>
