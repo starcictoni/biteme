@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -25,11 +26,7 @@ const routes = [
     name: 'recepti',
     component: () => import('../views/Recepti.vue')
   },
-  {
-    path: '/nasavizija',
-    name: 'nasavizija',
-    component: () => import('../views/Nasavizija.vue')
-  },
+
   {
     path: '/onama',
     name: 'onama',

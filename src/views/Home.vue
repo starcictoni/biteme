@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div class="container-fluid">
+  <v-app id="app">
+    <v-content>
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -37,9 +37,10 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+          <svg class="neka" alt="Vuetify Logo" src="/testg.svg" />
     
-    </div>
-  </div>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
@@ -60,4 +61,5 @@ img {
   width: 100%;
   height: 600px;
 }
+
 </style>
