@@ -5,7 +5,8 @@
       </v-col>
       <v-col cols="6" md="5">
         <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
-          <v-row justify="space-around mb-3">
+          <v-row :justify="justify" :align="alignment">
+
             <v-avatar size="85" >
               <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO">
             </v-avatar>
@@ -48,12 +49,12 @@
 
           <!-- Password -->
           <v-text-field
-            v-model="password"
+            :password="password"
             background-color=""
             name="input-10-2"
             label="Lozinka"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min]"
+            :rules="[rules.required, rules.min, rules.password]"
             :type="show1 ? 'text' : 'Password'"
             hint=""
             placeholder="Unesite lozinku"
@@ -94,10 +95,10 @@
               </v-alert>
             </div>
             <div class="col-md-6 text-left mt-1 pt-0 pb-0 ">
-              <v-checkbox v-model="prodajapodataka" label="Pristajem na svu prodaju podataka"></v-checkbox>
+              <v-checkbox label="Pristajem na uvjete"></v-checkbox>
             </div>
             <div class="col-md-6 text-right pt-0 pb-0 mt-3">
-              <v-btn v-if="email != NULL && password == password2" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
+              <v-btn v-if="password == password2" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
             </div>
           </div>
           <!--
@@ -131,17 +132,24 @@ export default {
   },
   data () {
     return {
-      v: null,
+      alignment: 'center',
+      justify: 'center',
       show1: false,
       show2: false,
-      prodajapodataka: "",
       username: "",
       email: "",
       password: "",
       password2: "",
       rules: {
         required: value => !!value || 'Nužno je unijeti.',
-        min: v => v.length >= 8 || 'Minimalno 8 znakova',
+        password: value => {
+          const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+          console.log("Usao je mater mu jebem");
+          return (
+            pattern.test(value) || 
+            "Minimalno 8 znakova, 1 veliko slovo, 1 broj i 1 poseban znak"
+          );
+        }
       }
     }//return
   },//data

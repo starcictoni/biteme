@@ -34,8 +34,9 @@
           <v-btn class="mr-2"><router-link to="Prijava"> Prijava </router-link></v-btn>
           <v-btn class="mr-2"> <router-link to="Registracija">Registracija</router-link></v-btn>  
         </div>
+        {{userEmail}}
         <div v-if="authenticated" >
-          {{Email}}
+          
           <v-btn class="mr-2" @click.prevent="logout"><router-link to="/"> Odjava </router-link></v-btn>
         </div>
         
@@ -56,6 +57,7 @@ import HelloWorld from './components/HelloWorld';
 import localStore from '@/localStore.js';
 export default {
   name: 'App',
+
   data () {
     return localStore;
   },
@@ -65,6 +67,15 @@ export default {
   methods: {
     logout() {
       firebase.auth().signOut();
+    },
+    getUser() {
+      var user = firebase.auth().currentUser;
+      var name, email, uid;
+      if(user != null) {
+        name = user.displayName;
+        email = user.email;
+        uid = user.uid;
+      }
     }
   },
    mounted() {

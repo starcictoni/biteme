@@ -5,7 +5,7 @@
       </v-col>
       <v-col cols="6" md="5">
         <v-sheet elevation="12" class="pa-12 pt-12 text-center">
-          <v-row justify="space-around mb-3">
+          <v-row :justify="justify" :align="alignment">
             <v-avatar size="85" >
               <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO">
             </v-avatar>
@@ -63,8 +63,9 @@
           <div class="separator"> ili </div>
           <div class="text-center">
             <v-btn class="ma-2" outlined color="primary"> Facebook </v-btn>
-            <v-btn class="ma-2" outlined color="red darken-3"> Google </v-btn>
-          </div>
+            <v-btn @click.prevent="signup" class="ma-2" outlined color="red darken-3"> Google </v-btn>
+
+          </div>           
           </v-form>
           
         </v-sheet>
@@ -86,6 +87,8 @@ export default {
   },  
   data () {
     return {
+      alignment: 'center',
+      justify: 'center',
       show1: false,
       email: '',
       password: '',
@@ -107,8 +110,26 @@ export default {
         }
         console.log(error);
       });
-    }
-  }
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+          // The signed-in user info.
+          var user = result.user;
+          // ...
+          })
+          .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
+    },
+
+  },
 };
 </script>
 
