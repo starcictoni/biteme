@@ -23,7 +23,6 @@
         </v-content>
       </v-app>
     </div>
-  
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     <script>
@@ -33,5 +32,31 @@
       })
     </script>
     <!-- built files will be auto injected -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAtp8yfmaXT1PXP7F8UobtNwRDTk9hNJ4g",
+        authDomain: "bite-me-83536.firebaseapp.com",
+        databaseURL: "https://bite-me-83536.firebaseio.com",
+        projectId: "bite-me-83536",
+        storageBucket: "bite-me-83536.appspot.com",
+        messagingSenderId: "522563355785",
+        appId: "1:522563355785:web:64482a1c2f9139ec513258",
+        measurementId: "G-0YDDZH0GZK"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      var db = firebase.firestore();
+</script>
   </body>
 </html>

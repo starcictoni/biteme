@@ -1,8 +1,7 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
     <!-- Navigation drawer upon authentication (Ono lijevo kao što je na Slacku)
     <v-navigation-drawer app>
-      
     </v-navigation-drawer>
      -->
     <v-app-bar app color="secondary" dark>
@@ -27,20 +26,25 @@
         <v-spacer></v-spacer>
          LOGO 
          <div class="d-flex align-center">
-          <v-img alt="Vuetify Logo" class="neka" contain src="/testg.svg/" transition="scale-transition"/>
+          <v-img alt="Vuetify Logo" class="neka" contain src="olive.jpg" transition="scale-transition"/>
         </div>
         <v-spacer></v-spacer>
-        <v-btn class="mr-2">
-          <router-link to="prijava">Prijava</router-link>
-        </v-btn>
-        <v-btn class="mr-2">
-          <router-link to="Registracija">Registracija</router-link>
-        </v-btn>    
-    </v-app-bar>
 
-    <v-content class="p-0">
+        <div v-if="!authenticated">
+          <v-btn class="mr-2"><router-link to="Prijava"> Prijava </router-link></v-btn>
+          <v-btn class="mr-2"> <router-link to="Registracija">Registracija</router-link></v-btn>  
+        </div>
+        <div v-if="authenticated" >
+          {{Email}}
+          <v-btn class="mr-2" @click.prevent="logout"><router-link to="/"> Odjava </router-link></v-btn>
+        </div>
+        
+    </v-app-bar>
+    <v-container class="p-2 mt-12 mb-12">
+    <v-content class="p-0 mt-12">
       <router-view/>
     </v-content>
+    </v-container>
     <v-footer app>
       <!-- -->nesto nesto
     </v-footer>
@@ -49,17 +53,38 @@
 
 <script>
 import HelloWorld from './components/HelloWorld';
-
+import localStore from '@/localStore.js';
 export default {
   name: 'App',
-
+  data () {
+    return localStore;
+  },
   components: {
     HelloWorld,
   },
-
-  data: () => ({
-    //
-  }),
+  methods: {
+    logout() {
+      firebase.auth().signOut();
+    }
+  },
+   mounted() {
+    const self = this
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        self.userEmail = user.email;
+        self.authenticated = true;
+        console.log(`Authenticated: ${self.userEmail}`)
+        if (self.$route.name !== 'home')
+          self.$router.push({name: 'home'})
+      }
+      else {
+        self.authenticated = false
+        console.log('Logged out')
+        if (self.$route.name !== 'prijava')
+          self.$router.push({name: 'prijava'})
+      }
+    });
+  }
 };
 </script>
 

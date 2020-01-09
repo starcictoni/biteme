@@ -53,9 +53,9 @@ const routes = [
     component: () => import('../views/Registracija.vue')
   },  
   {
-    path: '/prijavatest',
-    name: 'prijavatest',
-    component: () => import('../views/Prijavatest.vue')
+    path: '/prijava',
+    name: 'prijava',
+    component: () => import('../views/Prijava.vue')
   }
 ]
 

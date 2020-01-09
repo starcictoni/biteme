@@ -1,81 +1,211 @@
 <template>
-    <v-app>
-      <v-content>
-        Registracija
+  <v-container>
+    <v-row>
+      <v-col cols="3"> Prvi column
+      </v-col>
+      <v-col cols="6" md="5">
+        <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
+          <v-row justify="space-around mb-3">
+            <v-avatar size="85" >
+              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO">
+            </v-avatar>
+          </v-row>
+        <h3 class="dobrodosli-reg">Neki lijepi ugodni pozdrav</h3>
+        <v-form @submit.prevent="signup">
+          <!-- Username -->
+          <v-text-field
+            v-model="username"
+            background-color=""
+            name="nesto"
+            label="Korisnicko ime"
+            :rules="[rules.required]"
+            placeholder="Unesite korisnicko ime"
+            row-height="14"
+            rows="2"
+            auto-grow
+            clearable
+            filled
+            outlined
+          >
+          </v-text-field>
 
-            <h1>This is a signup page</h1>
-            <div class="container">
-              <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
-              </div>
-              <div class="row">
-                <div class="col"></div>
-                <div class="col">
+          <!--Email -->
+          <v-text-field
+            v-model="email"
+            background-color=""
+            name="nesto"
+            :rules="[rules.required]"
+            label="E-mail"
+            placeholder="Unesite e-mail"
+            row-height="14"
+            rows="2"
+            auto-grow
+            clearable
+            filled
+            outlined
+          >
+          </v-text-field>
 
-                  <form @submit.prevent="signup"><!--Nemoj poslati na server-->
-                    <div class="form-group">
-                      <!--Mail-->
-                      <label for="emailField">Email address</label>
-                      <input v-model="email" type="email" class="form-control" id="emailField" aria-describedby="emailHelp" placeholder="Enter email"/>
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                    </div>
-                    
-                    <!--Password-->
-                    <div class="form-group">
-                      <label for="passwordField">Password</label>
-                      <input v-model="password" type="password" class="form-control" id="passwordField" placeholder="Password"/>
-                    </div>
+          <!-- Password -->
+          <v-text-field
+            v-model="password"
+            background-color=""
+            name="input-10-2"
+            label="Lozinka"
+            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.required, rules.min]"
+            :type="show1 ? 'text' : 'Password'"
+            hint=""
+            placeholder="Unesite lozinku"
+            row-height="14"
+            rows="2"
+            auto-grow
+            clearable
+            filled
+            outlined
+            @click:append="show1 = !show1"
+          ></v-text-field>
 
-                    <!--Password 2-->
-                    <div class="form-group">
-                      <label for="confirmPasswordField">Confirm Password</label>
-                      <input v-model="password2" type="password" class="form-control" id="confirmPasswordField" placeholder="Confirm password"/>
-                    </div>
-
-                    <div v-if="password != password2" class="alert alert-danger" role="alert">Passwords do not match.</div> <!--Promijeni css-->
-                    <button v-if="password == password2" type="submit" class="btn btn-primary mt-5">Submit</button>
-                  </form>
-
-        </div>
-        <div class="col"></div>
-      </div>
-    </div>
-        <router-view></router-view>
-        </v-content>
-    </v-app>
+          <!-- Password2 -->
+          <v-text-field
+            v-model="password2"
+            background-color=""
+            name="input-10-2"
+            label="Potvrda lozinke"
+            :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.required]"
+            :type="show2 ? 'text' : 'Password'"
+            placeholder="Ponovno unesite lozinku"
+            row-height="14"
+            rows="2"
+            auto-grow
+            clearable
+            filled
+            outlined
+            @click:append="show2 = !show2"
+          >
+          </v-text-field>
+          
+          <!-- Ostatak -->
+          <div class="row">
+          <div v-if="password != password2">
+              <v-alert type="error">
+                Lozinke se ne podudaraju
+              </v-alert>
+            </div>
+            <div class="col-md-6 text-left mt-1 pt-0 pb-0 ">
+              <v-checkbox v-model="prodajapodataka" label="Pristajem na svu prodaju podataka"></v-checkbox>
+            </div>
+            <div class="col-md-6 text-right pt-0 pb-0 mt-3">
+              <v-btn v-if="email != NULL && password == password2" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
+            </div>
+          </div>
+          <!--
+          <div class="separator"> ili </div>
+          <div class="text-center">
+            <v-btn class="ma-2" outlined color="primary"> Facebook </v-btn>
+            <v-btn class="ma-2" outlined color="red darken-3"> Google </v-btn>
+          </div>
+          -->
+          </v-form>
+        </v-sheet>
+        <!-- Poslovni korisnici, ne znam hocemo li stici
+        <v-btn block color="secondary" dark>Za poslovne korisnike</v-btn>
+        -->
+        
+      </v-col>
+      <v-col cols="3"> Treci column
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
+// @ is an alias to /src
+import HelloWorld from "@/components/HelloWorld.vue";
+
 export default {
-  name: "signup",
+  name: "Registracija",
+  components: {
+    HelloWorld
+  },
   data () {
     return {
+      v: null,
+      show1: false,
+      show2: false,
+      prodajapodataka: "",
+      username: "",
       email: "",
       password: "",
-      password2: ""
-    }
-  },
+      password2: "",
+      rules: {
+        required: value => !!value || 'Nužno je unijeti.',
+        min: v => v.length >= 8 || 'Minimalno 8 znakova',
+      }
+    }//return
+  },//data
   methods: {
     signup () {
-      debugger;
-      firebase.auth().createUserWithEmailAndPassword(this.email, this.password).catch(function(error) {
-        console.log(error);
+      console.log("hihiih");
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
+      .then(u => {})
+      .catch(error => {
+        switch(error.code) {
+          case 'auth/email-already-in-use':
+            console.log(`Email address ${this.email} already in use.`);
+          case 'auth/invalid-email':
+            console.log(`Email address ${this.email} is invalid.`);
+          case 'auth/operation-not-allowed':
+            console.log('Error during sign up.');
+          case 'auth/weak-password':
+            console.log('Password is not strong enough.')
+          default:
+            console.log(error.message);
+        }
       });
+
     },
+      methods: {
+        newUser() {
+          console.log("Zapisujem korisnika u bazu", this.username, this.email, this.password);
+          db.collection("users").add({
+            username: this.username,
+            email: this.email,
+            password: this.password
+          });
+        }
+      }
+    }
   }
-}
+//export
 </script>
 
 <style lang="scss">
-form {
-  text-align: left;
-  label {
-    margin-top: 10px;
-    margin-left: 15px;
-  }
-  ::placeholder {
-    color: gray;
-  }
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #aaaaaa;
+}
+.separator::before {
+    margin-right: .25em;
+}
+.separator::after {
+    margin-left: .25em;
+}
+.dobrodosli-reg {
+  text-align: center;
+  color: black;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: -1.5px;
+  margin-bottom: 50px;
 }
 </style>
