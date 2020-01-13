@@ -6,7 +6,6 @@
       <v-col cols="6" md="5">
         <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
           <v-row :justify="justify" :align="alignment">
-
             <v-avatar size="85" >
               <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO">
             </v-avatar>
@@ -49,7 +48,7 @@
 
           <!-- Password -->
           <v-text-field
-            :password="password"
+            v-model="password"
             background-color=""
             name="input-10-2"
             label="Lozinka"
@@ -89,7 +88,7 @@
           
           <!-- Ostatak -->
           <div class="row">
-          <div v-if="password != password2">
+          <div v-if="password !== password2">
               <v-alert type="error">
                 Lozinke se ne podudaraju
               </v-alert>
@@ -98,10 +97,10 @@
               <v-checkbox label="Pristajem na uvjete"></v-checkbox>
             </div>
             <div class="col-md-6 text-right pt-0 pb-0 mt-3">
-              <v-btn v-if="password == password2" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
+              <v-btn v-if="password == password2" @click.prevent="signup" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
             </div>
           </div>
-          <!--
+          <!--  ; sendmail; newUser
           <div class="separator"> ili </div>
           <div class="text-center">
             <v-btn class="ma-2" outlined color="primary"> Facebook </v-btn>
@@ -124,11 +123,15 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import localStore from '@/localStore.js';
 
 export default {
   name: "Registracija",
   components: {
     HelloWorld
+  },
+  props: {
+    msg: String
   },
   data () {
     return {
@@ -144,7 +147,7 @@ export default {
         required: value => !!value || 'Nužno je unijeti.',
         password: value => {
           const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
-          console.log("Usao je mater mu jebem");
+          console.log("Usao je u rules");
           return (
             pattern.test(value) || 
             "Minimalno 8 znakova, 1 veliko slovo, 1 broj i 1 poseban znak"
@@ -155,7 +158,7 @@ export default {
   },//data
   methods: {
     signup () {
-      console.log("hihiih");
+      console.log("Pozvao je signup");
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
       .then(u => {})
       .catch(error => {
@@ -172,19 +175,50 @@ export default {
             console.log(error.message);
         }
       });
-
+      firebase.auth().onAuthStateChanged(function(user) {
+        user.sendEmailVerification(); 
+      });
+      /*
+      firebase.auth().onAuthStateChanged(function(user) { 
+          if (user.emailVerified) {
+            console.log('Email is verified');
+          }
+          else {
+            console.log('Email is not verified');
+          }
+        });
+        */
     },
-      methods: {
-        newUser() {
-          console.log("Zapisujem korisnika u bazu", this.username, this.email, this.password);
-          db.collection("users").add({
-            username: this.username,
-            email: this.email,
-            password: this.password
-          });
-        }
+    /*
+    sendmail() {
+      // var user = firebase.auth().currentUser;
+      console.log("Pozvao je sendemail")
+      user.sendEmailVerification().then(function() {
+          console.log("Email sent");
+        }).catch(function(error) {
+          console.log("Something went wrong");
+        });
+          firebase.auth().onAuthStateChanged(function(user) { 
+          if (user.emailVerified) {
+            console.log('Email is verified');
+          }
+          else {
+            console.log('Email is not verified');
+          }
+        });
+    },
+    */
+    /*newUser() {
+        console.log("Zapisujem korisnika u bazu", this.username, this.email, this.password);
+        db.collection("users").add({
+          username: this.username,
+          email: this.email,
+          password: this.password
+        });
       }
-    }
+      */
+    }//methods
+    
   }
 //export
 </script>

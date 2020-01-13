@@ -27,6 +27,7 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+          
           <!-- <svg class="neka" alt="Vuetify Logo" src="/testg.svg" /> -->
     </v-content>
   </v-app>

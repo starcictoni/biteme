@@ -56,7 +56,17 @@ const routes = [
     path: '/prijava',
     name: 'prijava',
     component: () => import('../views/Prijava.vue')
-  }
+  },
+  {
+    path: '/zaboravljena',
+    name: 'zaboravljena',
+    component: () => import('../views/Zaboravljena.vue')
+  },
+  {
+    path: '/korisnicki',
+    name: 'korisnicki' ,
+    component: () => import ('../views/Korisnicki.vue')
+  },
 ]
 
 const router = new VueRouter({

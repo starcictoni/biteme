@@ -1,5 +1,7 @@
 export default {
     authenticated: false,
-    username: "",
-    userEmail: ""
+    verified: false,
+    local_Username: "",
+    local_UserEmail: "",
+    local_uid: ""
 }

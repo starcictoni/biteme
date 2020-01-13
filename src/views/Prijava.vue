@@ -13,7 +13,6 @@
         <h3 class="dobrodosli">Neki lijepi ugodni pozdrav</h3>
         <h3 class="idipavidi">Neki razlog zasto bi se covjek ponovno prijavio</h3>
           <v-form @submit.prevent="signup">
-          
           <!-- Email -->
           <v-text-field
             v-model="email"
@@ -51,20 +50,23 @@
           >
           </v-text-field>
 
+
           <!-- Ostatak -->
           <div class="row">
+          <v-alert>
+           Nešto
+          </v-alert>
             <div class="col-md-6 text-left mt-1 pt-0 pb-0 ">
-              Zaboravili ste lozinku? Treba novi view
+              <router-link to="Zaboravljena">Zaboravili ste lozinku?</router-link>
             </div>
             <div class="col-md-6 text-right pt-0 pb-0 mt-3">
-              <v-btn type="submit" class="ma-2" outlined color="black"> Prijava </v-btn>
+              <v-btn @click.prevent="signin" type="submit" class="ma-2" outlined color="black"> Prijava </v-btn>
             </div>
           </div>
           <div class="separator"> ili </div>
           <div class="text-center">
             <v-btn class="ma-2" outlined color="primary"> Facebook </v-btn>
-            <v-btn @click.prevent="signup" class="ma-2" outlined color="red darken-3"> Google </v-btn>
-
+            <v-btn @click.prevent="goosignup" class="ma-2" outlined color="red darken-3"> Google </v-btn>
           </div>           
           </v-form>
           
@@ -84,7 +86,10 @@ export default {
   name: "Prijava",
   components: {
     HelloWorld
-  },  
+  },
+  props: {
+    msg: String
+  },
   data () {
     return {
       alignment: 'center',
@@ -98,39 +103,44 @@ export default {
     }
   },
   methods: {
-    signup () {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password).catch(function(error) {
-        var errorcode;
-        var errorMessage;
-        if(errorCode === 'auth/wrong password') {
-          alert('Wrong password.');
+    signin () {
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password).catch(error => {
+        switch(error.code) {
+          case 'auth/user-not-found':
+            console.log("User not found");
+          case 'auth/email-already-in-use':
+            console.log(`Email address ${this.email} already in use.`);
+          case 'auth/invalid-email':
+            console.log(`Email address ${this.email} is invalid.`);
+          case 'auth/operation-not-allowed':
+            console.log('Error during sign up.');
+          case 'auth/weak-password':
+            console.log('Password is not strong enough.')
+          default:
+            console.log(error.message);
         }
-        else {
-          alert(errorMessage);
-        }
-        console.log(error);
       });
-      firebase.auth().signInWithPopup(provider).then(function(result) {
-          // This gives you a Google Access Token. You can use it to access the Google API.
-          var token = result.credential.accessToken;
-          // The signed-in user info.
-          var user = result.user;
-          // ...
-          })
-          .catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-        });
     },
-
-  },
-};
+    goosignup () {
+      firebase.auth().signInWithPopup(provider)
+              .then(function(result) {
+              var token = result.credential.accessToken;  // This gives you a Google Access Token. You can use it to access the Google API.
+              var user = result.user;  // The signed-in user info.
+              // ...
+              })
+              .catch(function(error) {
+              // Handle Errors here.
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              // The email of the user's account used.
+              var email = error.email;
+              // The firebase.auth.AuthCredential type that was used.
+              var credential = error.credential;
+              // ...
+              })
+    }//goosignup
+  }//methods
+};//export
 </script>
 
 <style lang="scss">
