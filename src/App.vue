@@ -24,8 +24,15 @@
         <v-btn light to="/registracija" class="nav-join" data-cy="joinBtn">REGISTRIRAJ SE</v-btn>
       </div>
       <div v-else>
-        <v-btn text to="/about">PROFILE</v-btn>
-        <v-btn outlined color="white" @click="logout" data-cy="logout">Logout</v-btn>
+        <div v-if="authenticated">
+          <div class="mr-2" v-if="!verified">
+                <v-alert class="mr-2" type="error">
+                  Nije autenticiran
+                </v-alert>
+              </div>
+          <v-btn text to="/about">PROFILE</v-btn>
+          <v-btn outlined color="white" @click.prevent="logout" to="/" data-cy="logout">Logout</v-btn>
+        </div>
       </div>
     </v-app-bar>
   </span>
@@ -38,30 +45,33 @@
 <script>
 import HelloWorld from './components/HelloWorld';
 import localStore from '@/localStore.js';
-import Navbar from './components/Navbar'
+
+//import Navbar from './components/Navbar'
 export default {
   name: 'App',
   //components: "Navbar",
   data () {
     return {
-    localStore,
-    drawer: false,
-    items: [
-      { title: "Link1", url: "/menu" },
-      { title: "Link2", url: "/about" },
-      { title: "Prijava", url: "/prijava" },
-      { title: "Registracija", url: "/registracija" }
-    ]
+      localStore,
+      authenticated: false,
+      verified: false,
+      drawer: false,
+      items: [
+        { title: "Link1", url: "/menu" },
+        { title: "Link2", url: "/about" },
+        { title: "Prijava", url: "/prijava" },
+        { title: "Registracija", url: "/registracija" }
+      ]
     }
   },
 
   methods: {
-    addUser() {
+    /* addUser() {
       db.collection("users").add({
         email: local_UserEmail,
         
-      })
-    },
+      }) 
+    },*/
     logout() {
       firebase.auth().signOut();
     },
@@ -70,10 +80,27 @@ export default {
   mounted() {
     const self = this
     var user = firebase.auth().currentUser;
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(user => {
       if (user) {
+          var name = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+          console.log(name);
+          console.log(email);
+          console.log(emailVerified);
+          console.log(photoURL);
+          console.log(isAnonymous);
+          console.log(uid);
+          console.log(providerData);
+          
         self.userEmail = user.email;
+        self.authenticated = true;
         localStore.authenticated = true;
+        localStore.local_Username = user.username;
         localStore.local_UserEmail = user.email;
         localStore.local_uid = user.uid;
         console.log(`Authenticated: ${self.userEmail}`)
@@ -85,11 +112,13 @@ export default {
       else {
         console.log("Ulazi ovdje");
         self.authenticated = false
+        localStore.authenticated = false;
         console.log('Logged out')
       //  if (self.$route.name !== 'prijava')
       //    self.$router.push({name: 'prijava'})
       }
       if (user.emailVerified) {
+        self.verified = true;
         localStore.verified = true;
         console.log('Email is verified');
       }

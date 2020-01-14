@@ -64,6 +64,7 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
       var db = firebase.firestore();
+      
       //Google login
       var provider = new firebase.auth.GoogleAuthProvider();
       firebase.auth().useDeviceLanguage();

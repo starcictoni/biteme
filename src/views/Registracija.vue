@@ -100,13 +100,6 @@
               <v-btn v-if="password == password2" @click.prevent="signup" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
             </div>
           </div>
-          <!--  ; sendmail; newUser
-          <div class="separator"> ili </div>
-          <div class="text-center">
-            <v-btn class="ma-2" outlined color="primary"> Facebook </v-btn>
-            <v-btn class="ma-2" outlined color="red darken-3"> Google </v-btn>
-          </div>
-          -->
           </v-form>
         </v-sheet>
         <!-- Poslovni korisnici, ne znam hocemo li stici
@@ -139,6 +132,7 @@ export default {
       justify: 'center',
       show1: false,
       show2: false,
+      localStore,
       username: "",
       email: "",
       password: "",
@@ -159,66 +153,45 @@ export default {
   methods: {
     signup () {
       console.log("Pozvao je signup");
+      var user = firebase.auth().currentUser;
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
       .then(u => {})
       .catch(error => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
         switch(error.code) {
           case 'auth/email-already-in-use':
-            console.log(`Email address ${this.email} already in use.`);
+            alert(`Email address ${this.email} already in use.`);
           case 'auth/invalid-email':
-            console.log(`Email address ${this.email} is invalid.`);
+            alert(`Email address ${this.email} is invalid.`);
           case 'auth/operation-not-allowed':
-            console.log('Error during sign up.');
+            alert('Error during sign up.');
           case 'auth/weak-password':
-            console.log('Password is not strong enough.')
+            alert('Password is not strong enough.')
           default:
-            console.log(error.message);
+            alert(error.message);
         }
-      });
+      })
       firebase.auth().onAuthStateChanged(function(user) {
         user.sendEmailVerification(); 
       });
+      db.collection("users").add({
+        email: this.email,
+      })
       /*
-      firebase.auth().onAuthStateChanged(function(user) { 
-          if (user.emailVerified) {
-            console.log('Email is verified');
-          }
-          else {
-            console.log('Email is not verified');
-          }
-        });
-        */
-    },
-    /*
-    sendmail() {
-      // var user = firebase.auth().currentUser;
-      console.log("Pozvao je sendemail")
-      user.sendEmailVerification().then(function() {
-          console.log("Email sent");
-        }).catch(function(error) {
-          console.log("Something went wrong");
-        });
-          firebase.auth().onAuthStateChanged(function(user) { 
-          if (user.emailVerified) {
-            console.log('Email is verified');
-          }
-          else {
-            console.log('Email is not verified');
-          }
-        });
-    },
-    */
-    /*newUser() {
-        console.log("Zapisujem korisnika u bazu", this.username, this.email, this.password);
-        db.collection("users").add({
-          username: this.username,
-          email: this.email,
-          password: this.password
-        });
-      }
+      db.collection("users").add({
+        name: displayName,
+        email: email
+      })
+      .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
       */
+    },
     }//methods
-    
   }
 //export
 </script>

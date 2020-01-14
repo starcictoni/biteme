@@ -66,7 +66,7 @@
           <div class="separator"> ili </div>
           <div class="text-center">
             <v-btn class="ma-2" outlined color="primary"> Facebook </v-btn>
-            <v-btn @click.prevent="goosignup" class="ma-2" outlined color="red darken-3"> Google </v-btn>
+            <v-btn @click.prevent="goosignin" class="ma-2" outlined color="red darken-3"> Google </v-btn>
           </div>           
           </v-form>
           
@@ -121,7 +121,7 @@ export default {
         }
       });
     },
-    goosignup () {
+    goosignin () {
       firebase.auth().signInWithPopup(provider)
               .then(function(result) {
               var token = result.credential.accessToken;  // This gives you a Google Access Token. You can use it to access the Google API.

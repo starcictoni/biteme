@@ -37,22 +37,26 @@
 <script>
 export default {
     name: 'Zaboravljena',
-    methods: {
+    email: "",
+    methods: {//treba dovuci podatke od usera iz baze
         resend () {
             var auth = firebase.auth();
-            var emailAddress = "user@example.com";
+            var emailAddress = user.email;
             auth.sendPasswordResetEmail(emailAddress).then(function() {
             // Email sent
                 console.log("Mail je poslan")
             }).catch(function(error) {
-                switch(error.code) {
-                    case 'auth/user-not-found':
-                        console.log("User not found");
-                    case 'auth/invalid-email':
-                        console.log(`Email address ${this.email} is invalid.`);
-                }
-            // An error happened.
-            });
+                        var errorCode = error.code;
+                        var errorMessage = error.message;
+                        // [START_EXCLUDE]
+                        if (errorCode == 'auth/invalid-email') {
+                          alert(errorMessage);
+                        } else if (errorCode == 'auth/user-not-found') {
+                          alert(errorMessage);
+                        }
+                        console.log(error);
+                        // [END_EXCLUDE]
+                      });
         }
     }
 }
