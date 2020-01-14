@@ -48,7 +48,7 @@ export default {
       ]
     };
   },
-
+/* 
   methods: {
     logout() {
       firebase.auth().signOut();
@@ -78,7 +78,7 @@ export default {
         //   self.$router.push({ name: "prijava" });
       }
     });
-  }
+  } */
 };
 </script>
 
