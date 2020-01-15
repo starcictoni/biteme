@@ -53,9 +53,6 @@
 
           <!-- Ostatak -->
           <div class="row">
-          <v-alert>
-           Nešto
-          </v-alert>
             <div class="col-md-6 text-left mt-1 pt-0 pb-0 ">
               <router-link to="Zaboravljena">Zaboravili ste lozinku?</router-link>
             </div>

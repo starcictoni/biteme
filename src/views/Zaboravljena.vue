@@ -5,7 +5,7 @@
       </v-col>
       <v-col cols="6" md="5">
         <v-sheet elevation="12" class="pa-12 pt-12 text-center">
-          <v-form @submit.prevent="signup">
+          <v-form @submit.prevent="resend">
             <h3 class="naslov">Pronađi svoj Bite.me račun</h3>
             <h3 class="podnaslov">Reci nam svoj email :)</h3>
                 <v-text-field
@@ -37,11 +37,15 @@
 <script>
 export default {
     name: 'Zaboravljena',
-    email: "",
+    data () {
+      return {
+        email: "",
+      }
+    },
     methods: {//treba dovuci podatke od usera iz baze
         resend () {
             var auth = firebase.auth();
-            var emailAddress = user.email;
+            var emailAddress = this.email;
             auth.sendPasswordResetEmail(emailAddress).then(function() {
             // Email sent
                 console.log("Mail je poslan")

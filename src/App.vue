@@ -25,12 +25,12 @@
       </div>
       <div v-else>
         <div v-if="authenticated">
-          <div class="mr-2" v-if="!verified">
+          <div class="mt-1 mr-2" v-if="!verified">
                 <v-alert class="mr-2" type="error">
                   Nije autenticiran
                 </v-alert>
               </div>
-          <v-btn text to="/about">PROFILE</v-btn>
+          <v-btn text to="/Korisnicki profil">PROFILE</v-btn>
           <v-btn outlined color="white" @click.prevent="logout" to="/" data-cy="logout">Logout</v-btn>
         </div>
       </div>
@@ -46,10 +46,8 @@
 import HelloWorld from './components/HelloWorld';
 import localStore from '@/localStore.js';
 
-//import Navbar from './components/Navbar'
 export default {
   name: 'App',
-  //components: "Navbar",
   data () {
     return {
       localStore,
@@ -57,8 +55,8 @@ export default {
       verified: false,
       drawer: false,
       items: [
-        { title: "Link1", url: "/menu" },
-        { title: "Link2", url: "/about" },
+        { title: "Menu", url: "/menu" },
+        { title: "About", url: "/about" },
         { title: "Prijava", url: "/prijava" },
         { title: "Registracija", url: "/registracija" }
       ]
@@ -82,21 +80,6 @@ export default {
     var user = firebase.auth().currentUser;
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-          var name = user.displayName;
-          var email = user.email;
-          var emailVerified = user.emailVerified;
-          var photoURL = user.photoURL;
-          var isAnonymous = user.isAnonymous;
-          var uid = user.uid;
-          var providerData = user.providerData;
-          console.log(name);
-          console.log(email);
-          console.log(emailVerified);
-          console.log(photoURL);
-          console.log(isAnonymous);
-          console.log(uid);
-          console.log(providerData);
-          
         self.userEmail = user.email;
         self.authenticated = true;
         localStore.authenticated = true;

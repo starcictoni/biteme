@@ -120,11 +120,13 @@ import localStore from '@/localStore.js';
 
 export default {
   name: "Registracija",
+  
   components: {
     HelloWorld
   },
   props: {
-    msg: String
+    msg: String,
+    username: "",
   },
   data () {
     return {
@@ -133,7 +135,6 @@ export default {
       show1: false,
       show2: false,
       localStore,
-      username: "",
       email: "",
       password: "",
       password2: "",
@@ -175,21 +176,18 @@ export default {
       firebase.auth().onAuthStateChanged(function(user) {
         user.sendEmailVerification(); 
       });
-      db.collection("users").add({
-        email: this.email,
-      })
-      /*
-      db.collection("users").add({
-        name: displayName,
-        email: email
-      })
-      .then(function(docRef) {
-          console.log("Document written with ID: ", docRef.id);
-      })
-      .catch(function(error) {
-          console.error("Error adding document: ", error);
-      });
-      */
+      let id = this.email;
+      db.collection("users").doc(id)
+        .set({
+          email: this.email,
+          username: this.username,
+        })
+        .then(function() {
+            console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
     },
     }//methods
   }

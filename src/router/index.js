@@ -63,9 +63,9 @@ const routes = [
     component: () => import('../views/Zaboravljena.vue')
   },
   {
-    path: '/korisnicki',
-    name: 'korisnicki' ,
-    component: () => import ('../views/Korisnicki.vue')
+    path: '/profil',
+    name: 'profil' ,
+    component: () => import ('../views/Profil.vue')
   },
 ]
 
