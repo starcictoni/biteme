@@ -118,10 +118,10 @@ a {
   text-decoration: none;
 }
 .nav-join:hover {
-  background-color: yellow !important;
+  background-color: #ffe600 !important;
 }
 .tile:hover {
-  background: yellow;
+  background: #ffe600;
 }
 .logo {
   margin-right: 200px;
