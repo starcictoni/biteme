@@ -13,6 +13,7 @@
         <h3 class="dobrodosli-reg">Neki lijepi ugodni pozdrav</h3>
         <v-form @submit.prevent="signup">
           <!-- Username -->
+
           <v-text-field
             v-model="username"
             background-color=""
@@ -26,8 +27,7 @@
             clearable
             filled
             outlined
-          >
-          </v-text-field>
+          ></v-text-field>
 
           <!--Email -->
           <v-text-field
@@ -43,8 +43,7 @@
             clearable
             filled
             outlined
-          >
-          </v-text-field>
+          ></v-text-field>
 
           <!-- Password -->
           <v-text-field
@@ -83,9 +82,8 @@
             filled
             outlined
             @click:append="show2 = !show2"
-          >
-          </v-text-field>
-          
+          ></v-text-field>
+
           <!-- Ostatak -->
           <div class="row">
           <div v-if="password !== password2">
@@ -120,21 +118,21 @@ import localStore from '@/localStore.js';
 
 export default {
   name: "Registracija",
-  
   components: {
-    HelloWorld
+    //HelloWorld
   },
   props: {
-    msg: String,
-    username: "",
+    msg: String
   },
   data () {
     return {
-      alignment: 'center',
-      justify: 'center',
+      localStore, //global:localStore -> svugdje ide this.global    ili?
+      alignment: "center",
+      justify: "center",
       show1: false,
       show2: false,
-      localStore,
+
+      username: "",
       email: "",
       password: "",
       password2: "",
@@ -153,42 +151,45 @@ export default {
   },//data
   methods: {
     signup () {
+      const self = this;
       console.log("Pozvao je signup");
       var user = firebase.auth().currentUser;
-      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-      .then(u => {})
-      .catch(error => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        switch(error.code) {
-          case 'auth/email-already-in-use':
-            alert(`Email address ${this.email} already in use.`);
-          case 'auth/invalid-email':
-            alert(`Email address ${this.email} is invalid.`);
-          case 'auth/operation-not-allowed':
-            alert('Error during sign up.');
-          case 'auth/weak-password':
-            alert('Password is not strong enough.')
-          default:
-            alert(error.message);
-        }
-      })
-      firebase.auth().onAuthStateChanged(function(user) {
-        user.sendEmailVerification(); 
-      });
-      let id = this.email;
-      db.collection("users").doc(id)
-        .set({
-          email: this.email,
-          username: this.username,
-        })
-        .then(function() {
-            console.log("Document successfully written!");
-        })
-        .catch(function(error) {
-            console.error("Error writing document: ", error);
+      firebase.auth().createUserWithEmailAndPassword(self.email, self.password)
+          .then(u => {})
+          .catch(error => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            switch(error.code) {
+              case 'auth/email-already-in-use':
+                alert(`Email address ${self.email} already in use.`);
+              case 'auth/invalid-email':
+                alert(`Email address ${self.email} is invalid.`);
+              case 'auth/operation-not-allowed':
+                alert('Error during sign up.');
+              case 'auth/weak-password':
+                alert('Password is not strong enough.')
+              default:
+                alert(error.message);
+            }
+          })//catch
+
+        firebase.auth().onAuthStateChanged(function(user) {
+          user.sendEmailVerification(); 
         });
-    },
+
+        let id = self.email;
+        db.collection("users").doc(id)
+          .set({
+            email: self.email,
+            username: self.username,
+          })
+          .then(function() {
+              console.log("Document successfully written!");
+          })
+          .catch(function(error) {
+              console.error("Error writing document: ", error);
+          });
+    },//signup
     }//methods
   }
 //export
