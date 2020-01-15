@@ -112,4 +112,18 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+a {
+  color: white;
+  text-decoration: none;
+}
+.nav-join:hover {
+  background-color: yellow !important;
+}
+.tile:hover {
+  background: yellow;
+}
+.logo {
+  margin-right: 200px;
+}
+  </style>
