@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <span>
-    <v-navigation-drawer app v-model="drawer" light disable-resize-watcher>
+    <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
       <v-list>
         <template v-for="(item, index) in items">
           <v-list-item class="tile" :key="index" :to="item.url">
