@@ -17,30 +17,14 @@ const routes = [
     component: () => import('../views/Namirnice.vue')
   },
   {
-    path: '/partner',
-    name: 'partner',
-    component: () => import('../views/Partner.vue')
-  },
-  {
     path: '/recepti',
     name: 'recepti',
     component: () => import('../views/Recepti.vue')
-  },
-
-  {
-    path: '/onama',
-    name: 'onama',
-    component: () => import('../views/Onama.vue')
   },
   {
     path: '/poklon',
     name: 'poklon',
     component: () => import('../views/Poklon.vue')
-  },
-  {
-    path: '/socialfeed',
-    name: 'socialfeed',
-    component: () => import('../views/SocialFeed.vue')
   },
   {
     path: '/trgovina',

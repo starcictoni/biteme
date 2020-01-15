@@ -13,6 +13,7 @@
         <h3 class="dobrodosli">Neki lijepi ugodni pozdrav</h3>
         <h3 class="idipavidi">Neki razlog zasto bi se covjek ponovno prijavio</h3>
           <v-form @submit.prevent="signup">
+
           <!-- Email -->
           <v-text-field
             v-model="email"
@@ -27,8 +28,7 @@
             clearable
             filled
             outlined
-          >
-          </v-text-field>
+          ></v-text-field>
 
           <!--Password -->
           <v-text-field
@@ -47,9 +47,7 @@
             filled
             outlined
             @click:append="show1 = !show1"
-          >
-          </v-text-field>
-
+          ></v-text-field>
 
           <!-- Ostatak -->
           <div class="row">
@@ -78,22 +76,25 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+import localStore from '@/localStore.js';
 
 export default {
   name: "Prijava",
   components: {
-    HelloWorld
+    //HelloWorld
   },
   props: {
     msg: String
   },
   data () {
     return {
-      alignment: 'center',
-      justify: 'center',
+      localStore,
+      alignment: "center",
+      justify: "center",
       show1: false,
-      email: '',
-      password: '',
+
+      email: "",
+      password: "",
       rules: {
         required: value => !!value || 'Nužno je unijeti.'
       }
@@ -101,23 +102,28 @@ export default {
   },
   methods: {
     signin () {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password).catch(error => {
-        switch(error.code) {
-          case 'auth/user-not-found':
-            console.log("User not found");
-          case 'auth/email-already-in-use':
-            console.log(`Email address ${this.email} already in use.`);
-          case 'auth/invalid-email':
-            console.log(`Email address ${this.email} is invalid.`);
-          case 'auth/operation-not-allowed':
-            console.log('Error during sign up.');
-          case 'auth/weak-password':
-            console.log('Password is not strong enough.')
-          default:
-            console.log(error.message);
-        }
-      });
-    },
+      console.log("Pozvao je sign in");
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+        .catch(error => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+          switch(error.code) {
+            case 'auth/user-not-found':
+              console.log("User not found");
+            case 'auth/email-already-in-use':
+              console.log(`Email address ${this.email} already in use.`);
+            case 'auth/invalid-email':
+              console.log(`Email address ${this.email} is invalid.`);
+            case 'auth/operation-not-allowed':
+              console.log('Error during sign up.');
+            case 'auth/weak-password':
+              console.log('Password is not strong enough.')
+            default:
+              console.log(error.message);
+          }
+        });
+    },//signin
+
     goosignin () {
       firebase.auth().signInWithPopup(provider)
               .then(function(result) {
