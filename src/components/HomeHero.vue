@@ -1,20 +1,18 @@
 <template>
     <v-container fluid fill-height class="home-hero" style="max-height: 100vh;">
         <v-layout justify-center align-center column pa-5>
-            <div class="display-4 font-weight-black white--text text-xs-center">
-                HEALTHY MEALS
+            <div class="display-5 font-weight-black white--text tagline text-xs-center">
+            SPREMANJE JELA NIKAD NIJE
             </div>
             <div
-                class="display-4 font-weight-black white--text text-xs-center mb-3"
-            >
-                FOR YOUR TABLE
+                class="display-5 tagline font-weight-black white--text text-xs-center">
+            BILO JEDNOSTAVNIJE!
             </div>
-            <div class="display-1 font-weight-bold white--text text-xs-center">
-                Finally be a foodie at home with fresh, chef-prepared meals
-                delivered daily to your door.
+            <div class="display-1 font-weight-bold black--text text-xs-center">
+                Uz Bite.me jedite zdravo, domaće i ukusno!
             </div>
-            <v-btn fab class="mt-5 brown darken-4">
-                <v-icon large color="white">expand_more</v-icon>
+            <v-btn fab color="#ffe600" class="mt-5">
+                <v-icon large color="white"></v-icon>
             </v-btn>
         </v-layout>
     </v-container>
@@ -28,9 +26,16 @@ export default {
 
 <style scoped>
 .home-hero {
-    background: url('http://source.unsplash.com/0BhSKStVtdM');
+    background: url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg');
     background-size: cover;
     width: 100%;
     height: 100%;
+}
+.tagline{
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #000;
+    font-size: 76px !important;
+    line-height: 5rem;
+    letter-spacing: -0.0083333333em !important
 }
 </style>
