@@ -52,7 +52,6 @@ export default {
       authenticated: false,
       verified: false,
       drawer: false,
-      //prezimee:'sdsdsd',
       items: [
         { title: "Menu", url: "/menu" },
         { title: "About", url: "/about" },
@@ -61,7 +60,6 @@ export default {
       ]
     }
   },
-
   methods: {
     logout() {
       firebase.auth().signOut();
@@ -95,15 +93,14 @@ export default {
       }//if(user)
       else {
         self.authenticated = false;
-        self.local_authenticated = false;
         console.log('Logged out')
       }
       if (user.emailVerified) {
         self.verified = true;
-        self.local_verified = true;
         console.log('Email is verified');
       }
       else {
+        self.verified = false;
         console.log('Email is not verified');
       }
     });

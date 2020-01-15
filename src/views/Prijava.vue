@@ -76,7 +76,6 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import localStore from '@/localStore.js';
 
 export default {
   name: "Prijava",
@@ -88,7 +87,6 @@ export default {
   },
   data () {
     return {
-      localStore,
       alignment: "center",
       justify: "center",
       show1: false,

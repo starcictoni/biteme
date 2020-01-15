@@ -121,9 +121,6 @@ export default {
   components: {
     //HelloWorld
   },
-  props: {
-    msg: String
-  },
   data () {
     return {
       localStore, //global:localStore -> svugdje ide this.global    ili?
