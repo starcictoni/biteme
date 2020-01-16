@@ -126,4 +126,7 @@ a {
 .logo {
   margin-right: 200px;
 }
+#app ::selection {
+  background: #fae94f;
+}
   </style>

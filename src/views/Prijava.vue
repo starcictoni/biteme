@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container fluid class="backgroundimg" style="max-height: 150vh;">
     <v-row class="justify-center">
       <v-col cols="6" md="5">
-        <v-sheet elevation="12" class="pa-12 pt-12 text-center">
+        <v-sheet elevation="5" class="pa-12 pt-12 text-center">
           <v-row :justify="justify" :align="alignment">
             <v-avatar size="85" >
               <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO">
@@ -143,7 +143,12 @@ export default {
 </script>
 
 <style lang="scss">
-
+.backgroundimg {
+    background: url('https://i.imgur.com/oJxfKdW.png');
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
 .separator {
     display: flex;
     align-items: center;
