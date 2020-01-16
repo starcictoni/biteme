@@ -152,7 +152,7 @@ export default {
       console.log("Pozvao je signup");
       var user = firebase.auth().currentUser;
       firebase.auth().createUserWithEmailAndPassword(self.email, self.password)
-          .then(u => {})
+          .then()
           .catch(error => {
             var errorCode = error.code;
             var errorMessage = error.message;

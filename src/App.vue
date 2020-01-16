@@ -55,6 +55,8 @@ export default {
       authenticated: false,
       verified: false,
       drawer: false,
+      UserEmail: "",
+      Username: "",
       items: [
         { title: "Menu", url: "/menu" },
         { title: "About", url: "/about" },
@@ -69,14 +71,35 @@ export default {
       firebase.auth().signOut();
     }
   }, //methods
-
+// db.collection("Users")
+//       .doc(this.userEmail)
+//       .get()
+//       .then(doc => {
+//       if (doc.exists) {
+//       this.userType = doc.data().User_Type;
+//       this.userDbf = doc.data().User_dbf;
+//       this.userFirstName = doc.data().User_First_Name;
+//       this.userSecondName = doc.data().User_Second_Name;
+//       this.userShelterName = doc.data().User_Shelter_Name;
+//       this.userGender = doc.data().User_Gender;
+//       this.userOibSsn = doc.data().User_Shelter_OIB_SSN;
+//       this.userLocation = doc.data().User_Shelter_Location;
+//       this.userPicture = doc.data().User_Picture;
+//       console.log("Document data:", doc.data());
+//       console.log(this.userType);
+//           } else {
+//           // doc.data() will be undefined in this case
+//           console.log("No such document!");
+//               }
+//           });
   mounted() {
-    const self = this;
+    const self = this
     var user = firebase.auth().currentUser;
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        self.local_UserEmail = user.email; //prebaci u store, pa iz storea u thenu zapisi u bazu
-        self.local_Username = self.username;
+       //debugger;
+        this.local_UserEmail = user.email; 
+        this.local_Username = this.username;
         self.authenticated = true;
         db.collection("users")
           .doc(self.local_UserEmail)
@@ -86,19 +109,24 @@ export default {
               self.local_UserEmail = doc.data().email;
               self.local_Username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
               console.log(`Username: ${self.local_Username}`);
+             // var ime = self.local_Username;
               console.log(`Authenticated: ${self.local_UserEmail}`);
               if (self.$route.name !== "home")
                 self.$router.push({ name: "home" });
             } else {
               console.log("No such document!"); // doc.data() will be undefined in this case
             }
-          });
+          },
+          
+          );
       } //if(user)
       else {
         self.authenticated = false;
-<<<<<<< HEAD
         console.log('Logged out')
       }
+      console.log("mail:",self.local_UserEmail),
+          console.log("ime:",self.local_Username)
+          console.log("ime2:",self.ime)
       if (user.emailVerified) {
         self.verified = true;
         console.log('Email is verified');
@@ -106,17 +134,6 @@ export default {
       else {
         self.verified = false;
         console.log('Email is not verified');
-=======
-        self.local_authenticated = false;
-        console.log("Logged out");
-      }
-      if (user.emailVerified) {
-        self.verified = true;
-        self.local_verified = true;
-        console.log("Email is verified");
-      } else {
-        console.log("Email is not verified");
->>>>>>> b6c76b15ef90d4790c2223f430d157a977780971
       }
     });
   } //mounted

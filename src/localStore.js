@@ -1,6 +1,6 @@
 export default {
-    local_Username: "",
-    local_UserEmail: "",
-    local_uid: "",
+    local_Username: '',
+    local_UserEmail: '',
+    local_uid: '',
 
 }

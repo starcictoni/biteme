@@ -16,7 +16,7 @@
 
           <!-- Email -->
           <v-text-field
-            v-model="email"
+            v-model="email1"
             background-color=""
             name="nesto"
             label="E-mail"
@@ -32,7 +32,7 @@
 
           <!--Password -->
           <v-text-field
-            v-model="password"
+            v-model="password1"
             background-color=""
             name="nesto"
             label="Lozinka"
@@ -82,17 +82,14 @@ export default {
   components: {
     //HelloWorld
   },
-  props: {
-    msg: String
-  },
   data () {
     return {
       alignment: "center",
       justify: "center",
       show1: false,
 
-      email: "",
-      password: "",
+      email1: "",
+      password1: "",
       rules: {
         required: value => !!value || 'Nužno je unijeti.'
       }
