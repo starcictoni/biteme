@@ -1,13 +1,11 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="3"> Prvi column
-      </v-col>
+  <v-container fluid class="backgroundimg" style="max-height: 150vh;">
+    <v-row class="justify-center">
       <v-col cols="6" md="5">
-        <v-sheet elevation="12" class="pa-12 pt-12 text-center">
+        <v-sheet elevation="5" class="pa-12 pt-12 text-center">
           <v-row :justify="justify" :align="alignment">
-            <v-avatar size="85" >
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO">
+            <v-avatar tile height="auto" width="100px" class="mb-5">
+              <img src="logoletter.png" alt="LOGO">
             </v-avatar>
           </v-row>
         <h3 class="dobrodosli">Neki lijepi ugodni pozdrav</h3>
@@ -32,8 +30,13 @@
 
           <!--Password -->
           <v-text-field
+<<<<<<< HEAD
             v-model="password1"
             background-color=""
+=======
+            v-model="password"
+            background-color="" 
+>>>>>>> a108628d952172897e957ff4f75ca9d28e4309a9
             name="nesto"
             label="Lozinka"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -66,8 +69,6 @@
           </v-form>
           
         </v-sheet>
-      </v-col>
-      <v-col cols="3"> Treci column
       </v-col>
     </v-row>
   </v-container>
@@ -142,7 +143,12 @@ export default {
 </script>
 
 <style lang="scss">
-
+.backgroundimg {
+    background: url('https://i.imgur.com/oJxfKdW.png');
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
 .separator {
     display: flex;
     align-items: center;
@@ -174,5 +180,4 @@ export default {
   font-weight: normal;
   margin-bottom: 50px;
 }
-
 </style>

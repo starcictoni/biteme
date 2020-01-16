@@ -23,10 +23,9 @@ export default {
     name: 'HomeHero'
 };
 </script>
-
 <style scoped>
 .home-hero {
-    background: url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg');
+    background: url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-size: cover;
     width: 100%;
     height: 100%;

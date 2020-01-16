@@ -58,10 +58,8 @@ export default {
       UserEmail: "",
       Username: "",
       items: [
-        { title: "Menu", url: "/menu" },
-        { title: "About", url: "/about" },
-        { title: "Prijava", url: "/prijava" },
-        { title: "Registracija", url: "/registracija" }
+        { title: "Recepti", url: "/recepti" },
+        // { title: "About", url: "/about" },
       ],
       itemsLog: [{ title: "It works", url: "/menu" }] //za neki drugi linkovi nakon prijave
     };
@@ -154,4 +152,8 @@ a {
 .logo {
   margin-right: 200px;
 }
+#app ::selection {
+  background: #fae94f;
+}
 </style>
+
