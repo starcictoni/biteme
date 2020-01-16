@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="white">
-    <v-container grid-list-lg>
+    <!-- <v-container> -->
       <v-col>
         <v-row
           class="display-1 font-weight-black text-black text-xs-center justify-center mt-5"
@@ -48,7 +48,7 @@
         </v-row>
                
       </v-col>
-    </v-container>
+    <!-- </v-container> -->
   </v-container>
 </template>
 
