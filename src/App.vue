@@ -56,10 +56,8 @@ export default {
       verified: false,
       drawer: false,
       items: [
-        { title: "Menu", url: "/menu" },
-        { title: "About", url: "/about" },
-        { title: "Prijava", url: "/prijava" },
-        { title: "Registracija", url: "/registracija" }
+        { title: "Recepti", url: "/recepti" },
+        // { title: "About", url: "/about" },
       ],
       itemsLog: [{ title: "It works", url: "/menu" }] //za neki drugi linkovi nakon prijave
     };
