@@ -1,8 +1,6 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col cols="3"> Prvi column
-      </v-col>
+    <v-row class="justify-center">
       <v-col cols="6" md="5">
         <v-sheet elevation="12" class="pa-12 pt-12 text-center">
           <v-row :justify="justify" :align="alignment">
@@ -66,8 +64,6 @@
           </v-form>
           
         </v-sheet>
-      </v-col>
-      <v-col cols="3"> Treci column
       </v-col>
     </v-row>
   </v-container>
