@@ -5,8 +5,8 @@
       <v-col cols="6" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 mb-12 text-center">
           <v-row :justify="justify" :align="alignment">
-            <v-avatar size="85" >
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO">
+            <v-avatar tile height="auto" width="100px" class="mb-5">
+              <img src="logoletter.png" alt="LOGO">
             </v-avatar>
           </v-row>
         <h3 class="dobrodosli-reg">Neki lijepi ugodni pozdrav</h3>
