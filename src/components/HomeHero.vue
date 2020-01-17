@@ -2,11 +2,11 @@
     <v-container fluid fill-height class="home-hero" style="max-height: 100vh;">
         <v-layout justify-center align-center column pa-5>
             <div class="display-5 font-weight-black white--text tagline text-xs-center">
-            SPREMANJE JELA NIKAD NIJE
+            Priprema jela nikad nije
             </div>
             <div
                 class="display-5 tagline font-weight-black white--text text-xs-center">
-            BILO JEDNOSTAVNIJE!
+            bila jednostavnija!
             </div>
             <div class="display-1 font-weight-bold black--text text-xs-center">
                 Uz Bite.me jedite zdravo, domaće i ukusno!
