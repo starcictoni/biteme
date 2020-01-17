@@ -1,8 +1,8 @@
 <template>
     <v-container grid-list-lg>
-        <v-layout row>
-            <v-flex xs12 class="text-xs-center display-1 font-weight-black my-5"
-                >Available Meal Plans</v-flex
+        <v-layout row class="justify-cenet">
+            <v-flex xs12 class="text-xs-center text-center justify-center display-1 font-weight-black my-5"
+                >Dostupni planovi prehrane</v-flex
             >
         </v-layout>
         <v-layout row wrap class="meal-plans">
@@ -29,10 +29,9 @@
                         <div>
                             <h3 class="headline mb-0">Keto</h3>
                             <div>
-                                The Keto diet is a high-fat, adequate-protein,
-                                low-carbohydrate diet. The diet forces the body
-                                to burn fats rather than carbohydrates by
-                                putting the body into ketosis.
+                                Keto dijeta je HFLC dijeta sa adekvatnom količinom bjelančevina. Dijeta forsira tijelo
+                                 da sagorijeva masti, a ne ugljikohidrate,
+                                 stavljajući tako tijelo u ketozu.
                             </div>
                         </div>
                     </v-card-text>
@@ -74,10 +73,7 @@
                         <div>
                             <h3 class="headline mb-0">Paleo</h3>
                             <div>
-                                The Paleo diet requires the predominant
-                                consumption of foods presumed to have been the
-                                only foods available to or consumed by humans
-                                during the Paleolithic era.
+                                Paleo dijeta zahtijeva pretežno konzumiranje hrane za koju se pretpostavlja da je bila jedina dostupna hrana koju su ljudi imali ili konzumirali tijekom ere paleolita.
                             </div>
                         </div>
                     </v-card-text>
@@ -119,10 +115,7 @@
                         <div>
                             <h3 class="headline mb-0">Vegan</h3>
                             <div>
-                                The vegan diet abstains from the use of animal
-                                products. The vegan diet does not consume meat,
-                                diary products, eggs or any all other
-                                animal-derived ingredients.
+                                Veganska prehrana suzdržava se od upotrebe životinjskih proizvoda. Ona ne sadrži meso, mlijeko, jaja ili bilo koje druge sastojke životinjskog porijekla.
                             </div>
                         </div>
                     </v-card-text>
