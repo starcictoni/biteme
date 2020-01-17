@@ -53,14 +53,9 @@
 import localStore from "@/localStore.js";
 
 export default {
-  name: "App",
+
   data() {
-    return {
-      localStore,
-      authenticated: false,
-      verified: false,
-      drawer: false
-    };
+    return localStore;
   },
 
   methods: {
