@@ -46,7 +46,6 @@
             outlined
             @click:append="show1 = !show1"
           ></v-text-field>
-
           <!-- Ostatak -->
           <div class="row">
             <div class="col-md-6 text-left mt-1 pt-0 pb-0 ">
@@ -83,7 +82,6 @@ export default {
       alignment: "center",
       justify: "center",
       show1: false,
-
       email: "",
       password: "",
       rules: {

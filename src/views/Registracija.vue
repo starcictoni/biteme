@@ -115,7 +115,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-//import localStore from '@/localStore.js';
+
 
 export default {
   name: "Registracija",
@@ -124,12 +124,10 @@ export default {
   },
   data () {
     return {
-      localStore, //global:localStore -> svugdje ide this.global    ili?
       alignment: "center",
       justify: "center",
       show1: false,
       show2: false,
-
       username: "",
       email: "",
       password: "",

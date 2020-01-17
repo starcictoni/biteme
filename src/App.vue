@@ -4,14 +4,6 @@
       <!-- Drawer -->
       <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
         <v-list v-if="!authenticated">
-<<<<<<< HEAD
-          <template v-for="(item, index) in this.items">
-            <v-list-item class="tile" :key="index" :to="item.url">
-              <v-list-item-content>{{ this.item.title }}</v-list-item-content>
-            </v-list-item>
-            <v-divider :key="`divider-${index}`"></v-divider>
-          </template>
-=======
           <v-list-item class="tile">
             <router-link class="tile" to="/recepti">
               <v-list-item-content>Recepti</v-list-item-content>
@@ -23,24 +15,14 @@
               <v-list-item-content>Trgovina</v-list-item-content>
             </router-link>
           </v-list-item>
->>>>>>> 17bea08c79adbd15d0dc459192fd5e52e4d874cd
         </v-list>
 
         <v-list v-if="authenticated">
-<<<<<<< HEAD
-          <template v-for="(item, index) in this.itemsLog">
-            <v-list-item class="tile" :key="index" :to="item.url">
-              <v-list-item-content>{{ item.title }}</v-list-item-content>
-            </v-list-item>
-            <v-divider :key="`divider-${index}`"></v-divider>
-          </template>
-=======
           <v-list-item class="tile">
             <router-link class="tile" to="/recepti">
               <v-list-item-content>nešto kad se korisnik prijavi</v-list-item-content>
             </router-link>
           </v-list-item>
->>>>>>> 17bea08c79adbd15d0dc459192fd5e52e4d874cd
         </v-list>
       </v-navigation-drawer>
 
@@ -78,21 +60,7 @@ import localStore from "@/localStore.js";
 
 export default {
   data() {
-<<<<<<< HEAD
-    return //{
-      localStore; //kako bih ja mogao samo store unijeti?
-    //   authenticated: false,
-    //   verified: false,
-    //   drawer: false,
-    //   items: [  <- ovo i ovo dolje ide u store
-    //     { title: "Recepti", url: "/recepti" },
-    //     // { title: "About", url: "/about" },
-    //   ],
-    //   itemsLog: [{ title: "It works", url: "/menu" }] //za neki drugi linkovi nakon prijave
-    // };
-=======
     return localStore;
->>>>>>> 17bea08c79adbd15d0dc459192fd5e52e4d874cd
   },
   methods: {
     logout() {
@@ -126,18 +94,18 @@ export default {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
        //debugger;
-        self.local_UserEmail = user.email; 
-        self.local_Username = self.username;
+        self.email = user.email; 
+       // self.local_Username = self.username;
         self.authenticated = true;
         db.collection("users")
-          .doc(self.local_UserEmail)
+          .doc(self.email)
           .get()
           .then(doc => {
             if (doc.exists) {
-              self.local_UserEmail = doc.data().email; //mozda promijeniti store varijable u lokalne
-              self.local_Username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
-              console.log(`Username: ${self.local_Username}`);
-              console.log(`Authenticated: ${self.local_UserEmail}`);
+              self.email = doc.data().email; //mozda promijeniti store varijable u lokalne
+              self.username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
+              console.log(`Username: ${self.username}`);
+              console.log(`Authenticated: ${self.email}`);
               if (self.$route.name !== "home")
                 self.$router.push({ name: "home" });
             } else {
@@ -151,8 +119,8 @@ export default {
         self.authenticated = false;
         console.log('Logged out')
       }
-      console.log("ime:",self.local_Username),
-      console.log("mail:",self.local_UserEmail)
+      console.log("ime:",self.username),
+      console.log("mail:",self.email)
       
       if (user.emailVerified) {
         self.verified = true;
