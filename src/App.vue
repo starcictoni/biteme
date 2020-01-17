@@ -3,15 +3,15 @@
     <span>
       <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
         <v-list v-if="!authenticated">
-          <template v-for="(item, index) in items">
+          <template v-for="(item, index) in this.items">
             <v-list-item class="tile" :key="index" :to="item.url">
-              <v-list-item-content>{{ item.title }}</v-list-item-content>
+              <v-list-item-content>{{ this.item.title }}</v-list-item-content>
             </v-list-item>
             <v-divider :key="`divider-${index}`"></v-divider>
           </template>
         </v-list>
         <v-list v-if="authenticated">
-          <template v-for="(item, index) in itemsLog">
+          <template v-for="(item, index) in this.itemsLog">
             <v-list-item class="tile" :key="index" :to="item.url">
               <v-list-item-content>{{ item.title }}</v-list-item-content>
             </v-list-item>
@@ -47,22 +47,21 @@
 <script>
 import localStore from "@/localStore.js";
 
+
 export default {
   name: "App",
   data() {
-    return {
-      localStore,
-      authenticated: false,
-      verified: false,
-      drawer: false,
-      UserEmail: "",
-      Username: "",
-      items: [
-        { title: "Recepti", url: "/recepti" },
-        // { title: "About", url: "/about" },
-      ],
-      itemsLog: [{ title: "It works", url: "/menu" }] //za neki drugi linkovi nakon prijave
-    };
+    return //{
+      localStore; //kako bih ja mogao samo store unijeti?
+    //   authenticated: false,
+    //   verified: false,
+    //   drawer: false,
+    //   items: [  <- ovo i ovo dolje ide u store
+    //     { title: "Recepti", url: "/recepti" },
+    //     // { title: "About", url: "/about" },
+    //   ],
+    //   itemsLog: [{ title: "It works", url: "/menu" }] //za neki drugi linkovi nakon prijave
+    // };
   },
   methods: {
     logout() {
@@ -96,18 +95,17 @@ export default {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
        //debugger;
-        this.local_UserEmail = user.email; 
-        this.local_Username = this.username;
+        self.local_UserEmail = user.email; 
+        self.local_Username = self.username;
         self.authenticated = true;
         db.collection("users")
           .doc(self.local_UserEmail)
           .get()
           .then(doc => {
             if (doc.exists) {
-              self.local_UserEmail = doc.data().email;
+              self.local_UserEmail = doc.data().email; //mozda promijeniti store varijable u lokalne
               self.local_Username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
               console.log(`Username: ${self.local_Username}`);
-             // var ime = self.local_Username;
               console.log(`Authenticated: ${self.local_UserEmail}`);
               if (self.$route.name !== "home")
                 self.$router.push({ name: "home" });
@@ -122,9 +120,9 @@ export default {
         self.authenticated = false;
         console.log('Logged out')
       }
-      console.log("mail:",self.local_UserEmail),
-          console.log("ime:",self.local_Username)
-          console.log("ime2:",self.ime)
+      console.log("ime:",self.local_Username),
+      console.log("mail:",self.local_UserEmail)
+      
       if (user.emailVerified) {
         self.verified = true;
         console.log('Email is verified');

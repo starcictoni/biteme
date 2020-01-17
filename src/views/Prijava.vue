@@ -14,7 +14,7 @@
 
           <!-- Email -->
           <v-text-field
-            v-model="email1"
+            v-model="email"
             background-color=""
             name="nesto"
             label="E-mail"
@@ -30,13 +30,8 @@
 
           <!--Password -->
           <v-text-field
-<<<<<<< HEAD
-            v-model="password1"
-            background-color=""
-=======
             v-model="password"
-            background-color="" 
->>>>>>> a108628d952172897e957ff4f75ca9d28e4309a9
+            background-color=""
             name="nesto"
             label="Lozinka"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -89,8 +84,8 @@ export default {
       justify: "center",
       show1: false,
 
-      email1: "",
-      password1: "",
+      email: "",
+      password: "",
       rules: {
         required: value => !!value || 'Nužno je unijeti.'
       }
@@ -98,6 +93,8 @@ export default {
   },
   methods: {
     signin () {
+            console.log(self.password);
+      console.log(self.email);
       console.log("Pozvao je sign in");
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .catch(error => {

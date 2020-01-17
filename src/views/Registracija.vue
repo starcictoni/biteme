@@ -25,6 +25,10 @@
             auto-grow
             clearable
             filled
+            type=""
+            value=""
+            id=""
+            input
             outlined
           ></v-text-field>
 
@@ -111,7 +115,7 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import localStore from '@/localStore.js';
+//import localStore from '@/localStore.js';
 
 export default {
   name: "Registracija",
@@ -147,6 +151,10 @@ export default {
     signup () {
       const self = this;
       console.log("Pozvao je signup");
+      console.log(self.username);
+      console.log(self.email);
+      console.log(self.password);
+      console.log(self.password2);
       var user = firebase.auth().currentUser;
       firebase.auth().createUserWithEmailAndPassword(self.email, self.password)
           .then()

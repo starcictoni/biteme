@@ -3,7 +3,7 @@
 
     <v-row>
       <v-col cols="3"> Prvi column </v-col>
-          {{funkcija()}}
+          
         <v-col cols="6" md="5">
           <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
             <v-avatar size="150" >
@@ -35,34 +35,34 @@ export default {
       }
     },
     
-     methods:  {
-      funkcija() {
-      console.log("nesto",this.localStore_Username);
-      console.log("mailcek",this.localStore_UserEmail);
-      let id = self.email;
-      db.collection("users")
-        .doc(id)
-        .get()
-        .then(doc => {
-        if (doc.exists) {
-        self.username = doc.data().username;
-        self.email = doc.data().email;
- /*       this.userFirstName = doc.data().User_First_Name;
-        this.userSecondName = doc.data().User_Second_Name;
-        this.userShelterName = doc.data().User_Shelter_Name;
-        this.userGender = doc.data().User_Gender;
-        this.userOibSsn = doc.data().User_Shelter_OIB_SSN;
-        this.userLocation = doc.data().User_Shelter_Location;
-        this.userPicture = doc.data().User_Picture;*/
-        console.log("Document data:", doc.data());
-        console.log(self.username);
-            } else {
-            // doc.data() will be undefined in this case
-            console.log("No such document!");
-                }
-            });
-            }
-      } 
+//      methods:  {
+//       funkcija() {
+//       console.log("nesto",this.localStore_Username);
+//       console.log("mailcek",this.localStore_UserEmail);
+//       let id = self.email;
+//       db.collection("users")
+//         .doc(id)
+//         .get()
+//         .then(doc => {
+//         if (doc.exists) {
+//         self.username = doc.data().username;
+//         self.email = doc.data().email;
+//  /*       this.userFirstName = doc.data().User_First_Name;
+//         this.userSecondName = doc.data().User_Second_Name;
+//         this.userShelterName = doc.data().User_Shelter_Name;
+//         this.userGender = doc.data().User_Gender;
+//         this.userOibSsn = doc.data().User_Shelter_OIB_SSN;
+//         this.userLocation = doc.data().User_Shelter_Location;
+//         this.userPicture = doc.data().User_Picture;*/
+//         console.log("Document data:", doc.data());
+//         console.log(self.username);
+//             } else {
+//             // doc.data() will be undefined in this case
+//             console.log("No such document!");
+//                 }
+//             });
+//             }
+//       } 
     }
 </script>
 
