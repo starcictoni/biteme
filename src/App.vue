@@ -9,6 +9,12 @@
               <v-list-item-content>Recepti</v-list-item-content>
             </router-link>
           </v-list-item>
+
+          <v-list-item class="tile">
+            <router-link class="tile" to="/trgovina">
+              <v-list-item-content>Trgovina</v-list-item-content>
+            </router-link>
+          </v-list-item>
         </v-list>
 
         <v-list v-if="authenticated">
@@ -40,12 +46,11 @@
         </div>
       </v-app-bar>
     </span>
-    
+
     <!-- Sadrzaj -->
     <v-content transition="slide-x-transition">
       <router-view></router-view>
     </v-content>
-    
   </v-app>
 </template>
 
@@ -53,7 +58,6 @@
 import localStore from "@/localStore.js";
 
 export default {
-
   data() {
     return localStore;
   },
@@ -114,7 +118,7 @@ a {
   background-color: #ffe600 !important;
 }
 .tile {
-  color: black!important;
+  color: black !important;
 }
 .tile:hover {
   background: #ffe600;
