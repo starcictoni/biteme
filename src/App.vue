@@ -1,24 +1,26 @@
 <template>
   <v-app id="app">
     <span>
+      <!-- Drawer -->
       <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
         <v-list v-if="!authenticated">
-          <template v-for="(item, index) in items">
-            <v-list-item class="tile" :key="index" :to="item.url">
-              <v-list-item-content>{{ item.title }}</v-list-item-content>
-            </v-list-item>
-            <v-divider :key="`divider-${index}`"></v-divider>
-          </template>
+          <v-list-item class="tile">
+            <router-link class="tile" to="/recepti">
+              <v-list-item-content>Recepti</v-list-item-content>
+            </router-link>
+          </v-list-item>
         </v-list>
+
         <v-list v-if="authenticated">
-          <template v-for="(item, index) in itemsLog">
-            <v-list-item class="tile" :key="index" :to="item.url">
-              <v-list-item-content>{{ item.title }}</v-list-item-content>
-            </v-list-item>
-            <v-divider :key="`divider-${index}`"></v-divider>
-          </template>
+          <v-list-item class="tile">
+            <router-link class="tile" to="/recepti">
+              <v-list-item-content>nešto kad se korisnik prijavi</v-list-item-content>
+            </router-link>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
+
+      <!-- Navbar -->
       <v-app-bar app color="black" dark>
         <v-app-bar-nav-icon @click="drawer = !drawer" class="logo"></v-app-bar-nav-icon>
         <v-spacer class="hidden-md-and-up"></v-spacer>
@@ -38,9 +40,12 @@
         </div>
       </v-app-bar>
     </span>
+    
+    <!-- Sadrzaj -->
     <v-content transition="slide-x-transition">
       <router-view></router-view>
     </v-content>
+    
   </v-app>
 </template>
 
@@ -48,19 +53,9 @@
 import localStore from "@/localStore.js";
 
 export default {
-  name: "App",
+
   data() {
-    return {
-      localStore,
-      authenticated: false,
-      verified: false,
-      drawer: false,
-      items: [
-        { title: "Recepti", url: "/recepti" },
-        // { title: "About", url: "/about" },
-      ],
-      itemsLog: [{ title: "It works", url: "/menu" }] //za neki drugi linkovi nakon prijave
-    };
+    return localStore;
   },
 
   methods: {
@@ -117,6 +112,9 @@ a {
 }
 .nav-join:hover {
   background-color: #ffe600 !important;
+}
+.tile {
+  color: black!important;
 }
 .tile:hover {
   background: #ffe600;
