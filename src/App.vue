@@ -1,24 +1,50 @@
 <template>
   <v-app id="app">
     <span>
+      <!-- Drawer -->
       <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
         <v-list v-if="!authenticated">
+<<<<<<< HEAD
           <template v-for="(item, index) in this.items">
             <v-list-item class="tile" :key="index" :to="item.url">
               <v-list-item-content>{{ this.item.title }}</v-list-item-content>
             </v-list-item>
             <v-divider :key="`divider-${index}`"></v-divider>
           </template>
+=======
+          <v-list-item class="tile">
+            <router-link class="tile" to="/recepti">
+              <v-list-item-content>Recepti</v-list-item-content>
+            </router-link>
+          </v-list-item>
+
+          <v-list-item class="tile">
+            <router-link class="tile" to="/trgovina">
+              <v-list-item-content>Trgovina</v-list-item-content>
+            </router-link>
+          </v-list-item>
+>>>>>>> 17bea08c79adbd15d0dc459192fd5e52e4d874cd
         </v-list>
+
         <v-list v-if="authenticated">
+<<<<<<< HEAD
           <template v-for="(item, index) in this.itemsLog">
             <v-list-item class="tile" :key="index" :to="item.url">
               <v-list-item-content>{{ item.title }}</v-list-item-content>
             </v-list-item>
             <v-divider :key="`divider-${index}`"></v-divider>
           </template>
+=======
+          <v-list-item class="tile">
+            <router-link class="tile" to="/recepti">
+              <v-list-item-content>nešto kad se korisnik prijavi</v-list-item-content>
+            </router-link>
+          </v-list-item>
+>>>>>>> 17bea08c79adbd15d0dc459192fd5e52e4d874cd
         </v-list>
       </v-navigation-drawer>
+
+      <!-- Navbar -->
       <v-app-bar app color="black" dark>
         <v-app-bar-nav-icon @click="drawer = !drawer" class="logo"></v-app-bar-nav-icon>
         <v-spacer class="hidden-md-and-up"></v-spacer>
@@ -38,6 +64,8 @@
         </div>
       </v-app-bar>
     </span>
+
+    <!-- Sadrzaj -->
     <v-content transition="slide-x-transition">
       <router-view></router-view>
     </v-content>
@@ -49,8 +77,8 @@ import localStore from "@/localStore.js";
 
 
 export default {
-  name: "App",
   data() {
+<<<<<<< HEAD
     return //{
       localStore; //kako bih ja mogao samo store unijeti?
     //   authenticated: false,
@@ -62,6 +90,9 @@ export default {
     //   ],
     //   itemsLog: [{ title: "It works", url: "/menu" }] //za neki drugi linkovi nakon prijave
     // };
+=======
+    return localStore;
+>>>>>>> 17bea08c79adbd15d0dc459192fd5e52e4d874cd
   },
   methods: {
     logout() {
@@ -143,6 +174,9 @@ a {
 }
 .nav-join:hover {
   background-color: #ffe600 !important;
+}
+.tile {
+  color: black !important;
 }
 .tile:hover {
   background: #ffe600;
