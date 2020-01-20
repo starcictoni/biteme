@@ -1,6 +1,6 @@
 <template>
   <v-app>
-      <v-container fluid class="backgroundimg">
+      <v-container fluid class="trgbackground">
         <v-row class="justify-left">
           <v-col class="justify-center" sm="12" md="4" v-for="item in storeItems" :key="item.id">
             <v-card color="rgb(255, 0, 0, 0)" elevation="0" class="mx-auto" max-width="280">
@@ -54,11 +54,11 @@ export default {
 </script>
 
 <style lang="scss">
-.backgroundimg {
-    background: url('https://via.placeholder.com/1500x900/ffe600/ffe600');
+.trgbackground {
     background-size: contain;
-    width: 100%;
+    background: url('https://via.placeholder.com/1500x900/ffe600/ffe600');
     height: 100%;
+    width: 100%   
 }
 .textbg{
   background-color:#ffffff
