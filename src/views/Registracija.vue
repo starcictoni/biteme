@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="backgroundimg" style="max-height: 150vh;">
+  <v-container fluid class="backgroundimg" style="max-height: 100%;">
     <v-row class="justify-center">
     
       <v-col cols="6" md="5">
