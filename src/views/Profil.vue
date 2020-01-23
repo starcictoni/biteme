@@ -1,20 +1,24 @@
 <template>
     <v-container>
-
     <v-row>
       <v-col cols="3"></v-col>
-          
         <v-col cols="6" md="6">
           <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
             <h3 class="dobrodosli">Uredi svoj profil</h3>
             <h3 class="idipavidi">Sve će biti u redu</h3>
-            <v-avatar class="mb-6" size="150" >
-              <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="LOGO"> <!-- User photo -->
+            <v-avatar class="mb-6" size="180" >
+              <img src="/def-pic.jpg" alt="LOGO"> <!-- User photo -->
             </v-avatar>
             <!-- <v-btn class="mt-8 mb-1" block color="secondary" dark>Uredite profil</v-btn> -->
             <!-- <div class="separator mt-3 mb-3"> </div> -->
 
             <!--Photo -->
+            <h6>Unesite podatke</h6> 
+            <!-- Ovaj dio se salje u storage -->
+          <form @submit.prevent="postnewimage" class="mb-5">
+            <croppa :width="150" :height="150" v-model="imageData"></croppa>
+          </form>
+
           <v-file-input
             v-model="photo"
             :rules="rules.velicina"
@@ -26,7 +30,6 @@
             small
           ></v-file-input>
             <div class="mb-5"></div>
-
             <!--First name -->
             <v-text-field
             v-model="firstname"
@@ -71,7 +74,6 @@
             background-color=""
             name="input-10-2"
             label="Adresa"
-            :rules="[]"
             hint=""
             placeholder="Unesite adresu"
             row-height="14"
@@ -80,22 +82,20 @@
             clearable
             filled
             outlined
-            @click:append="show1 = !show1"
           ></v-text-field>
-
-          <v-btn @click="show2 =! show2" type="submit" class="mb-2" outlined color="black"> Promjena lozinke </v-btn>
+            <!-- :rules="[]" -->
+          <!-- <v-btn @click="show2 =! show2" type="submit" class="mb-2" outlined color="black"> Promjena lozinke </v-btn> -->
           
-          <div v-if="show2">
           <!-- Old password -->
-            <v-text-field
+            <!-- <v-text-field
             class="mt-7"
-            v-model="newpassword"
+            v-model="oldpassword"
             background-color=""
             name="input-10-2"
             label="Lozinka"
-            :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.min, rules.password]"
-            :type="show1 ? 'text' : 'Password'"
+            :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+            :rules="[rules.password]"
+            :type="show2 ? 'text' : 'Password'"
             hint=""
             placeholder="Unesite staru lozinku"
             row-height="14"
@@ -104,17 +104,19 @@
             clearable
             filled
             outlined
-            @click:append="show1 = !show1"
-          ></v-text-field>
-
+            @click:append="show2 = !show2"
+          ></v-text-field> -->
+          
+          <h6>Odvojiti</h6>
+          <!-- Ovo se ne salje na bazu -->
           <!-- newPassword -->
           <v-text-field
-            v-model="newpassword"
+            v-model="newPassword"
             background-color=""
             name="input-10-2"
             label="Lozinka"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.min, rules.password]"
+            :rules="rules.password"
             :type="show1 ? 'text' : 'Password'"
             hint=""
             placeholder="Unesite novu lozinku"
@@ -126,10 +128,12 @@
             outlined
             @click:append="show1 = !show1"
           ></v-text-field>
-          </div>
+          <!-- </div> -->
           <div class="row">
             <div class="col-md-6 text-right pt-0 pb-0 mt-3">
-              <v-btn type="submit" class="ma-2" outlined color="black"> Spremi </v-btn>
+              <v-btn type="submit" @click="updateprofile" class="ma-2" outlined color="black"> Spremi </v-btn>
+              <v-btn type="submit" @click="postnewimage" class="ma-2" outlined color="black"> Postaj </v-btn>
+                {{username}}
             </div>
           </div>
 
@@ -153,49 +157,141 @@ import localStore from '@/localStore.js';
 export default {
   name: "Profil",
     data() {
-      return {
-        photo: null,
-        firstname: "",
-        lastname: "",
-        adresa: "",
-        newpassword: "",
-        show1: false,
-        show2: false,
-        rules: {
-        velicina: value => !value || value.size < 2000000 || 'Avatar size should be less than 2 MB!',
-        required: value => !!value || 'Nužno je unijeti.',
-        password: value => {
-          const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
-          console.log("Usao je u rules");
-          return (
-            pattern.test(value) || 
-            "Minimalno 8 znakova, 1 veliko slovo, 1 broj i 1 poseban znak"
-          );
-        },
-      }
-    }
+      return localStore;
 },
+// db.collection("Users")
+//       .doc(this.userEmail)
+//       .get()
+//       .then(doc => {
+//       if (doc.exists) {
+//       this.userType = doc.data().User_Type;
+//       this.userDbf = doc.data().User_dbf;
+//       this.userFirstName = doc.data().User_First_Name;
+//       this.userSecondName = doc.data().User_Second_Name;
+//       this.userShelterName = doc.data().User_Shelter_Name;
+//       this.userGender = doc.data().User_Gender;
+//       this.userOibSsn = doc.data().User_Shelter_OIB_SSN;
+//       this.userLocation = doc.data().User_Shelter_Location;
+//       this.userPicture = doc.data().User_Picture;
+//       console.log("Document data:", doc.data());
+//       console.log(this.userType);
+//           } else {
+//           // doc.data() will be undefined in this case
+//           console.log("No such document!");
+//               }
+//           }); 
   methods: {
-    //jedna veca funkcija koja ukljucuje manje.
-    //storage
-    change () {
+    postnewimage() {
       var user = firebase.auth().currentUser;
-      var credential;
-      // Prompt the user to re-provide their sign-in credentials
-      user.reauthenticateWithCredential(credential).then(function() {
-      // User re-authenticated.
-      }).catch(function(error) {
-      // An error happened.
+      var id = user.email;
+      this.imageData.generateBlob(blobData => {
+        console.log(blobData);
+        if(blobData != null) {
+          let imageName = this.email + "/" + Date.now() + ".png";
+          storage
+          .ref(imageName)
+          .put(blobData)
+          .then(result => {
+            result.ref.getDownloadURL()
+            .then(url => {
+            
+            db.collection("users")
+            .doc(id)
+            .update({
+              url: url,
+              posted_at: Date.now(),
+            })
+            .then(docRef => {
+              console.log("Document written with ID: ",
+              docRef.id);
+              this.imageData = null;
+              })
+              .catch(e => {
+              console.error("Error adding document: ");
+              });
+              })
+              .catch(e=> {
+              console.error(e)
+              })
+              })
+              .catch(e => {console.error(e)
+              })
+              }
+              }); // da... zatvaranje zagrada nakon ovoga noćna je mora!
+              
+
+
+      //foto: this.photo
+    },
+    updateprofile () {
+      var user = firebase.auth().currentUser;
+      var id = user.email;
+      db.collection("users").doc(id).update({
+          ime: this.firstname,
+          prezime: this.lastname,
+          adresa: this.adresa,
+          
+      })
+      .then(function(id) {
+          console.log("Document written with ID: ", id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
       });
 
+      // if(this.photo != null) {
+      //   console.log("Usao je u photo");
+      // }
+      // if(this.firstname != null) {
+      //   console.log("Usao je u firstname");
+      // }
+      // if(this.lastname != null) {
+      //   console.log("Usao je u lastname");
+      // }
+      // if(this.adresa != null) {
+      //   console.log("Usao je u adresu");
+      // }
+      // --------------------------------
+      // var user = firebase.auth().currentUser;
+      // user.updateProfile({
+      //   displayName: "Jane Q. User",
+      //   photoURL: "https://example.com/jane-q-user/profile.jpg"
+      // }).then(function() {
+      //   // Update successful.
+      // }).catch(function(error) {
+      //   // An error happened.
+      // });
+
+    },
+
+    change () {
       var user = firebase.auth().currentUser;
-      var newPassword = getASecureRandomPassword();
-      user.updatePassword(newPassword).then(function() {
-      // Update successful.
-      }).catch(function(error) {
-      // An error happened.
-      });
-    }
+      if(this.newPassword != null) {
+          user.updatePassword(newPassword).then(function()  {
+             console.log("Update successful.")
+          }).catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            switch(error.code) {
+            case 'auth/weak-password':
+              console.log('Password is not strong enough.')
+            default:
+              console.log(error.message);
+          }
+          });
+      }
+      else {
+        console.log("Well...");
+      }
+      // var user = firebase.auth().currentUser;
+      // var credential;
+      // // Prompt the user to re-provide their sign-in credentials
+      // user.reauthenticateWithCredential(credential).then(function() {
+      //   // User re-authenticated.
+      // }).catch(function(error) {
+      //   // An error happened.
+      // });
+    },//change
   }, 
 }
 </script>

@@ -91,8 +91,6 @@ export default {
   },
   methods: {
     signin () {
-            console.log(self.password);
-      console.log(self.email);
       console.log("Pozvao je sign in");
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .catch(error => {

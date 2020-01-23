@@ -55,7 +55,7 @@
             name="input-10-2"
             label="Lozinka"
             :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.required, rules.min, rules.password]"
+            :rules="[rules.required, rules.password]"
             :type="show1 ? 'text' : 'Password'"
             hint=""
             placeholder="Unesite lozinku"

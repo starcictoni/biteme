@@ -67,27 +67,6 @@ export default {
       firebase.auth().signOut();
     }
   }, //methods
-// db.collection("Users")
-//       .doc(this.userEmail)
-//       .get()
-//       .then(doc => {
-//       if (doc.exists) {
-//       this.userType = doc.data().User_Type;
-//       this.userDbf = doc.data().User_dbf;
-//       this.userFirstName = doc.data().User_First_Name;
-//       this.userSecondName = doc.data().User_Second_Name;
-//       this.userShelterName = doc.data().User_Shelter_Name;
-//       this.userGender = doc.data().User_Gender;
-//       this.userOibSsn = doc.data().User_Shelter_OIB_SSN;
-//       this.userLocation = doc.data().User_Shelter_Location;
-//       this.userPicture = doc.data().User_Picture;
-//       console.log("Document data:", doc.data());
-//       console.log(this.userType);
-//           } else {
-//           // doc.data() will be undefined in this case
-//           console.log("No such document!");
-//               }
-//           });
   mounted() {
     const self = this
     var user = firebase.auth().currentUser;
@@ -95,7 +74,6 @@ export default {
       if (user) {
        //debugger;
         self.email = user.email; 
-       // self.local_Username = self.username;
         self.authenticated = true;
         db.collection("users")
           .doc(self.email)
@@ -119,9 +97,6 @@ export default {
         self.authenticated = false;
         console.log('Logged out')
       }
-      console.log("ime:",self.username),
-      console.log("mail:",self.email)
-      
       if (user.emailVerified) {
         self.verified = true;
         console.log('Email is verified');
