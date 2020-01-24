@@ -1,35 +1,29 @@
 <template>
   <v-container>
     <v-app>
-      <v-row class="justify-center">
-        <v-col cols="8" md="9">
-          <v-card elevation="12" class="pa-6 pt-12 mb-12 text-center">
-            <!-- <v-card-title> -->
-            <v-text-field
-              v-model="search"
-              append-icon="mdi-search"
-              label="Search"
-              single-line
-              hide-details
-            ></v-text-field>
-            <!-- </v-card-title> -->
-            <v-data-table
-              v-model="selected"
-              :headers="headers"
-              :items="desserts"
-              :single-select="singleSelect"
-              :search="search"
-              item-key="ime"
-              show-select
-              class="elevation-1"
-            >
-              <template v-slot:top>
-                <v-switch v-model="singleSelect" label="Single select" class="pa-3"></v-switch>
-              </template>
-            </v-data-table>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-row class="justify-left">
+          <v-col class="justify-center" sm="12" md="4" v-for="item in storeItems" :key="item.id">
+            <v-card color="rgb(255, 0, 0, 0)" elevation="0" class="mx-auto" max-width="280">
+              <v-img class="align-end justify-center" :src="item.pic" height="fill"></v-img>
+              <v-card-title class="justify-center headline font-weight-bold">{{ item.title }}</v-card-title>
+              <v-card-subtitle class="text-center subtitle-1 black--text font-weight-black">{{ item.price }}</v-card-subtitle>
+              <v-card-actions class="justify-center">
+                <v-btn color="#eeffff" flat tile>DODAJ U KOŠARICU</v-btn>
+                <v-btn icon @click="item.show = !item.show">
+                  <v-icon>{{ item.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                </v-btn>
+              </v-card-actions>
+              <v-expand-transition>
+                <div v-show="item.show">
+                  <!-- <v-divider></v-divider> -->
+                  <v-card-text class="text-center textbg">I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.</v-card-text>
+                </div>
+              </v-expand-transition>
+            </v-card>
+          </v-col>
+
+          
+        </v-row>
 
       <v-content>
         <router-view></router-view>
@@ -59,331 +53,391 @@ export default {
           value: "ime"
         },
         { text: "kcal", value: "kalorije" },
-        { text: "Količina (g)", value: "kolicina"},
-        { text: "Masti (g)", value: "masti" },
-        { text: "Ugljikohidrati (g)", value: "ugljikohidrati" },
-        { text: "Bjelančevine (g)", value: "bjelancevine" },
-        { text: "Porcija", value: "porcija"},
+        { text: "Masti (g/100)", value: "masti" },
+        { text: "Ugljikohidrati (g/100)", value: "ugljikohidrati" },
+        { text: "Bjelančevine (g/100)", value: "bjelancevine" },
+        { text: "Količina", value: "kolicina"},
         { text: "Cijena (kn)", value: "cijena" }
       ],
-      desserts: [
+      groceries: [
         {
+          id: 1,
           ime: "Artičoka",
-          kalorije: 47,
-          kolicina: 100,
-          masti: 0.2,
-          ugljikohidrati: 11,
-          bjelancevine: 3.3,
-          porcija: "kom",
-          cijena: 4.99
+          opis: {
+            kalorije: 47,
+            masti: 0.2,
+            ugljikohidrati: 11,
+            bjelancevine: 3.3,
+          },
+          kolicina: "kom",
+          cijena: 4.99,
+          pic: null,
         },
         { 
           //1kg, 10kn
+          id: 2,
           ime: "Batat",
-          kalorije: 85,
-          kolicina: 100,
-          masti: 0.1,
-          ugljikohidrati: 20,
-          bjelancevine: 1.6,
-          porcija: "1kg",
-          cijena: 9.99
+          opis: {
+            kalorije: 85,
+            masti: 0.1,
+            ugljikohidrati: 20,
+            bjelancevine: 1.6,
+          },
+          kolicina: "1kg",
+          cijena: 9.99,
+          pic: null,
         },
         {
           //kg, 12kn
+          id: 3,
           ime: "Blitva",
-          kalorije: 43,
-          kolicina: 100,
-          masti: 0.2,
-          ugljikohidrati: 10,
-          bjelancevine: 1.6,
-          porcija: "1kg",
-          cijena: 11.99
+          opis: {
+            kalorije: 43,
+            masti: 0.2,
+            ugljikohidrati: 10,
+            bjelancevine: 1.6,
+          },
+          kolicina: "1kg",
+          cijena: 11.99,
+          pic: null,
         },
         {
-          //kg, 20kn
+          id: 4,
           ime: "Brokula",
-          kalorije: 33,
-          kolicina: 100,
-          masti: 0.4,
-          ugljikohidrati: 7,
-          bjelancevine: 2.8,
-          porcija: "1kg",
-          cijena: 19.99
+          opis: {
+            kalorije: 33,
+            masti: 0.4,
+            ugljikohidrati: 7,
+            bjelancevine: 2.8,
+          },
+          kolicina: "1kg",
+          cijena: 19.99,
+          pic: null,
         },
-        { //kg, 9kn
+        {
+          id: 5,
           ime: "Cikla",
-          kalorije: 19,
-          kolicina: 100,
-          masti: 0.2,
-          ugljikohidrati: 3.7,
-          bjelancevine: 1.8,
-          porcija: "1kg",
-          cijena: 8.99
+          opis: {
+            kalorije: 19,
+            masti: 0.2,
+            ugljikohidrati: 3.7,
+            bjelancevine: 1.8,          
+          },
+          kolicina: "1kg",
+          cijena: 8.99,
+          pic: null,
         },
         {
-          //kg, 5kn
+          id: 6,
           ime: "Cvjetača",
-          kalorije: 24,
-          kolicina: 100,
-          masti: 0.3,
-          ugljikohidrati: 5,
-          bjelancevine: 1.9,
-          porcija: "kom",
-          cijena: 4.99
+          opis: {
+            kalorije: 24,
+            masti: 0.3,
+            ugljikohidrati: 5,
+            bjelancevine: 1.9,
+          },
+          kolicina: "kom",
+          cijena: 4.99,
+          pic: null,
         },
         {
-          //kg, 20kn---------------------------
+          id: 7,
           ime: "Češnjak",
-          kalorije: 24,
-          kolicina: 100,
-          masti: 0.3,
-          ugljikohidrati: 5,
-          bjelancevine: 1.9,
-          porcija: "1kg",
+          opis: {
+            kalorije: 24,
+            masti: 0.3,
+            ugljikohidrati: 5,
+            bjelancevine: 1.9,
+          },
+          kolicina: "1kg",
           cijena: 19.99
         },
-
         {
-          //kg, 32kn
+          id: 8,
           ime: "Endivija",
-          kalorije: 17,
-          kolicina: 100,
-          masti: 0.2,
-          ugljikohidrati: 3.4,
-          bjelancevine: 1.3,
-          porcija: "kom",
-          cijena: 8.99
+          opis: {
+            kalorije: 17,
+            masti: 0.2,
+            ugljikohidrati: 3.4,
+            bjelancevine: 1.3,
+          },
+          kolicina: "kom",
+          cijena: 8.99,
+          pic: null,
         },
         {
-          //kg, 17kn
+          id: 9,
           ime: "Grašak",
-          kalorije: 81,
-          kolicina: 100,
-          masti: 0.4,
-          ugljikohidrati: 14,
-          bjelancevine: 5,
-          porcija: "1kg",
-          cijena: 16.99
+          opis: {
+            kalorije: 81,
+            masti: 0.4,
+            ugljikohidrati: 14,
+            bjelancevine: 5,
+          },
+          kolicina: "1kg",
+          cijena: 16.99,
+          pic: null,
         },
         {
-          //kg, 20kn
+          id: 10,
           ime: "Kelj",
-          kalorije: 49,
-          kolicina: 100,
-          masti: 0.9,
-          ugljikohidrati: 9,
-          bjelancevine: 4.3,
-          porcija: "kom",
-          cijena: 9.99
+          opis: {
+            kalorije: 49,
+            masti: 0.9,
+            ugljikohidrati: 9,
+            bjelancevine: 4.3,
+          },
+          kolicina: "kom",
+          cijena: 9.99,
+          pic: null,
         },
         {
-          //kg, 7kn
+          id: 11,
           ime: "Krastavac",
-          kalorije: 10,
-          kolicina: 100,
-          masti: 0.2,
-          ugljikohidrati: 2.2,
-          bjelancevine: 0.6,
-          porcija: "1kg",
-          cijena: 7.99
+          opis: {
+            kalorije: 10,
+            masti: 0.2,
+            ugljikohidrati: 2.2,
+            bjelancevine: 0.6,
+          },
+          kolicina: "1kg",
+          cijena: 7.99,
+          pic: null,
         },
         {
-          //kg, 5kn
+          id: 12,
           ime: "Krumpir",
-          kalorije: 77,
-          kolicina: 100,
-          masti: 0.1,
-          ugljikohidrati: 17,
-          bjelancevine: 2,
-          porcija: "1kg",
-          cijena: 4.99
+          opis: {
+            kalorije: 77,
+            masti: 0.1,
+            ugljikohidrati: 17,
+            bjelancevine: 2,
+          },
+          kolicina: "1kg",
+          cijena: 4.99,
+          pic: null,
         },
         {
           //kg, 3kn
+          id: 13,
           ime: "Kukuruz",
-          kalorije: 64,
-          kolicina: 100,
-          masti: 0.5,
-          ugljikohidrati: 15,
-          bjelancevine: 1.9,
-          porcija: "1kg",
-          cijena: 2.99
+          opis: {
+            kalorije: 64,
+            masti: 0.5,
+            ugljikohidrati: 15,
+            bjelancevine: 1.9,
+          },
+          kolicina: "1kg",
+          cijena: 2.99,
+          pic: null,
         },
         {
-          //kg, 6kn
+          id: 14,
           ime: "Kupus",
-          kalorije: 24.6,
-          kolicina: 100,
-          masti: 0.1,
-          ugljikohidrati: 6,
-          bjelancevine: 1.3,
-          porcija: "1kg",
-          cijena: 5.99
+          opis: {
+            kalorije: 24.6,
+            masti: 0.1,
+            ugljikohidrati: 6,
+            bjelancevine: 1.3,
+          },
+          kolicina: "1kg",
+          cijena: 5.99,
+          pic: null,
         },
         {
-          //30g, 9kn
+          id: 15,
           ime: "Lovor",
-          kalorije: 42,
-          kolicina: 100,
-          masti: 0,
-          ugljikohidrati: 0,
-          bjelancevine: 0,
-          porcija: "30g",
-          cijena: 8.99
+          opis: {
+            kalorije: 42,
+            masti: 0,
+            ugljikohidrati: 0,
+            bjelancevine: 0,
+          },
+          kolicina: "30g",
+          cijena: 8.99,
+          pic: null,
         },
         {
-          //kg, 15kn
+          id: 16,
           ime: "Luk",
-          kalorije: 39,
-          kolicina: 100,
-          masti: 0.1,
-          ugljikohidrati: 9,
-          bjelancevine: 1.1,
-          porcija: "1kg",
-          cijena: "8.99"
+          opis: {
+            kalorije: 39,
+            masti: 0.1,
+            ugljikohidrati: 9,
+            bjelancevine: 1.1,
+          },
+          kolicina: "1kg",
+          cijena: "8.99",
+          pic: null,
         },
         {
-          //kg, 100kn
+          id: 17,
           ime: "Matovilac",
-          kalorije: 21,
-          kolicina: 100,
-          masti: 0.4,
-          ugljikohidrati: 20,
-          bjelancevine: 2,
-          porcija: "200g",
-          cijena: 19.99
+          opis: {
+            kalorije: 21,
+            masti: 0.4,
+            ugljikohidrati: 20,
+            bjelancevine: 2,
+          },
+          kolicina: "200g",
+          cijena: 19.99,
+          pic: null,
         },
         {
-          //kg, 12kn
+          id: 18,
           ime: "Mrkva",
-          kalorije: 41,
-          kolicina: 100,
-          masti: 0,
-          ugljikohidrati: 10,
-          bjelancevine: 1,
-          porcija: "1kg",
-          cijena: 11.99
+          opis: {
+            kalorije: 41,
+            masti: 0,
+            ugljikohidrati: 10,
+            bjelancevine: 1,
+          },
+          kolicina: "1kg",
+          cijena: 11.99,
+          pic: null,
         },
         {
-          //kg, 20kn
+          id: 19,
           ime: "Paprika",
-          kalorije: 35,
-          kolicina: 100,
-          masti: 0,
-          ugljikohidrati: 6,
-          bjelancevine: 1,
-          porcija: "1kg",
-          cijena: 13.99
+          opis: {
+            kalorije: 35,
+            masti: 0,
+            ugljikohidrati: 6,
+            bjelancevine: 1,
+          },
+          kolicina: "1kg",
+          cijena: 13.99,
+          pic: null,
         },
         {
-          //kg, 20kn
+          id: 20,
           ime: "Patlidžan",
-          kalorije: 18,
-          kolicina: 100,
-          masti: 0,
-          ugljikohidrati: 3,
-          bjelancevine: 0,
-          porcija: "1kg",
-          cijena: 16.99
+          opis: {
+            kalorije: 18,
+            masti: 0,
+            ugljikohidrati: 3,
+            bjelancevine: 0,
+          },
+          kolicina: "1kg",
+          cijena: 16.99,
+          pic: null,
         },
         {
-          //10g, 17kn
+          id: 21,
           ime: "Peršin",
-          kalorije: 41,
-          kolicina: 100,
-          masti: 0.4,
-          ugljikohidrati: 9,
-          bjelancevine: 4.4,
-          porcija: "10g",
-          cijena: 15.99
+          opis: {
+            kalorije: 41,
+            masti: 0.4,
+            ugljikohidrati: 9,
+            bjelancevine: 4.4,
+          },
+          kolicina: "10g",
+          cijena: 15.99,
+          pic: null,
         },
         {
-          //kg, 25kn
+          id: 22,
           ime: "Radič",
-          kalorije: 23,
-          kolicina: 100,
-          masti: 0.25,
-          ugljikohidrati: 4.5,
-          bjelancevine: 1.4,
-          porcija: "500g",
-          cijena: 11.99
+          opis: {
+            kalorije: 23,
+            masti: 0.25,
+            ugljikohidrati: 4.5,
+            bjelancevine: 1.4,
+          },
+          kolicina: "500g",
+          cijena: 11.99,
+          pic: null,
         },
         {
-          //kg, 11kn
+          id: 23,
           ime: "Rajčica",
-          kalorije: 25,
-          kolicina: 100,
-          masti: 0,
-          ugljikohidrati: 29,
-          bjelancevine: 1,
-          porcija: "1kg",
-          cijena: 11.99
+          opis: {
+            kalorije: 25,
+            masti: 0,
+            ugljikohidrati: 29,
+            bjelancevine: 1,
+          },
+          kolicina: "1kg",
+          cijena: 11.99,
+          pic: null,
         },
         {
-          //kg 100kn
+          id: 24,
           ime: "Rukola",
-          kalorije: 25,
-          kolicina: 100,
-          masti: 0.7,
-          ugljikohidrati: 3.7,
-          bjelancevine: 2.6,
-          porcija: "200g",
-          cijena: 19.99
+          opis: {
+            kalorije: 25,
+            masti: 0.7,
+            ugljikohidrati: 3.7,
+            bjelancevine: 2.6,
+          },
+          kolicina: "200g",
+          cijena: 19.99,
+          pic: null,
         },
         {
-          //30g, 25kn
+          id: 25,
           ime: "Ružmarin",
-          kalorije: 131,
-          kolicina: "100g",
-          masti: 5.9,
-          ugljikohidrati: 20.7,
-          bjelancevine: 3.3,
-          porcija: "30g",
-          cijena: 23.99
+          opis: {
+            kalorije: 131,
+            masti: 5.9,
+            ugljikohidrati: 20.7,
+            bjelancevine: 3.3,
+          },
+          kolicina: "30g",
+          cijena: 23.99,
+          pic: null,
         },
         {
-          //100g, 22kn
+          id: 26,
           ime: "Rotkvica",
-          kalorije: 16,
-          kolicina: 100,
-          masti: 0.1,
-          ugljikohidrati: 3.4,
-          bjelancevine: 0.7,
-          porcija: "100g",
-          cijena: 4.99
+          opis: {
+            kalorije: 16,
+            masti: 0.1,
+            ugljikohidrati: 3.4,
+            bjelancevine: 0.7,
+          },
+          kolicina: "100g",
+          cijena: 4.99,
+          pic: null,
         },
         {
-          //1kg, 23kn
+          id: 27,
           ime: "Zelena salata",
-          kalorije: 14,
-          kolicina: 100,
-          masti: 0.2,
-          ugljikohidrati: 2.9,
-          bjelancevine: 1.4,
-          porcija: "kom",
-          cijena: 12.99
+          opis: {
+            kalorije: 14,
+            masti: 0.2,
+            ugljikohidrati: 2.9,
+            bjelancevine: 1.4,
+          },
+          kolicina: "kom",
+          cijena: 12.99,
+          pic: null,
         },
         {
-          //kg, 33kn
+          id: 28,
           ime: "Špinat",
-          kalorije: 23,
-          kolicina: 100,
-          masti: 0.3,
-          ugljikohidrati: 3.7,
-          bjelancevine: 3,
-          porcija: "500g",
-          cijena: 16.99
+          opis: {
+            kalorije: 23,
+            masti: 0.3,
+            ugljikohidrati: 3.7,
+            bjelancevine: 3,
+          },
+          kolicina: "500g",
+          cijena: 16.99,
+          pic: null,
         },        
         {
-          //kg, 9kn
+          id: 29,
           ime: "Tikvica",
-          kalorije: 17,
-          kolicina: 100,
-          masti: 0.3,
-          ugljikohidrati: 3.1,
-          bjelancevine: 1.2,
-          porcija: "1kg",
-          cijena: 8.99
+          opis: {
+            kalorije: 17,
+            masti: 0.3,
+            ugljikohidrati: 3.1,
+            bjelancevine: 1.2,
+          },
+          kolicina: "1kg",
+          cijena: 8.99,
+          pic: null,
         },
       ]
     };
