@@ -35,6 +35,11 @@
             </router-link>
           </v-list-item>
           <v-list-item class="tile">
+            <router-link class="tile" to="/Namirnice">
+              <v-list-item-content>Namirnice</v-list-item-content>
+            </router-link>
+          </v-list-item>
+          <v-list-item class="tile">
             <router-link class="tile" to="/recepti">
               <v-list-item-content>nešto kad se korisnik prijavi</v-list-item-content>
             </router-link>
@@ -57,6 +62,8 @@
         </div>
         <div v-if="authenticated">
           <!-- <v-alert v-if="!verified" type="error">Nije autenticiran</v-alert> -->
+          <!-- <v-icon class="mr-3" large color="white">mdi-cart-outline</v-icon> -->
+          <!-- <v-icon class="mr-3" large color="white">mdi-account</v-icon> -->
           <v-btn text to="/Profil">PROFIL</v-btn>
           <v-btn outlined color="white" @click.prevent="logout" to="/" data-cy="logout">ODJAVA</v-btn>
         </div>

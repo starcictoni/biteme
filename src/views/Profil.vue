@@ -9,7 +9,7 @@
             <h3 class="dobrodosli">Uredi svoj profil</h3>
             <h3 class="idipavidi">Sve će biti u redu</h3>
             <v-avatar class="mb-6" size="180" >
-              <img :src="photo" alt="LOGO"> <!-- User photo -->
+              <img :src="photo || 'def-pic.jpg'" alt="LOGO"> <!-- User photo -->
             </v-avatar>
             <!-- <v-btn class="mt-8 mb-1" block color="secondary" dark>Uredite profil</v-btn> -->
             <!-- <div class="separator mt-3 mb-3"> </div> -->
@@ -157,9 +157,12 @@ export default {
     data() {
       return localStore;
 },
+
+
 mounted() {
-  console.log("Pozvan je created");
+  console.log("Pozvan je profil mounted");
   var user = firebase.auth().currentUser;
+
   db.collection("users")
   .doc(user.email)
   .get()
@@ -236,30 +239,6 @@ mounted() {
       .catch(function(error) {
           console.error("Error adding document: ", error);
       });
-
-      // if(this.photo != null) {
-      //   console.log("Usao je u photo");
-      // }
-      // if(this.firstname != null) {
-      //   console.log("Usao je u firstname");
-      // }
-      // if(this.lastname != null) {
-      //   console.log("Usao je u lastname");
-      // }
-      // if(this.adresa != null) {
-      //   console.log("Usao je u adresu");
-      // }
-      // --------------------------------
-      // var user = firebase.auth().currentUser;
-      // user.updateProfile({
-      //   displayName: "Jane Q. User",
-      //   photoURL: "https://example.com/jane-q-user/profile.jpg"
-      // }).then(function() {
-      //   // Update successful.
-      // }).catch(function(error) {
-      //   // An error happened.
-      // });
-
     },
 
     change () {
