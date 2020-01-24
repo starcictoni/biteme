@@ -1,15 +1,14 @@
 <template>
     <v-container>
-    <v-row>
+    <v-row class="justify-center">
       <!-- ODABIR SLIKE NEK BUDE S DESNE STRANE DOK CE OSTATAK BITI S LIJEVE -->
       <!-- REAUTENTICIRAJ KAKO BI DOBIO STARU LOZINKU, VALJDA?-->
-      <v-col cols="3"></v-col>
         <v-col cols="6" md="6">
           <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
             <h3 class="dobrodosli">Uredi svoj profil</h3>
             <h3 class="idipavidi">Sve će biti u redu</h3>
             <v-avatar class="mb-6" size="180" >
-              <img :src="photo" alt="LOGO"> <!-- User photo -->
+              <img :src="photo || 'def-pic.jpg'" alt="LOGO"> <!-- User photo -->
             </v-avatar>
             <!-- <v-btn class="mt-8 mb-1" block color="secondary" dark>Uredite profil</v-btn> -->
             <!-- <div class="separator mt-3 mb-3"> </div> -->
@@ -74,8 +73,8 @@
             filled
             outlined
           ></v-text-field>
-          <v-btn type="submit" @click="updateprofile" class="ma-2" outlined color="black"> Spremi </v-btn>
-          <v-btn @click="show3 =! show3" type="submit" class="mb-2" outlined color="black"> Promjena lozinke </v-btn> 
+          <v-btn tile type="submit" @click="updateprofile" class="ma-2" outlined color="black"> Spremi </v-btn>
+          <v-btn tile @click="show3 =! show3" type="submit" class="ma-2" outlined color="black"> Promjena lozinke </v-btn> 
           <div v-if="!show3">
            
           <!-- Old password -->
@@ -142,9 +141,6 @@
             
           </v-sheet>
         </v-col>
-
-
-      <v-col cols="3"></v-col>
     </v-row>
 
   </v-container>
