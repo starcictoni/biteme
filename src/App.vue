@@ -1,5 +1,5 @@
 <template>
-  <v-app id="app">
+  <v-app id="app" style="background-color: white">
     <span>
       <!-- Drawer -->
       <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
@@ -19,21 +19,23 @@
 
         <v-list v-if="authenticated">
           <!--  <v-list-item two-line></v-list-item> -->
-          <v-list-item three-line>
-            <v-list-item-avatar>
-              <img :src="photo">
+          <v-list-item two-line style="background-color: #ffe600">
+            <v-list-item-avatar class="mr-3">
+              <img :src="photo || 'def-pic.jpg'">
             </v-list-item-avatar>
             <v-list-item-content>
-              <v-list-item-title>{{firstname}}</v-list-item-title>
-              <v-list-item-title>{{lastname}}</v-list-item-title>
+              <v-list-item-title>{{firstname}} {{lastname}}</v-list-item-title>
               <v-list-item-subtitle>Logged In</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item class="tile">
+          <v-list-item class="justify-center mt-4">
+            <img src="bmlogo.png" width="160px">
+           </v-list-item> 
+          <v-list-item class="tile mt-1">
             <router-link class="tile" to="/Profil">
               <v-list-item-content>Profil</v-list-item-content>
             </router-link>
-          </v-list-item>
+           </v-list-item> <v-divider/>
           <v-list-item class="tile">
             <router-link class="tile" to="/Namirnice">
               <v-list-item-content>Namirnice</v-list-item-content>
@@ -41,7 +43,17 @@
           </v-list-item>
           <v-list-item class="tile">
             <router-link class="tile" to="/recepti">
-              <v-list-item-content>nešto kad se korisnik prijavi</v-list-item-content>
+              <v-list-item-content>Recepti</v-list-item-content>
+            </router-link>
+          </v-list-item><v-divider/>
+           <v-list-item class="tile">
+            <router-link class="tile" to="/trgovina">
+              <v-list-item-content>Trgovina</v-list-item-content>
+            </router-link>
+          </v-list-item><v-divider/>
+          <v-list-item class="tile">
+            <router-link class="tile" to="">
+              <v-list-item-content>O nama</v-list-item-content>
             </router-link>
           </v-list-item>
         </v-list>
@@ -57,15 +69,15 @@
         </router-link>
         <v-spacer class="hidden-sm-and-down"></v-spacer>
         <div v-if="!authenticated" class="hidden-sm-and-down">
-          <v-btn text to="/prijava" data-cy="signinBtn">PRIJAVA</v-btn>
-          <v-btn light to="/registracija" class="nav-join" data-cy="joinBtn">REGISTRACIJA</v-btn>
+          <v-btn text tile to="/prijava" data-cy="signinBtn">PRIJAVA</v-btn>
+          <v-btn light tile to="/registracija" class="nav-join" data-cy="joinBtn">REGISTRACIJA</v-btn>
         </div>
         <div v-if="authenticated">
           <!-- <v-alert v-if="!verified" type="error">Nije autenticiran</v-alert> -->
           <!-- <v-icon class="mr-3" large color="white">mdi-cart-outline</v-icon> -->
           <!-- <v-icon class="mr-3" large color="white">mdi-account</v-icon> -->
           <v-btn text to="/Profil">PROFIL</v-btn>
-          <v-btn outlined color="white" @click.prevent="logout" to="/" data-cy="logout">ODJAVA</v-btn>
+          <v-btn outlined tile color="white" @click.prevent="logout" to="/" data-cy="logout">ODJAVA</v-btn>
         </div>
       </v-app-bar>
     </span>
@@ -161,6 +173,8 @@ a {
 }
 .tile {
   color: black !important;
+  justify-content: center;
+  font-weight: bold;
 }
 .tile:hover {
   background: #ffe600;
