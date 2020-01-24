@@ -103,59 +103,58 @@ export default {
     }
   }, //methods
   mounted() {
-    const self = this
-    var user = firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
        //debugger;
-        self.email = user.email; 
-        self.authenticated = true;
+        this.email = user.email; 
+        this.authenticated = true;
         db.collection("users")
-          .doc(self.email)
+        .doc(this.email)
+        .get()
+        .then(doc => {
+          if(doc.exists) {
+            this.username = doc.data().username;
+            this.firstname = doc.data().ime;
+            this.lastname = doc.data().prezime;
+            this.adresa = doc.data().adresa;
+            this.photo = doc.data().url;
+          }
+          else {
+            console.log("Document does not exist")
+          }
+        })
+          if (user.emailVerified) {
+            this.verified = true;
+            console.log('Email is verified');
+          }
+          else {
+            this.verified = false;
+            console.log('Email is not verified, zasto dvaput?');
+          }
+        db.collection("users")
+          .doc(this.email)
           .get()
           .then(doc => {
             if (doc.exists) {
-              self.email = doc.data().email; //mozda promijeniti store varijable u lokalne
-              self.username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
-              console.log(`Username: ${self.username}`);
-              console.log(`Authenticated: ${self.email}`);
-              if (self.$route.name !== "home")
-                self.$router.push({ name: "home" });
-            } else {
-              console.log("No such document!"); // doc.data() will be undefined in this case
-            }
-          },
-          
-          );
+              this.email = doc.data().email; //mozda promijeniti store varijable u lokalne
+              this.username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
+              console.log(`Username: ${this.username}`);
+              console.log(`Authenticated: ${this.email}`);
+              if (this.$route.name !== "home")
+                this.$router.push({ name: "home" });
+              } 
+              else {
+                console.log("No such document!"); // doc.data() will be undefined in this case
+              }
+          });
       } //if(user)
       else {
-        self.authenticated = false;
+        this.authenticated = false;
         console.log('Logged out')
       }
-      if (user.emailVerified) {
-        self.verified = true;
-        console.log('Email is verified');
-      }
-      else {
-        self.verified = false;
-        console.log('Email is not verified');
-      }
     });
-  db.collection("users")
-  .doc(user.email)
-  .get()
-  .then(doc => {
-    if(doc.exists) {
-      this.username = doc.data().username;
-      this.firstname = doc.data().ime;
-      this.lastname = doc.data().prezime;
-      this.adresa = doc.data().adresa;
-      this.photo = doc.data().url;
-    }
-    else {
-      console.log("Document does not exist")
-    }
-    })
+
     // .catch(error => {
     //   console.log(error);
     // })

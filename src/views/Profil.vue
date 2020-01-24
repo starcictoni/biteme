@@ -137,8 +137,6 @@
               <v-btn type="submit" @click="postnewimage" class="ma-2" outlined color="black"> Promijeni profilnu </v-btn>
             </div>
           </div>
-
-            
           </v-sheet>
         </v-col>
     </v-row>
@@ -216,9 +214,6 @@ mounted() {
               })
               }
               }); // da... zatvaranje zagrada nakon ovoga noćna je mora!
-              
-
-
       //foto: this.photo
     },
     updateprofile () {

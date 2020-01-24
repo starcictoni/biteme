@@ -2,19 +2,19 @@
   <v-container>
     <v-app>
       <v-row class="justify-left">
-          <v-col class="justify-center" sm="12" md="4" v-for="item in storeItems" :key="item.id">
+          <v-col class="justify-center" sm="12" md="4" v-for="grocery in groceries" :key="grocery.id">
             <v-card color="rgb(255, 0, 0, 0)" elevation="0" class="mx-auto" max-width="280">
-              <v-img class="align-end justify-center" :src="item.pic" height="fill"></v-img>
-              <v-card-title class="justify-center headline font-weight-bold">{{ item.title }}</v-card-title>
-              <v-card-subtitle class="text-center subtitle-1 black--text font-weight-black">{{ item.price }}</v-card-subtitle>
+              <v-img class="align-end justify-center" :src="grocery.pic" height="fill"></v-img>
+              <v-card-title class="justify-center headline font-weight-bold">{{ grocery.ime }}</v-card-title>
+              <v-card-subtitle class="text-center subtitle-1 black--text font-weight-black">{{ grocery.cijena }}</v-card-subtitle>
               <v-card-actions class="justify-center">
-                <v-btn color="#eeffff" flat tile>DODAJ U KOŠARICU</v-btn>
-                <v-btn icon @click="item.show = !item.show">
-                  <v-icon>{{ item.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+                <v-btn color="#eeffff" text tile>DODAJ U KOŠARICU</v-btn>
+                <v-btn icon @click="grocery.show = !grocery.show">
+                  <v-icon>{{ grocery.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                 </v-btn>
               </v-card-actions>
               <v-expand-transition>
-                <div v-show="item.show">
+                <div v-show="grocery.show">
                   <!-- <v-divider></v-divider> -->
                   <v-card-text class="text-center textbg">I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.</v-card-text>
                 </div>
@@ -42,23 +42,23 @@ export default {
   },
   data() {
     return {
-      singleSelect: false,
-      search: '',
-      selected: [],
-      headers: [
-        {
-          text: "Namirnice",
-          align: "left",
-          sortable: false,
-          value: "ime"
-        },
-        { text: "kcal", value: "kalorije" },
-        { text: "Masti (g/100)", value: "masti" },
-        { text: "Ugljikohidrati (g/100)", value: "ugljikohidrati" },
-        { text: "Bjelančevine (g/100)", value: "bjelancevine" },
-        { text: "Količina", value: "kolicina"},
-        { text: "Cijena (kn)", value: "cijena" }
-      ],
+      //singleSelect: false,
+      //search: '',
+      //selected: [],
+      // headers: [
+      //   {
+      //     text: "Namirnice",
+      //     align: "left",
+      //     sortable: false,
+      //     value: "ime"
+      //   },
+      //   { text: "kcal", value: "kalorije" },
+      //   { text: "Masti (g/100)", value: "masti" },
+      //   { text: "Ugljikohidrati (g/100)", value: "ugljikohidrati" },
+      //   { text: "Bjelančevine (g/100)", value: "bjelancevine" },
+      //   { text: "Količina", value: "kolicina"},
+      //   { text: "Cijena (kn)", value: "cijena" }
+      // ],
       groceries: [
         {
           id: 1,
@@ -71,10 +71,9 @@ export default {
           },
           kolicina: "kom",
           cijena: 4.99,
-          pic: null,
+          //pic: null,
         },
         { 
-          //1kg, 10kn
           id: 2,
           ime: "Batat",
           opis: {
@@ -85,10 +84,9 @@ export default {
           },
           kolicina: "1kg",
           cijena: 9.99,
-          pic: null,
+          //pic: null,
         },
         {
-          //kg, 12kn
           id: 3,
           ime: "Blitva",
           opis: {
@@ -99,7 +97,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 11.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 4,
@@ -112,7 +110,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 19.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 5,
@@ -125,7 +123,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 8.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 6,
@@ -138,7 +136,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 4.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 7,
@@ -150,7 +148,8 @@ export default {
             bjelancevine: 1.9,
           },
           kolicina: "1kg",
-          cijena: 19.99
+          cijena: 19.99,
+          //pic: null,
         },
         {
           id: 8,
@@ -163,7 +162,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 8.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 9,
@@ -176,7 +175,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 16.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 10,
@@ -189,7 +188,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 9.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 11,
@@ -202,7 +201,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 7.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 12,
@@ -215,10 +214,9 @@ export default {
           },
           kolicina: "1kg",
           cijena: 4.99,
-          pic: null,
+          //pic: null,
         },
         {
-          //kg, 3kn
           id: 13,
           ime: "Kukuruz",
           opis: {
@@ -229,7 +227,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 2.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 14,
@@ -242,7 +240,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 5.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 15,
@@ -255,7 +253,7 @@ export default {
           },
           kolicina: "30g",
           cijena: 8.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 16,
@@ -268,7 +266,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: "8.99",
-          pic: null,
+          //pic: null,
         },
         {
           id: 17,
@@ -281,7 +279,7 @@ export default {
           },
           kolicina: "200g",
           cijena: 19.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 18,
@@ -294,7 +292,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 11.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 19,
@@ -307,7 +305,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 13.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 20,
@@ -320,7 +318,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 16.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 21,
@@ -333,7 +331,7 @@ export default {
           },
           kolicina: "10g",
           cijena: 15.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 22,
@@ -346,7 +344,7 @@ export default {
           },
           kolicina: "500g",
           cijena: 11.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 23,
@@ -359,7 +357,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 11.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 24,
@@ -372,7 +370,7 @@ export default {
           },
           kolicina: "200g",
           cijena: 19.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 25,
@@ -385,7 +383,7 @@ export default {
           },
           kolicina: "30g",
           cijena: 23.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 26,
@@ -398,7 +396,7 @@ export default {
           },
           kolicina: "100g",
           cijena: 4.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 27,
@@ -411,7 +409,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 12.99,
-          pic: null,
+          //pic: null,
         },
         {
           id: 28,
@@ -424,7 +422,7 @@ export default {
           },
           kolicina: "500g",
           cijena: 16.99,
-          pic: null,
+          //pic: null,
         },        
         {
           id: 29,
@@ -437,7 +435,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 8.99,
-          pic: null,
+          //pic: null,
         },
       ]
     };
