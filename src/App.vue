@@ -18,6 +18,22 @@
         </v-list>
 
         <v-list v-if="authenticated">
+          <!--  <v-list-item two-line></v-list-item> -->
+          <v-list-item three-line>
+            <v-list-item-avatar>
+              <img :src="photo">
+            </v-list-item-avatar>
+            <v-list-item-content>
+              <v-list-item-title>{{firstname}}</v-list-item-title>
+              <v-list-item-title>{{lastname}}</v-list-item-title>
+              <v-list-item-subtitle>Logged In</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          <v-list-item class="tile">
+            <router-link class="tile" to="/Profil">
+              <v-list-item-content>Profil</v-list-item-content>
+            </router-link>
+          </v-list-item>
           <v-list-item class="tile">
             <router-link class="tile" to="/recepti">
               <v-list-item-content>nešto kad se korisnik prijavi</v-list-item-content>
@@ -106,6 +122,24 @@ export default {
         console.log('Email is not verified');
       }
     });
+  db.collection("users")
+  .doc(user.email)
+  .get()
+  .then(doc => {
+    if(doc.exists) {
+      this.username = doc.data().username;
+      this.firstname = doc.data().ime;
+      this.lastname = doc.data().prezime;
+      this.adresa = doc.data().adresa;
+      this.photo = doc.data().url;
+    }
+    else {
+      console.log("Document does not exist")
+    }
+    })
+    // .catch(error => {
+    //   console.log(error);
+    // })
   } //mounted
 };
 </script>

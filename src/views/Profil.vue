@@ -1,34 +1,25 @@
 <template>
     <v-container>
     <v-row>
+      <!-- ODABIR SLIKE NEK BUDE S DESNE STRANE DOK CE OSTATAK BITI S LIJEVE -->
+      <!-- REAUTENTICIRAJ KAKO BI DOBIO STARU LOZINKU, VALJDA?-->
       <v-col cols="3"></v-col>
         <v-col cols="6" md="6">
           <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
             <h3 class="dobrodosli">Uredi svoj profil</h3>
             <h3 class="idipavidi">Sve će biti u redu</h3>
             <v-avatar class="mb-6" size="180" >
-              <img src="/def-pic.jpg" alt="LOGO"> <!-- User photo -->
+              <img :src="photo" alt="LOGO"> <!-- User photo -->
             </v-avatar>
             <!-- <v-btn class="mt-8 mb-1" block color="secondary" dark>Uredite profil</v-btn> -->
             <!-- <div class="separator mt-3 mb-3"> </div> -->
 
-            <!--Photo -->
-            <h6>Unesite podatke</h6> 
             <!-- Ovaj dio se salje u storage -->
-          <form @submit.prevent="postnewimage" class="mb-5">
-            <croppa :width="150" :height="150" v-model="imageData"></croppa>
-          </form>
-
-          <v-file-input
-            v-model="photo"
-            :rules="rules.velicina"
-            accept="image/png, image/jpeg, image/bmp"
-            placeholder="Odaberi profilnu"
-            prepend-icon="mdi-camera"
-            label="Profilna slika"
-            clearable
-            small
-          ></v-file-input>
+            <!-- {{username}}
+            {{firstname}}
+            {{lastname}}
+            {{adresa}} -->
+          
             <div class="mb-5"></div>
             <!--First name -->
             <v-text-field
@@ -83,18 +74,19 @@
             filled
             outlined
           ></v-text-field>
-            <!-- :rules="[]" -->
-          <!-- <v-btn @click="show2 =! show2" type="submit" class="mb-2" outlined color="black"> Promjena lozinke </v-btn> -->
-          
+          <v-btn type="submit" @click="updateprofile" class="ma-2" outlined color="black"> Spremi </v-btn>
+          <v-btn @click="show3 =! show3" type="submit" class="mb-2" outlined color="black"> Promjena lozinke </v-btn> 
+          <div v-if="!show3">
+           
           <!-- Old password -->
-            <!-- <v-text-field
+            <v-text-field
             class="mt-7"
-            v-model="oldpassword"
+            v-model="oldPassword"
             background-color=""
             name="input-10-2"
             label="Lozinka"
             :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
-            :rules="[rules.password]"
+            :rules="rules.password"
             :type="show2 ? 'text' : 'Password'"
             hint=""
             placeholder="Unesite staru lozinku"
@@ -105,9 +97,8 @@
             filled
             outlined
             @click:append="show2 = !show2"
-          ></v-text-field> -->
+          ></v-text-field> 
           
-          <h6>Odvojiti</h6>
           <!-- Ovo se ne salje na bazu -->
           <!-- newPassword -->
           <v-text-field
@@ -128,19 +119,26 @@
             outlined
             @click:append="show1 = !show1"
           ></v-text-field>
+          </div>
+
+          <form @submit.prevent="postnewimage" class="mb-5 cropper">
+            <v-card outlined>
+            <croppa 
+            :canvas-color="'default'"
+            :placeholder="'Odaberi sliku'"
+            :width="200" 
+            :height="120" 
+            v-model="imageData"
+            ></croppa>
+            </v-card>
+          </form>
           <!-- </div> -->
           <div class="row">
             <div class="col-md-6 text-right pt-0 pb-0 mt-3">
-              <v-btn type="submit" @click="updateprofile" class="ma-2" outlined color="black"> Spremi </v-btn>
-              <v-btn type="submit" @click="postnewimage" class="ma-2" outlined color="black"> Postaj </v-btn>
-                {{username}}
+              <v-btn type="submit" @click="postnewimage" class="ma-2" outlined color="black"> Promijeni profilnu </v-btn>
             </div>
           </div>
 
-                <!-- {{this.username}} @click.prevent="signin" <div class="separator mt-3 mb-3"> </div>  -->
-            
-                <!-- {{this.email}} <div class="separator mt-3 mb-3"> </div> -->
-              <!-- {{email}} -->
             
           </v-sheet>
         </v-col>
@@ -159,27 +157,29 @@ export default {
     data() {
       return localStore;
 },
-// db.collection("Users")
-//       .doc(this.userEmail)
-//       .get()
-//       .then(doc => {
-//       if (doc.exists) {
-//       this.userType = doc.data().User_Type;
-//       this.userDbf = doc.data().User_dbf;
-//       this.userFirstName = doc.data().User_First_Name;
-//       this.userSecondName = doc.data().User_Second_Name;
-//       this.userShelterName = doc.data().User_Shelter_Name;
-//       this.userGender = doc.data().User_Gender;
-//       this.userOibSsn = doc.data().User_Shelter_OIB_SSN;
-//       this.userLocation = doc.data().User_Shelter_Location;
-//       this.userPicture = doc.data().User_Picture;
-//       console.log("Document data:", doc.data());
-//       console.log(this.userType);
-//           } else {
-//           // doc.data() will be undefined in this case
-//           console.log("No such document!");
-//               }
-//           }); 
+mounted() {
+  console.log("Pozvan je created");
+  var user = firebase.auth().currentUser;
+  db.collection("users")
+  .doc(user.email)
+  .get()
+  .then(doc => {
+    if(doc.exists) {
+      this.username = doc.data().username;
+      this.firstname = doc.data().ime;
+      this.lastname = doc.data().prezime;
+      this.adresa = doc.data().adresa;
+      this.photo = doc.data().url;
+    }
+    else {
+      console.log("Document does not exist")
+    }
+    })
+    // .catch(error => {
+    //   console.log(error);
+    // })
+
+},
   methods: {
     postnewimage() {
       var user = firebase.auth().currentUser;
@@ -194,7 +194,6 @@ export default {
           .then(result => {
             result.ref.getDownloadURL()
             .then(url => {
-            
             db.collection("users")
             .doc(id)
             .update({
@@ -230,7 +229,6 @@ export default {
           ime: this.firstname,
           prezime: this.lastname,
           adresa: this.adresa,
-          
       })
       .then(function(id) {
           console.log("Document written with ID: ", id);
@@ -328,4 +326,18 @@ export default {
   font-weight: normal;
   margin-bottom: 50px;
 }
+.croppa-container {
+  background-color:#f0f0f0;
+  border-style: solid;
+  border-color: #c5c5c5;
+  border-width: 1px;
+  //margin: 1px;
+  
+}
+.croppa-container:hover {
+  opacity: 0.7;
+}
+
+
+
 </style>
