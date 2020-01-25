@@ -3,48 +3,55 @@
     <v-app>
       <v-row class="justify-left">
           <v-col class="justify-center" sm="12" md="4" v-for="grocery in groceries" :key="grocery.id">
+
             <v-card color="rgb(255, 0, 0, 0)" elevation="0" class="mx-auto" max-width="280">
+
+              <!-- Slika namirnice -->
               <v-img class="align-end justify-center" :src="grocery.pic" height="fill"></v-img>
+
+              <!-- Ime namirnice -->
               <v-card-title class="justify-center headline font-weight-bold">{{ grocery.ime }}</v-card-title>
+
+              <!-- Cijena -->
               <v-card-subtitle class="text-center subtitle-1 black--text font-weight-black">{{ grocery.cijena }}</v-card-subtitle>
+
+              <!-- Gumb kosarica -->
               <v-card-actions class="justify-center">
-                <v-btn color="#eeffff" text tile>DODAJ U KOŠARICU</v-btn>
-                <v-btn icon @click="grocery.show = !grocery.show">
+                <v-btn tile>DODAJ U KOŠARICU</v-btn>
+              </v-card-actions>
+
+              <!-- Nutritivne vrijednosti -->
+              <v-card-actions class="justify-center">
+                  <v-btn icon @click="grocery.show = !grocery.show">
                   <v-icon>{{ grocery.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
                 </v-btn>
               </v-card-actions>
+
               <v-expand-transition>
                 <div v-show="grocery.show">
-                  <!-- <v-divider></v-divider> -->
-                  <v-card-text class="text-left textbg">Kalorije: {{groceries[0].opis.kalorije}}</v-card-text>
-                  <v-card-text class="text-left textbg">Bjelančevine: {{groceries[0].opis.bjelancevine}}</v-card-text>
-                  <v-card-text class="text-left textbg">Ugljikohidrati: {{groceries[0].opis.ugljikohidrati}}</v-card-text>
-                  <v-card-text class="text-left textbg">Masti: {{groceries[0].opis.masti}}</v-card-text>
+                  <v-card-text>Kalorije: {{grocery.opis.kalorije}}</v-card-text>
+                  <v-card-text>Bjelančevine: {{grocery.opis.bjelancevine}}</v-card-text>
+                  <v-card-text>Ugljikohidrati: {{grocery.opis.ugljikohidrati}}</v-card-text>
+                  <v-card-text>Masti: {{grocery.opis.masti}}</v-card-text>
                 </div>
               </v-expand-transition>
+
             </v-card>
-          </v-col>
-
-          
+          </v-col>          
         </v-row>
-
-      <v-content>
-        <router-view></router-view>
-      </v-content>
     </v-app>
   </v-container>
 </template>
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+
+import localStore from '@/localStore.js'
 
 export default {
   ime: "namirnice",
-  components: {
-    HelloWorld
-  },
+ 
   data() {
     return {
+      localStore,
       //singleSelect: false,
       //search: '',
       //selected: [],
