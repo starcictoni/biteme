@@ -16,7 +16,10 @@
               <v-expand-transition>
                 <div v-show="grocery.show">
                   <!-- <v-divider></v-divider> -->
-                  <v-card-text class="text-center textbg">I'm a thing. But, like most politicians, he promised more than he could deliver. You won't have time for sleeping, soldier, not with all the bed making you'll be doing. Then we'll go with that data file! Hey, you add a one and two zeros to that or we walk! You're going to do his laundry? I've got to find a way to escape.</v-card-text>
+                  <v-card-text class="text-left textbg">Kalorije: {{groceries[0].opis.kalorije}}</v-card-text>
+                  <v-card-text class="text-left textbg">Bjelančevine: {{groceries[0].opis.bjelancevine}}</v-card-text>
+                  <v-card-text class="text-left textbg">Ugljikohidrati: {{groceries[0].opis.ugljikohidrati}}</v-card-text>
+                  <v-card-text class="text-left textbg">Masti: {{groceries[0].opis.masti}}</v-card-text>
                 </div>
               </v-expand-transition>
             </v-card>
@@ -71,6 +74,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 4.99,
+          show: false,
           //pic: null,
         },
         { 
@@ -84,6 +88,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 9.99,
+          show: false,
           //pic: null,
         },
         {
@@ -97,6 +102,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 11.99,
+          show: false,
           //pic: null,
         },
         {
@@ -110,6 +116,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 19.99,
+          show: false,
           //pic: null,
         },
         {
@@ -123,6 +130,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 8.99,
+          show: false,
           //pic: null,
         },
         {
@@ -136,6 +144,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 4.99,
+          show: false,
           //pic: null,
         },
         {
@@ -149,6 +158,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 19.99,
+          show: false,
           //pic: null,
         },
         {
@@ -162,6 +172,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 8.99,
+          show: false,
           //pic: null,
         },
         {
@@ -175,6 +186,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 16.99,
+          show: false,
           //pic: null,
         },
         {
@@ -188,6 +200,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 9.99,
+          show: false,
           //pic: null,
         },
         {
@@ -201,6 +214,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 7.99,
+          show: false,
           //pic: null,
         },
         {
@@ -214,6 +228,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 4.99,
+          show: false,
           //pic: null,
         },
         {
@@ -227,6 +242,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 2.99,
+          show: false,
           //pic: null,
         },
         {
@@ -240,6 +256,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 5.99,
+          show: false,
           //pic: null,
         },
         {
@@ -253,6 +270,7 @@ export default {
           },
           kolicina: "30g",
           cijena: 8.99,
+          show: false,
           //pic: null,
         },
         {
@@ -266,6 +284,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: "8.99",
+          show: false,
           //pic: null,
         },
         {
@@ -279,6 +298,7 @@ export default {
           },
           kolicina: "200g",
           cijena: 19.99,
+          show: false,
           //pic: null,
         },
         {
@@ -292,6 +312,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 11.99,
+          show: false,
           //pic: null,
         },
         {
@@ -305,6 +326,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 13.99,
+          show: false,
           //pic: null,
         },
         {
@@ -318,6 +340,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 16.99,
+          show: false,
           //pic: null,
         },
         {
@@ -331,6 +354,7 @@ export default {
           },
           kolicina: "10g",
           cijena: 15.99,
+          show: false,
           //pic: null,
         },
         {
@@ -344,6 +368,7 @@ export default {
           },
           kolicina: "500g",
           cijena: 11.99,
+          show: false,
           //pic: null,
         },
         {
@@ -357,6 +382,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 11.99,
+          show: false,
           //pic: null,
         },
         {
@@ -370,6 +396,7 @@ export default {
           },
           kolicina: "200g",
           cijena: 19.99,
+          show: false,
           //pic: null,
         },
         {
@@ -383,6 +410,7 @@ export default {
           },
           kolicina: "30g",
           cijena: 23.99,
+          show: false,
           //pic: null,
         },
         {
@@ -396,6 +424,7 @@ export default {
           },
           kolicina: "100g",
           cijena: 4.99,
+          show: false,
           //pic: null,
         },
         {
@@ -409,6 +438,7 @@ export default {
           },
           kolicina: "kom",
           cijena: 12.99,
+          show: false,
           //pic: null,
         },
         {
@@ -422,6 +452,7 @@ export default {
           },
           kolicina: "500g",
           cijena: 16.99,
+          show: false,
           //pic: null,
         },        
         {
@@ -435,6 +466,7 @@ export default {
           },
           kolicina: "1kg",
           cijena: 8.99,
+          show: false,
           //pic: null,
         },
       ]

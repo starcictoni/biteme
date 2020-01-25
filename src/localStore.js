@@ -12,7 +12,6 @@ export default {
     adresa: "",
     newPassword: "",
     oldPassword: "",
-    show: false,
     show1: false,
     show2: false,
     show3: false,
