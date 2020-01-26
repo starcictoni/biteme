@@ -12,7 +12,7 @@
                 <!-- <v-btn color="#eeffff" text tile>DODAJ U KOŠARICU</v-btn>  -->
                 <!-- Poziv bazi usera da napuni itemse  Setter--->
                 <v-text-field class="centered-input" label="Solo" :value="grocery.stanje" solo ></v-text-field>
-                <v-btn :id="grocery.ime + i" class="mb-7" @click="greet" icon><v-icon>mdi-plus</v-icon></v-btn>
+                <v-btn :id="grocery.ime + i" class="mb-7" @click="add1" icon><v-icon>mdi-plus</v-icon></v-btn>
 
 
                 <v-btn icon @click="grocery.show = !grocery.show"> add1
@@ -39,10 +39,8 @@ export default {
     return localStore;
   },
   methods: {
-      reply_click(clicked_id) {
-      alert("Button clicked, id "+ id +", text"+this.innerHTML);
-  },
     add1() {
+
     },
     sub1() {
     },

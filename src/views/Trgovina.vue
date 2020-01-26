@@ -27,12 +27,8 @@
               </v-expand-transition>
             </v-card>
           </v-col>
-
-          
         </v-row>
       </v-container>
-
-      <router-view></router-view>
   </v-app>
 </template>
 
