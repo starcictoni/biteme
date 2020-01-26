@@ -223,6 +223,7 @@ mounted() {
           ime: this.firstname,
           prezime: this.lastname,
           adresa: this.adresa,
+          kupovina: this.kupovina,
       })
       .then(function(id) {
           console.log("Document written with ID: ", id);
