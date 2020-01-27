@@ -11,7 +11,7 @@
               <!-- <v-card-subtitle class="text-center pt-0 mt-0">{{ item.desc }}</v-card-subtitle> -->
 
               <v-card-actions class="justify-center">
-                <v-btn color="#eeffff" flat tile>DODAJ U KOŠARICU</v-btn>
+                <v-btn color="#eeffff" text tile>DODAJ U KOŠARICU</v-btn>
                
                 <v-btn icon @click="item.show = !item.show">
                   <v-icon>{{ item.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
@@ -27,12 +27,8 @@
               </v-expand-transition>
             </v-card>
           </v-col>
-
-          
         </v-row>
       </v-container>
-
-      <router-view></router-view>
   </v-app>
 </template>
 

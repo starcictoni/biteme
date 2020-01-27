@@ -151,9 +151,12 @@ export default {
     data() {
       return localStore;
 },
+
+
 mounted() {
-  console.log("Pozvan je created");
+  console.log("Pozvan je profil mounted");
   var user = firebase.auth().currentUser;
+
   db.collection("users")
   .doc(user.email)
   .get()
@@ -211,9 +214,6 @@ mounted() {
               })
               }
               }); // da... zatvaranje zagrada nakon ovoga noćna je mora!
-              
-
-
       //foto: this.photo
     },
     updateprofile () {
@@ -223,6 +223,7 @@ mounted() {
           ime: this.firstname,
           prezime: this.lastname,
           adresa: this.adresa,
+          kupovina: this.kupovina,
       })
       .then(function(id) {
           console.log("Document written with ID: ", id);
@@ -230,30 +231,6 @@ mounted() {
       .catch(function(error) {
           console.error("Error adding document: ", error);
       });
-
-      // if(this.photo != null) {
-      //   console.log("Usao je u photo");
-      // }
-      // if(this.firstname != null) {
-      //   console.log("Usao je u firstname");
-      // }
-      // if(this.lastname != null) {
-      //   console.log("Usao je u lastname");
-      // }
-      // if(this.adresa != null) {
-      //   console.log("Usao je u adresu");
-      // }
-      // --------------------------------
-      // var user = firebase.auth().currentUser;
-      // user.updateProfile({
-      //   displayName: "Jane Q. User",
-      //   photoURL: "https://example.com/jane-q-user/profile.jpg"
-      // }).then(function() {
-      //   // Update successful.
-      // }).catch(function(error) {
-      //   // An error happened.
-      // });
-
     },
 
     change () {
