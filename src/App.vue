@@ -60,12 +60,7 @@
               <v-list-item-content>Namirnice</v-list-item-content>
             </router-link>
           </v-list-item>
-          <v-divider />
-          <v-list-item class="tile">
-            <router-link class="tile" to="/Namirnice">
-              <v-list-item-content>Namirnice</v-list-item-content>
-            </router-link>
-          </v-list-item>
+          <v-divider/>
           <v-list-item class="tile">
             <router-link class="tile" to="/recepti">
               <v-list-item-content>Recepti</v-list-item-content>
@@ -82,6 +77,13 @@
             <router-link class="tile" to>
               <v-list-item-content>O nama</v-list-item-content>
             </router-link>
+          </v-list-item>
+          <v-list-item>
+          </v-list-item>
+          <v-list-item>
+          </v-list-item>
+          <v-list-item class="font-weight-bold body-2">
+             <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -226,9 +228,6 @@ a {
 }
 .tile:hover {
   background: #ffe600;
-}
-.logo {
-  // margin-right: 0px;
 }
 #app ::selection {
   background: #fae94f;
