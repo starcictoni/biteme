@@ -2,7 +2,7 @@
   <v-container fluid class="backgroundimg" style="max-height: 100%;">
     <v-row class="justify-center">
     
-      <v-col cols="6" md="5">
+      <v-col cols="12" sm="9" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 mb-12 text-center">
           <v-row :justify="justify" :align="alignment">
             <v-avatar tile height="auto" width="100px" class="mb-5">
@@ -89,15 +89,16 @@
 
           <!-- Ostatak -->
           <div class="row">
-          <div v-if="password !== password2">
+          <!-- <div v-if="password !== password2">
               <v-alert type="error">
                 Lozinke se ne podudaraju
               </v-alert>
+            </div> -->
+            <div class="col-md-6 col-sm-12 justify-center text-center mt-1 pt-0 pb-0 ">
+              <v-checkbox class="justify-center" label="Pristajem na uvjete"></v-checkbox>
             </div>
-            <div class="col-md-6 text-left mt-1 pt-0 pb-0 ">
-              <v-checkbox label="Pristajem na uvjete"></v-checkbox>
-            </div>
-            <div class="col-md-6 text-right pt-0 pb-0 mt-3">
+            <div class="col-md-6 text-center pt-0 pb-0 mt-3" width="50px">
+              <v-btn v-if="password !== password2" text wrap color="red" width="50px" class="ma-2"> Lozinke se ne podudaraju </v-btn>
               <v-btn v-if="password == password2" @click.prevent="signup" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
             </div>
           </div>
