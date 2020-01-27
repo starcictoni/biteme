@@ -43,6 +43,7 @@ export default {
 
     },
     sub1() {
+      
     },
     // created: function () {
     //   var id = this.groceries.id;

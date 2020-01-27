@@ -1,6 +1,5 @@
 <template>
     <span>
-        <!-- {{this.username}} -->
         <hero></hero>
         <homekoraci></homekoraci>
     </span>
