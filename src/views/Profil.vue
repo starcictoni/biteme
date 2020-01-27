@@ -1,10 +1,10 @@
 <template>
-    <v-container>
-    <v-row class="justify-center">
+    <v-container  fluid class="backgroundimg1" style="max-height: 100%;">
+    <v-row class="justify-center text-center">
       <!-- ODABIR SLIKE NEK BUDE S DESNE STRANE DOK CE OSTATAK BITI S LIJEVE -->
       <!-- REAUTENTICIRAJ KAKO BI DOBIO STARU LOZINKU, VALJDA?-->
-        <v-col cols="6" md="6">
-          <v-sheet elevation="12" class="pa-12 pt-12 mb-12 text-center">
+        <v-col cols="11" md="6">
+          <!-- <v-sheeet elevation="12" class="pa-12 pt-12 mb-12 text-center"> -->
             <h3 class="dobrodosli">Uredi svoj profil</h3>
             <h3 class="idipavidi">Sve će biti u redu</h3>
             <v-avatar class="mb-6" size="180" >
@@ -73,7 +73,7 @@
             filled
             outlined
           ></v-text-field>
-          <v-btn tile type="submit" @click="updateprofile" class="ma-2" outlined color="black"> Spremi </v-btn>
+          <v-btn tile type="submit" @click="updateprofile" class="ma-2" depressed style="background-color:#ffe600 !important" > Spremi </v-btn>
           <v-btn tile @click="show3 =! show3" type="submit" class="ma-2" outlined color="black"> Promjena lozinke </v-btn> 
           <div v-if="!show3">
            
@@ -132,14 +132,12 @@
             </v-card>
           </form>
           <!-- </div> -->
-          <div class="row">
-            <div class="col-md-6 text-right pt-0 pb-0 mt-3">
-              <v-btn type="submit" @click="postnewimage" class="ma-2" outlined color="black"> Promijeni profilnu </v-btn>
-            </div>
+          <div>
+            <v-btn tile type="submit" @click="postnewimage" class="ma-2" outlined color="black"> Promijeni profilnu </v-btn>
           </div>
 
             
-          </v-sheet>
+
         </v-col>
     </v-row>
 
@@ -291,6 +289,12 @@ mounted() {
 </script>
 
 <style lang="scss">
+.backgroundimg1 {
+    background-image: url('https://f-scope.net/images/meal-png-14.png');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: -25vw -350px;
+}
 .separator {
     display: flex;
     align-items: center;
