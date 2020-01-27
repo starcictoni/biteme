@@ -51,6 +51,11 @@ const routes = [
     name: 'profil' ,
     component: () => import ('../views/Profil.vue')
   },
+  {
+    path: '/kosarica',
+    name: 'kosarica',
+    component: () => import('../views/Kosarica.vue')
+  },
 ]
 
 const router = new VueRouter({

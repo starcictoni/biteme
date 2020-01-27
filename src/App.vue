@@ -107,6 +107,10 @@
           </v-col>
 
           <v-col align-self="center" class="justify-center hidden-sm-and-down">
+            
+            <!-- ovo je privremeno -->
+            <v-btn light tile to="/kosarica" class="ml-auto">KOŠARICA</v-btn>
+
             <div v-if="!authenticated" class="mx-auto hidden-sm-and-down v-responsive">
               <v-btn
                 retain-focus-on-click
@@ -192,8 +196,9 @@ export default {
               this.username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
               console.log(`Username: ${this.username}`);
               console.log(`Authenticated: ${this.email}`);
-              if (this.$route.name !== "home")
-                this.$router.push({ name: "home" });
+              // svaki put kada refresham stranicu mi se prebaci na home (sb)
+              // if (this.$route.name !== "home")
+              //   this.$router.push({ name: "home" });
               } 
               else {
                 console.log("No such document!"); // doc.data() will be undefined in this case

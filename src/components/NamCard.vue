@@ -38,15 +38,15 @@
           <v-card-actions class="justify-center">
 
             <!-- Minus 1 nam -->
-            <v-btn class="mb-7" @click="subKol(grocery, i)" icon>
+            <v-btn class="mb-7" @click=" grocery.stanje > 0 ? grocery.stanje-- : null" icon>
               <v-icon>mdi-minus</v-icon>
             </v-btn>
 
             <!-- Input kolicine -->
-            <v-text-field class="centered-input" solo :value="grocery.stanje" ></v-text-field>
+            <v-text-field class="centered-input" solo v-model="grocery.stanje" ></v-text-field>
 
             <!-- Plus 1 nam -->
-            <v-btn :id="grocery.ime + i" class="mb-7" @click="addKol(grocery, i)" icon>
+            <v-btn :id="grocery.ime + i" class="mb-7" @click="grocery.stanje++" icon>
               <v-icon>mdi-plus</v-icon>
             </v-btn>
           </v-card-actions>
@@ -58,9 +58,12 @@
           </v-card-subtitle>
 
           <!-- Dodavanje namirnice u kosaricu -->
-          <v-card-actions class="justify-center">
-            <v-btn @click="dodajCart(grocery, i)">DODAJ U KOŠARICU</v-btn>
-          </v-card-actions>
+            <DodajProizvod
+              :ime="grocery.ime"
+              :stanje="grocery.stanje"
+            > 
+            </DodajProizvod>	
+            <!-- <v-btn @click="dodajCart(grocery, i)">DODAJ U KOŠARICU</v-btn> -->
 
         </v-card>
       </v-col>
@@ -69,23 +72,17 @@
 </template>
 <script>
 import localStore from "@/localStore.js";
+import DodajProizvod from "@/components/DodajProizvod.vue";
 
 export default {
+  components: {
+    DodajProizvod
+  },
+
   data() {
     return localStore;
   },
   methods: {
-    addKol(groceries,i) {
-      localStore.groceries[i].stanje++
-    },
-    subKol(groceries,i) {
-      if(localStore.groceries[i].stanje > 0) {
-        localStore.groceries[i].stanje--
-      }
-    },
-    dodajCart(groceries,i){
-      localStore.kupovina.push(groceries);
-    }
   }
 };
 
