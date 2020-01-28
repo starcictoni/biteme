@@ -49,6 +49,7 @@
             <v-btn :id="grocery.ime + i" class="mb-7" @click="grocery.stanje++" icon>
               <v-icon>mdi-plus</v-icon>
             </v-btn>
+            {{grocery.stanje}}
           </v-card-actions>
 
 

@@ -16,6 +16,7 @@ export default {
     show1: false,
     show2: false,
     show3: false,
+    
     rules: [{
     velicina: value => !value || value.size < 2000000 || 'Avatar size should be less than 2 MB!',
     required: value => !!value || 'Nužno je unijeti.',

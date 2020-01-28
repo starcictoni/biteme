@@ -148,29 +148,33 @@ export default {
   },//data
   methods: {
     signup () {
-      const self = this;
-      console.log("Pozvao je signup");
-      console.log(self.username);
-      console.log(self.email);
-      console.log(self.password);
-      console.log(self.password2);
+      // console.log("Pozvao je signup");
+      // console.log(this.username);
+      // console.log(this.email);
+      // console.log(this.password);
+      // console.log(this.password2);
       var user = firebase.auth().currentUser;
-      firebase.auth().createUserWithEmailAndPassword(self.email, self.password)
+      firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
           .then()
           .catch(error => {
             var errorCode = error.code;
             var errorMessage = error.message;
             switch(error.code) {
               case 'auth/email-already-in-use':
-                alert(`Email address ${self.email} already in use.`);
+                alert(`Email address ${this.email} already in use.`);
+                break;
               case 'auth/invalid-email':
-                alert(`Email address ${self.email} is invalid.`);
+                alert(`Email address ${this.email} is invalid.`);
+                break;
               case 'auth/operation-not-allowed':
                 alert('Error during sign up.');
+                break;
               case 'auth/weak-password':
-                alert('Password is not strong enough.')
+                alert('Password is not strong enough.');
+                break;
               default:
                 alert(error.message);
+                break;
             }
           })//catch
 
@@ -190,6 +194,8 @@ export default {
           .catch(function(error) {
               console.error("Error writing document: ", error);
           });
+                   if (this.$route.name !== "home")
+             this.$router.push({ name: "home" });
     },//signup
     }//methods
   }

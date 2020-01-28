@@ -23,9 +23,10 @@ export default {
       }
     };
   },
-  methods: {
+  methods: { //jedino ovako mogu, polje polja
       dodajProizvod() {
-          localStore.kupovina.push(this.namirnica);
+        console.log(this.ime, " ", this.stanje);
+        localStore.kupovina.unshift([this.ime, this.stanje]);
       }
   }
 };

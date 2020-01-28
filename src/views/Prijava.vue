@@ -89,6 +89,13 @@ export default {
       }
     }
   },
+  //Za alert u prijavi
+  //   watch: {
+  //   result: function(result) {
+  //     console.log("Watch aktiviran");
+  //     this.alert = true;
+  //   }
+  // },
   methods: {
     signin () {
       console.log("Pozvao je sign in");
@@ -98,19 +105,22 @@ export default {
         var errorMessage = error.message;
           switch(error.code) {
             case 'auth/user-not-found':
-              console.log("User not found");
+              alert("User not found");
+              break;
             case 'auth/email-already-in-use':
-              console.log(`Email address ${this.email} already in use.`);
+              alert(`Email address ${this.email} already in use.`);
             case 'auth/invalid-email':
-              console.log(`Email address ${this.email} is invalid.`);
+              alert(`Email address ${this.email} is invalid.`);
             case 'auth/operation-not-allowed':
-              console.log('Error during sign up.');
+              alert('Error during sign up.');
             case 'auth/weak-password':
-              console.log('Password is not strong enough.')
+              alert('Password is not strong enough.')
             default:
-              console.log(error.message);
+              alert(error.message);
           }
-        });
+        })
+         if (this.$route.name !== "home")
+             this.$router.push({ name: "home" });
     },//signin
 
     goosignin () {

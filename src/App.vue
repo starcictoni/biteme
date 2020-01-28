@@ -152,11 +152,13 @@ export default {
   data() {
     return localStore;
   },
+//--------------------------------------------------
   methods: {
     logout() {
       firebase.auth().signOut();
     }
-  }, //methods
+  },
+//--------------------------------------------------
   mounted() {
     let user = firebase.auth().currentUser;
     firebase.auth().onAuthStateChanged(user => {
@@ -170,50 +172,36 @@ export default {
         .then(doc => {
           if(doc.exists) {
             this.username = doc.data().username;
+            this.email = doc.data().email;
             this.firstname = doc.data().ime;
             this.lastname = doc.data().prezime;
             this.adresa = doc.data().adresa;
             this.photo = doc.data().url;
-          }
-          else {
-            console.log("Document does not exist")
-          }
-        })
-          if (user.emailVerified) {
-            this.verified = true;
-            console.log('Email is verified');
-          }
-          else {
+            if (user.emailVerified) {
+              this.verified = true;
+              console.log(`Username: ${this.username}`);
+              console.log(`Authenticated: ${this.email} and verified`);
+            }
+            else {
             this.verified = false;
             console.log('Email is not verified, zasto dvaput?');
-          }
-        db.collection("users")
-          .doc(this.email)
-          .get()
-          .then(doc => {
-            if (doc.exists) {
-              this.email = doc.data().email; //mozda promijeniti store varijable u lokalne
-              this.username = doc.data().username; //this.local_Username varijabla u localstoreu = zapisi u bazu email, username
-              console.log(`Username: ${this.username}`);
-              console.log(`Authenticated: ${this.email}`);
-              // svaki put kada refresham stranicu mi se prebaci na home (sb)
-              // if (this.$route.name !== "home")
-              //   this.$router.push({ name: "home" });
-              } 
-              else {
-                console.log("No such document!"); // doc.data() will be undefined in this case
-              }
-          });
-      } //if(user)
-      else {
-        this.authenticated = false;
-        console.log('Logged out')
-      }
-    });
+            }
+            // svaki put kada refresham stranicu mi se prebaci na home (sb)
+            // if (this.$route.name !== "home")
+            //   this.$router.push({ name: "home" });
+          }//if(doc.exists)
+
+          // else{   OVO TREBA SREDITI TS
+          //   console.log("Document does not exist")
+          // }
+
+        })//then
+        }
 
     // .catch(error => {
     //   console.log(error);
     // })
+  })
   } //mounted
 };
 </script>
