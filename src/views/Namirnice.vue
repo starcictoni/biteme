@@ -1,28 +1,21 @@
 <template>
-  <v-container fluid class="backgroundimg">
-    <v-app>
-      
-            <NamCard></NamCard>
-          
-
+  <v-app>
+    <v-container fluid class="backgroundimg">
+      <NamCard></NamCard>
       <!-- <v-content>
         <router-view></router-view>
       </v-content> -->
-    </v-app>
-  </v-container>
+    </v-container>
+  </v-app>
 </template>
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import NamCard from "@/components/NamCard.vue";
 
 export default {
   ime: "namirnice",
   components: {
-    HelloWorld,
     NamCard
   },
-  
 };
 </script>
 

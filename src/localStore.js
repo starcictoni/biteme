@@ -29,6 +29,109 @@ export default {
       );
     },
   }],
+
+  storeItems: [
+    {
+      id: 1, 
+      ime: "Lonac", 
+      cijena: 239.90, 
+      opis: "Izrađen od visokokvalitetnih materijala, s česticama kamena i bakra. Energetski učinkovit lonac otporan je na ogrebotine i s neprianjajućim svojstvima. Pogodan je za korištenje na svim vrstama štednjaka (uključujući indukcijski) i u pećnici. Jednostavan za održavanje, lonac je periv u perilici.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_stone_legend_copperlux_pot_24cm.jpg"
+    },
+    {
+      id: 2, 
+      ime: "Set noževa", 
+      cijena: 149.90, 
+      opis: "Kuhinjski noževi izrađeni je od nehrđajućeg čelika visoke kvalitete. Njihova prednost je dvosmjerno ručno oštrena oštrica, pod kutom od 15 ° za dugotrajnu oštrinu i izdržljivost. Pogodni su za rezanje velikih komada hrane. Dužina oštrice je 20,5 cm. ", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://i.pinimg.com/originals/9d/86/67/9d866736df552397568a7daf751fefed.jpg"
+    },
+    {
+      id: 3,
+      ime: "Posuđe",
+      cijena: 149.90, 
+      opis: "Set posudica za pohranjivanje hrane od 10 dijelova pomoći će vam da uštedite do 60% prostora za pohranu u kuhinji. Set sadrži 5 različitih veličina posudice sa 100% hermetičkim zatvaranjem. Sigurne su za korištenje u hladnjaku i mikrovalnoj pećnici. Dolaze u veličinama: 250 ml, 350 ml, 540 ml, 800 ml i 1200 ml.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_brava_cooltops.jpg"
+    },
+    {
+      id: '4', 
+      ime: "Pribor za jelo", 
+      cijena: 399.90, 
+      opis: "Bezvremensku eleganciju na vašem stolu donijet će set pribora za jelo Gourmet. Izrađen od nehrđajućeg čelika, set je jednostavan za održavanje. Sadrži šest žlica, šest vilica, šest noževa i šest čajnih žličica. ", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_gourmet_cutlery_set_1.jpg"
+    },
+    {
+      id: '5', 
+      ime: "Ribež", 
+      cijena: 69.90, 
+      opis: "Dvostruki ribež za brze rezultate omogućuje ribanje u oba smjera. Oštrice od nehrđajućeg čelika. Naribajte korjenasto povrće, tikvice, luk i ostalu hranu po želji. Sa udobnom ručkom. Ribež dimenzija 31 x 7 cm.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://cdn.vitapur.net/media/catalog/product/cache/3/small_image/430x404/9df78eab33525d08d6e5fb8d27136e95/1/9/19389_two_way_ribbon_grater_rosmarino_product_3_web.jpg"
+    },
+    {
+      id: '6', 
+      ime: "Set za grill", 
+      cijena: 129.90, 
+      opis: "Omogućite si jednostavnu i brzu pripremu hrane s roštilja pomoću Seta za gril Astoria. Set sadrži vilicu za roštilj, velike hvataljke i lopaticu za roštilj. Izrađen od visokokvalitetnog nehrđajućeg čelika, set je praktičan za pripremu i posluživanje jela s roštilja.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_astoria_grilling_set.jpg"
+    },
+    {
+      id: '7', 
+      ime: "Kuhinjska vaga", 
+      cijena: 149.90, 
+      opis: "Zaboravite vage na baterije i električne kablove. Uz praktičnu kuhinjsku vagu Joy izvažite omiljene sastojke do 5 kg pritiskom na 2 tipke! Kompaktnog i jednostavnog dizajna, vaga sadrži i digitalni ekran s više mjernih jedinica (g, oz, lb i ml za vodu ili mlijeko). Jednostavna za pohranu. Veličina: 25 x 19 x 1.4 cm.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://images-na.ssl-images-amazon.com/images/I/61zNakpa4%2BL._AC_SX522_.jpg"
+    },
+    {
+      id: '8', 
+      ime: "Blender", 
+      cijena: 599.90, 
+      opis: "Sjeckalica je multifunkcionalni pomagač kojeg možete koristiti za razne kulinarske poslove, svaki dan. Odaberite jednostruke ili dvostruke oštrice za sjeckanje u zdjeli zapremine 360 ml. Uz 2 dodatka pripremite različite vrste umaka. Jednostavna je za upotrebu i periva u perilici.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://k.nooncdn.com/t_desktop-pdp-v1/v1551527549/N21175612A_1.jpg"
+    },
+    {
+      id: '9', 
+      ime: "Pekač", 
+      cijena: 399.90, 
+      opis: "Zahvaljujući pekaču Stone Legend Flamenco možete u kratkom vremenu ispeći razna jela. Pekač je otporan na ogrebotine, bez prianjanja i energetski učinkovit. Pogodan je za korištenje na svim vrstama štednjaka (uključujući indukcijski) i u pećnici. Dimenzije pekača su 35x21 cm.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://www.oven-racks.com/img/black-baking-tray.jpg"
+    },
+    // {
+    //   id: '10', 
+    //   ime: "Tanjuri", 
+    //   cijena: 259.90, 
+    //   opis: "Neka kvalitetno posuđe bude temelj vaše kuhinje! Bez alata nema zanata, a bez kvalitetnog posuđa nema vrhunske kuhinje! Set uključuje 12 tanjura", 
+    //   kolicina: "kom", 
+    //   stanje: 0, 
+    //   show: false, 
+    //   pic: "http://freefoodphotos.com/imagelibrary/crockery_cookware/slides/clean_plates.jpg"
+    // },
+  ],
   groceries: [
     {
       id: 1,
@@ -450,6 +553,66 @@ export default {
       stanje: 0,
       //pic: null,
     },        
+    {
+      id: 29,
+      ime: "Tikvica",
+      opis: [{
+        kalorije: 17,
+        masti: 0.3,
+        ugljikohidrati: 3.1,
+        bjelancevine: 1.2,
+      }],
+      kolicina: "1kg",
+      cijena: 8.99,
+      show: false,
+      stanje: 0,
+      //pic: null,
+    },
+    {
+      id: 29,
+      ime: "Tikvica",
+      opis: [{
+        kalorije: 17,
+        masti: 0.3,
+        ugljikohidrati: 3.1,
+        bjelancevine: 1.2,
+      }],
+      kolicina: "1kg",
+      cijena: 8.99,
+      show: false,
+      stanje: 0,
+      //pic: null,
+    },
+    {
+      id: 29,
+      ime: "Tikvica",
+      opis: [{
+        kalorije: 17,
+        masti: 0.3,
+        ugljikohidrati: 3.1,
+        bjelancevine: 1.2,
+      }],
+      kolicina: "1kg",
+      cijena: 8.99,
+      show: false,
+      stanje: 0,
+      //pic: null,
+    },
+    {
+      id: 29,
+      ime: "Tikvica",
+      opis: [{
+        kalorije: 17,
+        masti: 0.3,
+        ugljikohidrati: 3.1,
+        bjelancevine: 1.2,
+      }],
+      kolicina: "1kg",
+      cijena: 8.99,
+      show: false,
+      stanje: 0,
+      //pic: null,
+    },
     {
       id: 29,
       ime: "Tikvica",

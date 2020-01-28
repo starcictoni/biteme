@@ -1,18 +1,11 @@
 <template>
   <v-app>
     <v-row class="justify-left">
-      <v-col
-        class="justify-center"
-        sm="12"
-        md="4"
-        v-for="(grocery, i) in groceries"
-        :key="grocery.id"
-      >
+      <v-col class="justify-center" sm="12" md="4" v-for="(grocery, i) in groceries" :key="grocery.id">
         <v-card color="rgb(255, 0, 0, 0)" elevation="5" class="mx-auto" max-width="280">
-
-          <!-- slika namirnice -->
+          
+          <!-- Slika namirnice -->
           <v-img class="align-end justify-center" src="https://cdn.sunbasket.com/tn_f85d0cb7-f443-4423-8bc4-c3bbefd20020.jpg" height="fill"></v-img>
-
           <!-- Ime namirnice -->
           <v-card-title class="justify-center headline font-weight-bold">{{ grocery.ime }}</v-card-title>
 
