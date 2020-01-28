@@ -1,7 +1,8 @@
 <template>
   <span>
     <!-- {{this.username}} -->
-    <hero></hero>
+    <hero v-if="!authenticated"></hero>
+    <heroauth v-if="authenticated"></heroauth>
     <homekoraci></homekoraci>
     <!-- <div class="videowrapper"> OVO JE U TRENUTNO TESTNOJ FAZI 
       <div style="background-color: black" class="view hm-black-strong">
@@ -21,6 +22,7 @@
 
 <script>
 import hero from "@/components/Hero";
+import heroauth from "@/components/HeroAuth";
 import homekoraci from "@/components/HomeKoraci";
 import localStore from "@/localStore.js";
 
@@ -28,7 +30,8 @@ export default {
   name: "home",
   components: {
     hero,
-    homekoraci
+    homekoraci,
+    heroauth
   },
   data() {
     return localStore;

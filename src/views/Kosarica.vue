@@ -1,27 +1,35 @@
 <template>
-    <v-container>
-        <!-- ovo je testirnje sb -->
-        <p>{{kupovina[0]}}</p>   
-        <p>{{kupovina[1]}}</p>
-        <p>{{kupovina[2]}}</p>
-        <p>{{kupovina[3]}}</p>
-        <p>{{kupovina[4]}}</p>
-        <p>{{kupovina[5]}}</p>
-        <p>{{kupovina[6]}}</p>
-        <p>{{kupovina[7]}}</p>
-        <p>{{kupovina[8]}}</p>
-        <p>{{kupovina[9]}}</p>
+  <v-container>
+    <v-simple-table>
+      <template v-slot:default>
+        <thead>
+          <tr>
+            <th class="text-left">Namirnica</th>
+            <th class="text-left">Cijena</th>
+            <th class="text-left">Stanje</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item in kupovina" :key="item">
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] + " kn" }}</td>
+                <td>{{ item[2] }}</td>
 
-    </v-container>
+            </tr>
+      
+        </tbody>
+      </template>
+    </v-simple-table>
+  </v-container>
 </template>
 
 <script>
 import localStore from "@/localStore.js";
 
 export default {
-    name:"kosarica",    
-    data() {
-        return localStore;
-    }
+  name: "kosarica",
+  data() {
+    return localStore;
+  }
 };
 </script>

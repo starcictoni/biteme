@@ -14,6 +14,7 @@
 
           <!-- Email -->
           <v-text-field
+            dense
             v-model="email"
             background-color=""
             name="nesto"
@@ -24,13 +25,14 @@
             rows="2"
             auto-grow
             clearable
-            filled
-            outlined
+          
+            
           ></v-text-field>
 
           <!--Password -->
           <v-text-field
             v-model="password"
+            class="my-3"
             background-color=""
             name="nesto"
             label="Lozinka"
@@ -39,26 +41,25 @@
             :type="show1 ? 'text' : 'Password'"
             placeholder="Unesite lozinku"
             row-height="14"
-            rows="2"
+            rows="3"
             auto-grow
             clearable
-            filled
-            outlined
+            dense
             @click:append="show1 = !show1"
           ></v-text-field>
           <!-- Ostatak -->
-          <div class="row">
-            <div class="col-md-6 text-left mt-1 pt-0 pb-0 ">
+          <div>
+            <div class="text-left mt-n6 pt-0 pb-0 caption">
               <router-link to="Zaboravljena">Zaboravili ste lozinku?</router-link>
             </div>
-            <div class="col-md-6 text-right pt-0 pb-0 mt-3">
-              <v-btn @click.prevent="signin" type="submit" class="ma-2" outlined color="black"> Prijava </v-btn>
+            <div class="text-center pt-0 pb-0 my-3">
+              <v-btn tile depressed @click.prevent="signin" type="submit" class="ma-2 signbtn" outlined color="black"> Prijava </v-btn>
             </div>
           </div>
           <div class="separator"> ili </div>
-          <div class="text-center">
-            <v-btn class="ma-2" outlined color="primary"> Facebook </v-btn>
-            <v-btn @click.prevent="goosignin" class="ma-2" outlined color="red darken-3"> Google </v-btn>
+          <div class="justify-center">
+            <v-btn tile class="ma-2" outlined color="primary"> Facebook </v-btn>
+            <v-btn tile @click.prevent="goosignin" class="ma-2" outlined color="red darken-3"> Google </v-btn>
           </div>           
           </v-form>
           
@@ -182,5 +183,8 @@ export default {
   font-size: 16px;
   font-weight: normal;
   margin-bottom: 50px;
+}
+.signbtn:hover {
+  background-color: #ffe600 !important;
 }
 </style>

@@ -42,23 +42,24 @@
             <v-btn :id="grocery.ime + i" class="mb-7" @click="grocery.stanje++" icon>
               <v-icon>mdi-plus</v-icon>
             </v-btn>
-            {{grocery.stanje}}
+            
           </v-card-actions>
 
 
            <!-- Cijena po jedinici -->
           <v-card-subtitle class="text-center subtitle-1 black--text font-weight-black">
-            {{grocery.kolicina + ': '}}{{grocery.cijena + 'kn' }}
+            {{grocery.kolicina + ': '}}{{grocery.cijena + ' kn' }}
           </v-card-subtitle>
 
           <!-- Dodavanje namirnice u kosaricu -->
             <DodajProizvod
               :ime="grocery.ime"
+              :cijena="grocery.cijena"
               :stanje="grocery.stanje"
+
             > 
             </DodajProizvod>	
             <!-- <v-btn @click="dodajCart(grocery, i)">DODAJ U KOŠARICU</v-btn> -->
-
         </v-card>
       </v-col>
     </v-row>

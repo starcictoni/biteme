@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-card-actions class="justify-center">
-      <v-btn @click="dodajProizvod">DODAJ U KOŠARICU</v-btn>
+      <v-btn @click="dodajProizvod()">DODAJ U KOŠARICU</v-btn>
     </v-card-actions>
   </v-container>
 </template>
@@ -12,22 +12,28 @@ import localStore from "@/localStore.js";
 export default {
   props: {
     ime: String,
-    stanje: Number
+    stanje: Number,
+    cijena: Number
   },
   data() {
     return {
-      localStore,
       namirnica: {
         imeNam: this.ime,
-        stanjeNam: this.stanje
+        stanjeNam: this.stanje,
+        cijenaNam: this.cijena
       }
-    };
+    }
   },
   methods: { //jedino ovako mogu, polje polja
-      dodajProizvod() {
+      dodajProizvod(){
         console.log(this.ime, " ", this.stanje);
-        localStore.kupovina.unshift([this.ime, this.stanje]);
+        console.log(this.namirnica.imeNam);
+        console.log(this.namirnica.stanjeNam);
+
+        // stavio sam push umjesto unshift jer mi tako dodaje na kraju polja, više mi tako ima smisla ne pitajte zasto (sb)
+        localStore.kupovina.push([this.ime, this.cijena, this.stanje]);
       }
   }
+  
 };
 </script>
