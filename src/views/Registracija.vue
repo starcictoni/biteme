@@ -24,12 +24,12 @@
             rows="2"
             auto-grow
             clearable
-            filled
             type=""
             value=""
             id=""
             input
-            outlined
+            dense
+            class="mt-3"
           ></v-text-field>
 
           <!--Email -->
@@ -44,8 +44,8 @@
             rows="2"
             auto-grow
             clearable
-            filled
-            outlined
+            dense
+            class="mt-3"
           ></v-text-field>
 
           <!-- Password -->
@@ -63,9 +63,9 @@
             rows="2"
             auto-grow
             clearable
-            filled
-            outlined
+            dense
             @click:append="show1 = !show1"
+            class="mt-3"
           ></v-text-field>
 
           <!-- Password2 -->
@@ -82,9 +82,9 @@
             rows="2"
             auto-grow
             clearable
-            filled
-            outlined
+            dense
             @click:append="show2 = !show2"
+            class="mt-3"
           ></v-text-field>
 
           <!-- Ostatak -->
@@ -95,11 +95,11 @@
               </v-alert>
             </div> -->
             <div class="col-md-6 col-sm-12 justify-center text-center mt-1 pt-0 pb-0 ">
-              <v-checkbox class="justify-center" label="Pristajem na uvjete"></v-checkbox>
+              <v-checkbox color="#ffe600" class="justify-center" label="Pristajem na uvjete"></v-checkbox>
             </div>
             <div class="col-md-6 text-center pt-0 pb-0 mt-3" width="50px">
-              <v-btn v-if="password !== password2" text wrap color="red" width="50px" class="ma-2"> Lozinke se ne podudaraju </v-btn>
-              <v-btn v-if="password == password2" @click.prevent="signup" type="submit" class="ma-2" outlined color="black"> Registracija </v-btn>
+              <v-btn tile v-if="password !== password2" text wrap color="red" width="50px" class="ma-2"> Lozinke se ne podudaraju </v-btn>
+              <v-btn tile v-if="password == password2" @click.prevent="signup" type="submit" class="ma-2 regbtn" outlined color="black"> Registracija </v-btn>
             </div>
           </div>
           </v-form>
@@ -227,5 +227,8 @@ export default {
   font-weight: bold;
   letter-spacing: -1.5px;
   margin-bottom: 50px;
+}
+.regbtn:hover {
+  background-color: #ffe600 !important;
 }
 </style>

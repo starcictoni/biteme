@@ -32,7 +32,7 @@
               <v-list-item-subtitle>Logged In</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item height="105px" class="justify-center mt-1 mb-n5">
+          <v-list-item height="105px" class="justify-center mt-1 mb-n4">
             <v-btn
               retain-focus-on-click
               text
@@ -53,7 +53,7 @@
             >ODJAVA</v-btn>
           </v-list-item>
           <v-list-item class="justify-center mt-3">
-            <img src="bmlogo.png" width="130px" />
+            <img src="bmlogo.png" width="130px"/>
           </v-list-item>
           <v-list-item class="tile mt-1">
             <router-link class="tile" to="/namirnice">
@@ -82,7 +82,7 @@
           </v-list-item>
           <v-list-item>
           </v-list-item>
-          <v-list-item class="font-weight-bold body-2">
+          <v-list-item class="font-weight-bold caption">
              <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
           </v-list-item>
         </v-list>
@@ -113,10 +113,11 @@
                 text
                 class="ml-auto"
                 tile
+                small
                 to="/prijava"
                 data-cy="signinBtn"
               >PRIJAVA</v-btn>
-              <v-btn light tile to="/registracija" class="nav-join" data-cy="joinBtn">REGISTRACIJA</v-btn>
+              <v-btn light small tile to="/registracija" class="nav-join" data-cy="joinBtn">REGISTRACIJA</v-btn>
             </div>
           </v-col>
         </v-row>

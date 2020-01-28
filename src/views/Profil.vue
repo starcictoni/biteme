@@ -7,7 +7,7 @@
           <!-- <v-sheeet elevation="12" class="pa-12 pt-12 mb-12 text-center"> -->
             <h3 class="dobrodosli">Uredi svoj profil</h3>
             <h3 class="idipavidi">Sve će biti u redu</h3>
-            <v-avatar class="mb-6" size="180" >
+            <v-avatar class="mb-12" size="180" >
               <img :src="photo || 'def-pic.jpg'" alt="LOGO"> <!-- User photo -->
             </v-avatar>
             <!-- <v-btn class="mt-8 mb-1" block color="secondary" dark>Uredite profil</v-btn> -->
@@ -19,7 +19,7 @@
             {{lastname}}
             {{adresa}} -->
           
-            <div class="mb-5"></div>
+            
             <!--First name -->
             <v-text-field
             v-model="firstname"
@@ -31,12 +31,11 @@
             rows="2"
             auto-grow
             clearable
-            filled
             type=""
             value=""
             id=""
             input
-            outlined
+            dense
           ></v-text-field>
           <!--Last name-->
 
@@ -50,12 +49,11 @@
             rows="2"
             auto-grow
             clearable
-            filled
             type=""
             value=""
             id=""
             input
-            outlined
+            dense
           ></v-text-field>
 
           <!-- Adresa -->
@@ -70,8 +68,7 @@
             rows="2"
             auto-grow
             clearable
-            filled
-            outlined
+            dense
           ></v-text-field>
           <v-btn tile type="submit" @click="updateprofile" class="ma-2" depressed style="background-color:#ffe600 !important" > Spremi </v-btn>
           <v-btn tile @click="show3 =! show3" type="submit" class="ma-2" outlined color="black"> Promjena lozinke </v-btn> 
@@ -93,8 +90,7 @@
             rows="2"
             auto-grow
             clearable
-            filled
-            outlined
+            dense
             @click:append="show2 = !show2"
           ></v-text-field> 
           
@@ -114,8 +110,7 @@
             rows="2"
             auto-grow
             clearable
-            filled
-            outlined
+            dense
             @click:append="show1 = !show1"
           ></v-text-field>
           </div>
