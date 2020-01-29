@@ -1,16 +1,16 @@
 <template>
-  <v-container fluid class="backgroundimg" fill-height style="max-height: 100%;">
+  <v-container fill-height fluid class="backgroundimg" style="max-height: 100%;">
     <v-row class="justify-center">
       <v-col cols="6" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 text-center">
-          <v-row :justify="justify" :align="alignment">
+          <v-row class="justify-center align-center">
             <v-avatar tile height="auto" width="100px" class="mb-5">
               <img src="logoletter.png" alt="LOGO">
             </v-avatar>
           </v-row>
         <h3 class="dobrodosli">Neki lijepi ugodni pozdrav</h3>
         <h3 class="idipavidi">Neki razlog zasto bi se covjek ponovno prijavio</h3>
-          <v-form @submit.prevent="signup">
+          <v-form @submit.prevent="signin">
 
           <!-- Email -->
           <v-text-field
@@ -25,8 +25,6 @@
             rows="2"
             auto-grow
             clearable
-          
-            
           ></v-text-field>
 
           <!--Password -->
@@ -70,18 +68,11 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
   name: "Prijava",
-  components: {
-    //HelloWorld
-  },
   data () {
     return {
-      alignment: "center",
-      justify: "center",
       show1: false,
       email: "",
       password: "",
@@ -90,13 +81,6 @@ export default {
       }
     }
   },
-  //Za alert u prijavi
-  //   watch: {
-  //   result: function(result) {
-  //     console.log("Watch aktiviran");
-  //     this.alert = true;
-  //   }
-  // },
   methods: {
     signin () {
       console.log("Pozvao je sign in");
@@ -120,7 +104,7 @@ export default {
               alert(error.message);
           }
         })
-         if (this.$route.name !== "home")
+        if (this.$route.name !== "home")
              this.$router.push({ name: "home" });
     },//signin
 

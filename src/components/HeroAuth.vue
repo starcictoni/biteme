@@ -1,4 +1,5 @@
 <template>
+    <div v-if="authenticated"> 
     <v-container  fill-height fluid class="homebackground2" style="max-height: 90vh;">
         <v-layout justify-center align-center column pa-5>
             <div v-bind:class="[$vuetify.breakpoint.mdAndUp ? 'display-5' : 'display-2']" class="white--text font-weight-black tekst text-center">
@@ -12,11 +13,17 @@
             </v-btn>
         </v-layout>
     </v-container>
+    </div>
 </template>
 
 <script>;
+import localStore from "@/localStore.js"
 export default {
-    name: 'Heroauth' 
+    name: 'Heroauth',    
+    data () {
+        return localStore;
+
+    },
 };
 </script>
 <style scoped>

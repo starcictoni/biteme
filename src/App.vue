@@ -47,9 +47,8 @@
               small
               tile
               class="font-weight-black listbtn"
-              @click.prevent="logout"
+              @click="logout"
               to="/"
-              data-cy="logout"
             >ODJAVA</v-btn>
           </v-list-item>
           <v-list-item class="justify-center mt-3">
@@ -158,9 +157,11 @@ export default {
 //--------------------------------------------------
   methods: {
     logout() {
+      
+      console.log("pozvao je odjavu");
       firebase.auth().signOut();
-      this.authenticated = false;
-      this.drawer = false;
+       this.authenticated = false;
+       this.drawer = false;
     }
   },
 //--------------------------------------------------
