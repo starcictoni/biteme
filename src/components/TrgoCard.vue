@@ -30,7 +30,12 @@
                     <v-card-subtitle class="text-center subtitle-1 black--text font-weight-black"> <!-- Cijena po jedinici -->
                         {{item.kolicina + ': '}}{{ item.cijena + 'kn' }}
                     </v-card-subtitle>  
-
+                    <DodajProizvod
+                        :id="item.id"
+                        :ime="item.ime"
+                        :stanje="item.stanje"
+                        :cijena="item.cijena"
+                    ></DodajProizvod>
                 <!-- Dodaj nesto -->
 
                 </v-card>
@@ -41,7 +46,11 @@
 
 <script>
 import localStore from "@/localStore.js";
+import DodajProizvod from "@/components/DodajProizvod.vue"
 export default {
+    components: {
+        DodajProizvod,
+    },
     data () {
         return localStore; 
     },
