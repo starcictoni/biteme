@@ -33,7 +33,7 @@ export default {
 
   storeItems: [
     {
-      id: 1, 
+      id: 37, 
       ime: "Lonac", 
       cijena: 239.90, 
       opis: "Izrađen od visokokvalitetnih materijala, s česticama kamena i bakra. Energetski učinkovit lonac otporan je na ogrebotine i s neprianjajućim svojstvima. Pogodan je za korištenje na svim vrstama štednjaka (uključujući indukcijski) i u pećnici. Jednostavan za održavanje, lonac je periv u perilici.", 
@@ -43,7 +43,7 @@ export default {
       pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_stone_legend_copperlux_pot_24cm.jpg"
     },
     {
-      id: 2, 
+      id: 38, 
       ime: "Set noževa", 
       cijena: 149.90, 
       opis: "Kuhinjski noževi izrađeni je od nehrđajućeg čelika visoke kvalitete. Njihova prednost je dvosmjerno ručno oštrena oštrica, pod kutom od 15 ° za dugotrajnu oštrinu i izdržljivost. Pogodni su za rezanje velikih komada hrane. Dužina oštrice je 20,5 cm. ", 
@@ -53,7 +53,7 @@ export default {
       pic: "https://i.pinimg.com/originals/9d/86/67/9d866736df552397568a7daf751fefed.jpg"
     },
     {
-      id: 3,
+      id: 39,
       ime: "Posuđe",
       cijena: 149.90, 
       opis: "Set posudica za pohranjivanje hrane od 10 dijelova pomoći će vam da uštedite do 60% prostora za pohranu u kuhinji. Set sadrži 5 različitih veličina posudice sa 100% hermetičkim zatvaranjem. Sigurne su za korištenje u hladnjaku i mikrovalnoj pećnici. Dolaze u veličinama: 250 ml, 350 ml, 540 ml, 800 ml i 1200 ml.", 
@@ -63,7 +63,7 @@ export default {
       pic: "https://pbs.twimg.com/media/D0lgCw0X4AEg8TX.jpg"
     },
     {
-      id: '4', 
+      id: 40, 
       ime: "Pribor za jelo", 
       cijena: 399.90, 
       opis: "Bezvremensku eleganciju na vašem stolu donijet će set pribora za jelo Gourmet. Izrađen od nehrđajućeg čelika, set je jednostavan za održavanje. Sadrži šest žlica, šest vilica, šest noževa i šest čajnih žličica. ", 
@@ -73,7 +73,7 @@ export default {
       pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_gourmet_cutlery_set_1.jpg"
     },
     {
-      id: '5', 
+      id: 41, 
       ime: "Ribež", 
       cijena: 69.90, 
       opis: "Dvostruki ribež za brze rezultate omogućuje ribanje u oba smjera. Oštrice od nehrđajućeg čelika. Naribajte korjenasto povrće, tikvice, luk i ostalu hranu po želji. Sa udobnom ručkom. Ribež dimenzija 31 x 7 cm.", 
@@ -83,7 +83,7 @@ export default {
       pic: "https://cdn.vitapur.net/media/catalog/product/cache/3/small_image/430x404/9df78eab33525d08d6e5fb8d27136e95/1/9/19389_two_way_ribbon_grater_rosmarino_product_3_web.jpg"
     },
     {
-      id: '6', 
+      id: 42, 
       ime: "Set za grill", 
       cijena: 129.90, 
       opis: "Omogućite si jednostavnu i brzu pripremu hrane s roštilja pomoću Seta za gril Astoria. Set sadrži vilicu za roštilj, velike hvataljke i lopaticu za roštilj. Izrađen od visokokvalitetnog nehrđajućeg čelika, set je praktičan za pripremu i posluživanje jela s roštilja.", 
@@ -93,7 +93,7 @@ export default {
       pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_astoria_grilling_set.jpg"
     },
     {
-      id: '7', 
+      id: 43, 
       ime: "Kuhinjska vaga", 
       cijena: 149.90, 
       opis: "Zaboravite vage na baterije i električne kablove. Uz praktičnu kuhinjsku vagu Joy izvažite omiljene sastojke do 5 kg pritiskom na 2 tipke! Kompaktnog i jednostavnog dizajna, vaga sadrži i digitalni ekran s više mjernih jedinica (g, oz, lb i ml za vodu ili mlijeko). Jednostavna za pohranu. Veličina: 25 x 19 x 1.4 cm.", 
@@ -103,7 +103,7 @@ export default {
       pic: "https://images-na.ssl-images-amazon.com/images/I/61zNakpa4%2BL._AC_SX522_.jpg"
     },
     {
-      id: '8', 
+      id: 44, 
       ime: "Blender", 
       cijena: 599.90, 
       opis: "Sjeckalica je multifunkcionalni pomagač kojeg možete koristiti za razne kulinarske poslove, svaki dan. Odaberite jednostruke ili dvostruke oštrice za sjeckanje u zdjeli zapremine 360 ml. Uz 2 dodatka pripremite različite vrste umaka. Jednostavna je za upotrebu i periva u perilici.", 
@@ -113,7 +113,7 @@ export default {
       pic: "https://k.nooncdn.com/t_desktop-pdp-v1/v1551527549/N21175612A_1.jpg"
     },
     {
-      id: '9', 
+      id: 45, 
       ime: "Pekač", 
       cijena: 399.90, 
       opis: "Zahvaljujući pekaču Stone Legend Flamenco možete u kratkom vremenu ispeći razna jela. Pekač je otporan na ogrebotine, bez prianjanja i energetski učinkovit. Pogodan je za korištenje na svim vrstama štednjaka (uključujući indukcijski) i u pećnici. Dimenzije pekača su 35x21 cm.", 
@@ -526,7 +526,7 @@ export default {
     },
     {
       id: 27,
-      ime: "Zelena salata",
+      ime: "Zel. salata",
       opis: [{
         kalorije: 14,
         masti: 0.2,

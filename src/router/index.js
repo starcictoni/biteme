@@ -22,11 +22,6 @@ const routes = [
     component: () => import('../views/Recepti.vue')
   },
   {
-    path: '/poklon',
-    name: 'poklon',
-    component: () => import('../views/Poklon.vue')
-  },
-  {
     path: '/trgovina',
     name: 'trgovina',
     component: () => import('../views/Trgovina.vue')
