@@ -85,6 +85,8 @@
           <v-list-item class="font-weight-bold caption">
              <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
           </v-list-item>
+          <v-list-item class="justify-center mt-n3"> <v-icon size="33" class="mediaicon">mdi-facebook</v-icon><v-icon size="33" class="mx-2 mediaicon">mdi-instagram</v-icon><v-icon size="33" class="mediaicon">mdi-twitter-circle</v-icon>
+          </v-list-item>
         </v-list>
       </v-navigation-drawer>
 
@@ -157,6 +159,8 @@ export default {
   methods: {
     logout() {
       firebase.auth().signOut();
+      this.authenticated = false;
+      this.drawer = false;
     }
   },
 //--------------------------------------------------
@@ -234,6 +238,13 @@ a {
 }
 .listbtn:hover{
    background-color: #ffe600 !important;
+}
+.mediaicon{
+ -webkit-text-fill-color: black;
+}
+.mediaicon:hover{
+  -webkit-text-fill-color: #ffe600 !important;
+  font-size: 40px !important;
 }
 </style>
 

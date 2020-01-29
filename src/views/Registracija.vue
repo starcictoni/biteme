@@ -1,7 +1,6 @@
 <template>
-  <v-container fluid class="backgroundimg" style="max-height: 100%;">
+  <v-container fluid class="backgroundimg" fill-height style="max-height: 100%;">
     <v-row class="justify-center">
-    
       <v-col cols="12" sm="9" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 mb-12 text-center">
           <v-row :justify="justify" :align="alignment">
@@ -182,7 +181,7 @@ export default {
           user.sendEmailVerification(); 
         });
 
-        let id = self.email;
+        let id = this .email;
         db.collection("users").doc(id)
           .set({
             email: self.email,

@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="backgroundimg" style="max-height: 100%;">
+  <v-container fluid class="backgroundimg" fill-height style="max-height: 100%;">
     <v-row class="justify-center">
       <v-col cols="6" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 text-center">
@@ -53,7 +53,7 @@
               <router-link to="Zaboravljena">Zaboravili ste lozinku?</router-link>
             </div>
             <div class="text-center pt-0 pb-0 my-3">
-              <v-btn tile depressed @click.prevent="signin" type="submit" class="ma-2 signbtn" outlined color="black"> Prijava </v-btn>
+              <v-btn tile depressed @click.prevent="signin" type="submit" class="ma-2 signbtn" outlined> Prijava </v-btn>
             </div>
           </div>
           <div class="separator"> ili </div>
@@ -186,5 +186,6 @@ export default {
 }
 .signbtn:hover {
   background-color: #ffe600 !important;
+  border-color: white;
 }
 </style>
