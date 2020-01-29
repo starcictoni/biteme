@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-card-actions class="justify-center">
-      <v-btn @click="dodajProizvod()">DODAJ U KOŠARICU</v-btn>
+    <v-card-actions class="justify-center pa-0">
+      <v-btn class="dodajbtn" tile depressed outlined @click="dodajProizvod()">DODAJ U KOŠARICU</v-btn>
     </v-card-actions>
   </v-container>
 </template>
@@ -45,3 +45,9 @@ export default {
   
 };
 </script>
+<style>
+.dodajbtn:hover{
+  background-color: black !important;
+  -webkit-text-fill-color: white !important;
+}
+</style>

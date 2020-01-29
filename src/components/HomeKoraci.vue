@@ -11,7 +11,7 @@
               class="stepimg white--text text-center align-center"
               height="200px"
               src="https://htmlcolors.com/color-image/ffe600.png"
-              ><v-icon class="mx-auto" size="130" color="black">mdi-animation-outline</v-icon></v-img>
+              ><v-icon class="mx-auto" size="100" color="black">mdi-animation-outline</v-icon></v-img>
             <v-card-text class="text--primary text-center">
               <p class="headline font-weight-black text--primary">Naruči</p>
               <div>
@@ -24,7 +24,7 @@
               class="stepimg white--text text-center align-center"
               height="200px"
               src="https://htmlcolors.com/color-image/ffe600.png"
-            ><v-icon class="mx-auto" size="130" color="black">mdi-truck-delivery-outline</v-icon>
+            ><v-icon class="mx-auto" size="100" color="black">mdi-truck-delivery-outline</v-icon>
             </v-img>
             <v-card-text class="text--primary text-center">
                 <p class="headline font-weight-black text--primary">Dostava</p>
@@ -37,7 +37,7 @@
               height="200px"
               src="https://htmlcolors.com/color-image/ffe600.png"
             >
-            <v-icon class="mx-auto" size="130" color="black">mdi-pasta</v-icon>
+            <v-icon class="mx-auto" size="100" color="black">mdi-pasta</v-icon>
             </v-img>
             <v-card-text class="text--primary text-center">
                 <p class="headline font-weight-black text--primary">Jedi ???</p>
