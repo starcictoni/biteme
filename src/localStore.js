@@ -661,7 +661,7 @@ export default {
     },
     {
       id: 36,
-      ime: "Bošarin",
+      ime: "Boškarin",
       opis: [{
         kalorije: 232,
         masti: 18.4,

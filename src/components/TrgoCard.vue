@@ -35,6 +35,7 @@
                         :ime="item.ime"
                         :stanje="item.stanje"
                         :cijena="item.cijena"
+                        :pic="item.pic"
                     ></DodajProizvod>
                 <!-- Dodaj nesto -->
 
