@@ -1,7 +1,6 @@
 <template>
-  <v-container fluid class="backgroundimg" style="max-height: 100%;">
+  <v-container fill-height fluid class="backgroundimg" style="max-height: 100%;">
     <v-row class="justify-center">
-    
       <v-col cols="12" sm="9" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 mb-12 text-center">
           <v-row :justify="justify" :align="alignment">
@@ -89,11 +88,6 @@
 
           <!-- Ostatak -->
           <div class="row">
-          <!-- <div v-if="password !== password2">
-              <v-alert type="error">
-                Lozinke se ne podudaraju
-              </v-alert>
-            </div> -->
             <div class="col-md-6 col-sm-12 justify-center text-center mt-1 pt-0 pb-0 ">
               <v-checkbox color="#ffe600" class="justify-center" label="Pristajem na uvjete"></v-checkbox>
             </div>
@@ -104,10 +98,6 @@
           </div>
           </v-form>
         </v-sheet>
-        <!-- Poslovni korisnici, ne znam hocemo li stici
-        <v-btn block color="secondary" dark>Za poslovne korisnike</v-btn>
-        -->
-        
       </v-col>
     </v-row>
   </v-container>
@@ -115,13 +105,10 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 
 export default {
   name: "Registracija",
   components: {
-    //HelloWorld
   },
   data () {
     return {
@@ -148,11 +135,11 @@ export default {
   },//data
   methods: {
     signup () {
-      // console.log("Pozvao je signup");
-      // console.log(this.username);
-      // console.log(this.email);
-      // console.log(this.password);
-      // console.log(this.password2);
+      console.log("Pozvao je signup");
+      console.log(this.username);
+      console.log(this.email);
+      console.log(this.password);
+      console.log(this.password2);
       var user = firebase.auth().currentUser;
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
           .then()
@@ -182,11 +169,11 @@ export default {
           user.sendEmailVerification(); 
         });
 
-        let id = self.email;
+        let id = this.email;
         db.collection("users").doc(id)
           .set({
-            email: self.email,
-            username: self.username,
+            email: this.email,
+            username: this.username,
           })
           .then(function() {
               console.log("Document successfully written!");
@@ -194,7 +181,7 @@ export default {
           .catch(function(error) {
               console.error("Error writing document: ", error);
           });
-                   if (this.$route.name !== "home")
+          if (this.$route.name !== "home")
              this.$router.push({ name: "home" });
     },//signup
     }//methods

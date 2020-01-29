@@ -8,41 +8,40 @@
         <v-row class="mt-12 mb-12">
           <v-card class="mx-auto md-12" max-width="200" max-height="300" flat tile>
             <v-img
-              class="stepimg white--text align-end"
+              class="stepimg white--text text-center align-center"
               height="200px"
               src="https://htmlcolors.com/color-image/ffe600.png"
-            ></v-img>
+              ><v-icon class="mx-auto" size="130" color="black">mdi-animation-outline</v-icon></v-img>
             <v-card-text class="text--primary text-center">
-              <p class="headline font-weight-black text--primary">Korak 1</p>
+              <p class="headline font-weight-black text--primary">Naruči</p>
               <div>
-                Pellentesque dolor nisi, vulputate quis lobortis
-                ac, tincidunt et quam.
+                Iz široke ponude domaćih ¸i zdravih namirnica odaberi ono što želiš. 🤤
               </div>
             </v-card-text>
           </v-card>
           <v-card class="mx-auto md-50px" max-width="200" max-height="300" flat tile>
             <v-img
-              class="stepimg white--text align-end"
+              class="stepimg white--text text-center align-center"
               height="200px"
               src="https://htmlcolors.com/color-image/ffe600.png"
-            >
+            ><v-icon class="mx-auto" size="130" color="black">mdi-truck-delivery-outline</v-icon>
             </v-img>
             <v-card-text class="text--primary text-center">
-                <p class="headline font-weight-black text--primary">Korak 2</p>
-              <div>Vivamus in tortor gravida eros laoreet condimentum nec vel dui.</div>
+                <p class="headline font-weight-black text--primary">Dostava</p>
+              <div>Odabrano ti šaljemo - kad želiš i gdje želiš! 👌</div>
             </v-card-text>
           </v-card>
           <v-card class="mx-auto md-50px" max-width="200" max-height="300" flat tile>
             <v-img
-              class="stepimg white--text align-end"
+              class="stepimg white--text text-center align-center"
               height="200px"
               src="https://htmlcolors.com/color-image/ffe600.png"
             >
-            
+            <v-icon class="mx-auto" size="130" color="black">mdi-pasta</v-icon>
             </v-img>
             <v-card-text class="text--primary text-center">
-                <p class="headline font-weight-black text--primary">Korak 3</p>
-              <div>Vestibulum aliquet vulputate erat. Phasellus id mauris mauris.</div>
+                <p class="headline font-weight-black text--primary">Jedi ???</p>
+              <div> Uživaj u domaćem, svježem pripremljenom obroku.</div>
             </v-card-text>
           </v-card>
         </v-row>

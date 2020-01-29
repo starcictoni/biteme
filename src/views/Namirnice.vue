@@ -9,16 +9,13 @@
   </v-container>
 </template>
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 import NamCard from "@/components/NamCard.vue";
 
 export default {
   ime: "namirnice",
   components: {
-    HelloWorld,
     NamCard
-  }
+  },
 };
 </script>
 

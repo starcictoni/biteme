@@ -1,9 +1,12 @@
 <template>
   <span>
     <!-- {{this.username}} -->
-    <hero v-if="!authenticated"></hero>
-    <heroauth v-if="authenticated"></heroauth>
+    <hero></hero>
+    <heroauth></heroauth>
     <homekoraci></homekoraci>
+    <homeimg></homeimg>
+    
+    
     <!-- <div class="videowrapper"> OVO JE U TRENUTNO TESTNOJ FAZI 
       <div style="background-color: black" class="view hm-black-strong">
         <video stlyle="color: black" class="video-fluid videocrop" autoplay loop muted>
@@ -24,6 +27,7 @@
 import hero from "@/components/Hero";
 import heroauth from "@/components/HeroAuth";
 import homekoraci from "@/components/HomeKoraci";
+import homeimg from "@/components/HomeImg";
 import localStore from "@/localStore.js";
 
 export default {
@@ -31,7 +35,8 @@ export default {
   components: {
     hero,
     homekoraci,
-    heroauth
+    heroauth,
+    homeimg
   },
   data() {
     return localStore;

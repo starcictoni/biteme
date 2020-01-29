@@ -30,6 +30,109 @@ export default {
       );
     },
   }],
+
+  storeItems: [
+    {
+      id: 1, 
+      ime: "Lonac", 
+      cijena: 239.90, 
+      opis: "Izrađen od visokokvalitetnih materijala, s česticama kamena i bakra. Energetski učinkovit lonac otporan je na ogrebotine i s neprianjajućim svojstvima. Pogodan je za korištenje na svim vrstama štednjaka (uključujući indukcijski) i u pećnici. Jednostavan za održavanje, lonac je periv u perilici.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_stone_legend_copperlux_pot_24cm.jpg"
+    },
+    {
+      id: 2, 
+      ime: "Set noževa", 
+      cijena: 149.90, 
+      opis: "Kuhinjski noževi izrađeni je od nehrđajućeg čelika visoke kvalitete. Njihova prednost je dvosmjerno ručno oštrena oštrica, pod kutom od 15 ° za dugotrajnu oštrinu i izdržljivost. Pogodni su za rezanje velikih komada hrane. Dužina oštrice je 20,5 cm. ", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://i.pinimg.com/originals/9d/86/67/9d866736df552397568a7daf751fefed.jpg"
+    },
+    {
+      id: 3,
+      ime: "Posuđe",
+      cijena: 149.90, 
+      opis: "Set posudica za pohranjivanje hrane od 10 dijelova pomoći će vam da uštedite do 60% prostora za pohranu u kuhinji. Set sadrži 5 različitih veličina posudice sa 100% hermetičkim zatvaranjem. Sigurne su za korištenje u hladnjaku i mikrovalnoj pećnici. Dolaze u veličinama: 250 ml, 350 ml, 540 ml, 800 ml i 1200 ml.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://pbs.twimg.com/media/D0lgCw0X4AEg8TX.jpg"
+    },
+    {
+      id: '4', 
+      ime: "Pribor za jelo", 
+      cijena: 399.90, 
+      opis: "Bezvremensku eleganciju na vašem stolu donijet će set pribora za jelo Gourmet. Izrađen od nehrđajućeg čelika, set je jednostavan za održavanje. Sadrži šest žlica, šest vilica, šest noževa i šest čajnih žličica. ", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_gourmet_cutlery_set_1.jpg"
+    },
+    {
+      id: '5', 
+      ime: "Ribež", 
+      cijena: 69.90, 
+      opis: "Dvostruki ribež za brze rezultate omogućuje ribanje u oba smjera. Oštrice od nehrđajućeg čelika. Naribajte korjenasto povrće, tikvice, luk i ostalu hranu po želji. Sa udobnom ručkom. Ribež dimenzija 31 x 7 cm.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://cdn.vitapur.net/media/catalog/product/cache/3/small_image/430x404/9df78eab33525d08d6e5fb8d27136e95/1/9/19389_two_way_ribbon_grater_rosmarino_product_3_web.jpg"
+    },
+    {
+      id: '6', 
+      ime: "Set za grill", 
+      cijena: 129.90, 
+      opis: "Omogućite si jednostavnu i brzu pripremu hrane s roštilja pomoću Seta za gril Astoria. Set sadrži vilicu za roštilj, velike hvataljke i lopaticu za roštilj. Izrađen od visokokvalitetnog nehrđajućeg čelika, set je praktičan za pripremu i posluživanje jela s roštilja.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_astoria_grilling_set.jpg"
+    },
+    {
+      id: '7', 
+      ime: "Kuhinjska vaga", 
+      cijena: 149.90, 
+      opis: "Zaboravite vage na baterije i električne kablove. Uz praktičnu kuhinjsku vagu Joy izvažite omiljene sastojke do 5 kg pritiskom na 2 tipke! Kompaktnog i jednostavnog dizajna, vaga sadrži i digitalni ekran s više mjernih jedinica (g, oz, lb i ml za vodu ili mlijeko). Jednostavna za pohranu. Veličina: 25 x 19 x 1.4 cm.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://images-na.ssl-images-amazon.com/images/I/61zNakpa4%2BL._AC_SX522_.jpg"
+    },
+    {
+      id: '8', 
+      ime: "Blender", 
+      cijena: 599.90, 
+      opis: "Sjeckalica je multifunkcionalni pomagač kojeg možete koristiti za razne kulinarske poslove, svaki dan. Odaberite jednostruke ili dvostruke oštrice za sjeckanje u zdjeli zapremine 360 ml. Uz 2 dodatka pripremite različite vrste umaka. Jednostavna je za upotrebu i periva u perilici.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://k.nooncdn.com/t_desktop-pdp-v1/v1551527549/N21175612A_1.jpg"
+    },
+    {
+      id: '9', 
+      ime: "Pekač", 
+      cijena: 399.90, 
+      opis: "Zahvaljujući pekaču Stone Legend Flamenco možete u kratkom vremenu ispeći razna jela. Pekač je otporan na ogrebotine, bez prianjanja i energetski učinkovit. Pogodan je za korištenje na svim vrstama štednjaka (uključujući indukcijski) i u pećnici. Dimenzije pekača su 35x21 cm.", 
+      kolicina: "kom", 
+      stanje: 0, 
+      show: false, 
+      pic: "https://www.oven-racks.com/img/black-baking-tray.jpg"
+    },
+    // {
+    //   id: '10', 
+    //   ime: "Tanjuri", 
+    //   cijena: 259.90, 
+    //   opis: "Neka kvalitetno posuđe bude temelj vaše kuhinje! Bez alata nema zanata, a bez kvalitetnog posuđa nema vrhunske kuhinje! Set uključuje 12 tanjura", 
+    //   kolicina: "kom", 
+    //   stanje: 0, 
+    //   show: false, 
+    //   pic: "http://freefoodphotos.com/imagelibrary/crockery_cookware/slides/clean_plates.jpg"
+    // },
+  ],
   groceries: [
     {
       id: 1,
@@ -44,7 +147,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/articoka-300x300.jpg"
     },
     { 
       id: 2,
@@ -59,7 +162,7 @@ export default {
       cijena: 9.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/batat7-300x300.jpg",
     },
     {
       id: 3,
@@ -74,7 +177,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/blitva-lisnata-300x300.jpg",
     },
     {
       id: 4,
@@ -89,7 +192,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/brokula1-300x300.jpg",
     },
     {
       id: 5,
@@ -104,7 +207,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/cikla-300x300.jpg",
     },
     {
       id: 6,
@@ -119,7 +222,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/cvjetaca1-300x300.jpg",
     },
     {
       id: 7,
@@ -134,7 +237,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/luk-cesnjak-300x300.jpg",
     },
     {
       id: 8,
@@ -149,7 +252,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/endivija1-300x300.jpg",
     },
     {
       id: 9,
@@ -164,7 +267,7 @@ export default {
       cijena: 16.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/grasak2-300x300.jpg",
     },
     {
       id: 10,
@@ -179,7 +282,7 @@ export default {
       cijena: 9.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/kelj-300x300.jpg",
     },
     {
       id: 11,
@@ -194,7 +297,7 @@ export default {
       cijena: 7.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/krastavac1-300x300.jpg",
     },
     {
       id: 12,
@@ -209,7 +312,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/krumpir26-300x300.jpg",
     },
     {
       id: 13,
@@ -224,7 +327,7 @@ export default {
       cijena: 2.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/kukuruz-secerac-300x300.jpg",
     },
     {
       id: 14,
@@ -239,7 +342,7 @@ export default {
       cijena: 5.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/kupus5-300x300.jpg",
     },
     {
       id: 15,
@@ -254,7 +357,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/lovor-300x300.jpg",
     },
     {
       id: 16,
@@ -269,7 +372,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/luk7-300x300.jpg",
     },
     {
       id: 17,
@@ -284,7 +387,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/matovilac-300x300.jpg",
     },
     {
       id: 18,
@@ -299,7 +402,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/mrkva7-300x300.jpg",
     },
     {
       id: 19,
@@ -314,7 +417,7 @@ export default {
       cijena: 13.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/paprika15-300x300.jpg",
     },
     {
       id: 20,
@@ -329,7 +432,7 @@ export default {
       cijena: 16.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/patlidjan-300x300.jpg",
     },
     {
       id: 21,
@@ -344,7 +447,7 @@ export default {
       cijena: 15.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/persin1-300x300.jpg",
     },
     {
       id: 22,
@@ -359,7 +462,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/radic3-300x300.jpg",
     },
     {
       id: 23,
@@ -374,7 +477,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rajcica32-300x300.jpg",
     },
     {
       id: 24,
@@ -389,7 +492,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rukola-300x300.jpg",
     },
     {
       id: 25,
@@ -404,7 +507,7 @@ export default {
       cijena: 23.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/ruzmarin1-300x300.jpg",
     },
     {
       id: 26,
@@ -419,7 +522,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rotkvica1-300x300.jpg",
     },
     {
       id: 27,
@@ -434,7 +537,7 @@ export default {
       cijena: 12.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/salata14-300x300.jpg",
     },
     {
       id: 28,
@@ -449,7 +552,7 @@ export default {
       cijena: 16.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/spinat1-300x300.jpg",
     },        
     {
       id: 29,
@@ -464,7 +567,112 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/tikva-300x300.jpg",
+    },
+    {
+      id: 30,
+      ime: "Govedina",
+      opis: [{
+        kalorije: 214,
+        masti: 15.4,
+        ugljikohidrati: 0,
+        bjelancevine: 18.8,
+      }],
+      kolicina: "1kg",
+      cijena: 49.99,
+      show: false,
+      stanje: 0,
+      pic: "https://dobartek.spar.hr/files/images/novosti/LIFESTYLE/2017/680x370-7/Meso.jpg",
+    },
+    {
+      id: 31,
+      ime: "Junetina",
+      opis: [{
+        kalorije: 217,
+        masti: 11.8,
+        ugljikohidrati: 0,
+        bjelancevine: 26.1,
+      }],
+      kolicina: "1kg",
+      cijena: 69.99,
+      show: false,
+      stanje: 0,
+      pic: "https://rtl-static.cdn.sysbee.net/image/nemasna-junetina-meso-od-zivotinja-hranjenih-travom-sadrzi-zdrave-omega-3-masne-kiseline-koje-cuvaju-zdravlje-srca-i-kardiovaskularnog-sustava-d6da9cc5db3bcbef90eb08b8cba61b36_view_article_new.jpg?v=22",
+    },
+    {
+      id: 32,
+      ime: "Teletina",
+      opis: [{
+        kalorije: 204,
+        masti: 14.6,
+        ugljikohidrati: 0,
+        bjelancevine: 18.1,
+      }],
+      kolicina: "1kg",
+      cijena: 89.99,
+      show: false,
+      stanje: 0,
+      pic: "http://stancija-kovacici.hr/images/teletina-ispod-sa%C4%8Da334x232.jpg?crc=69723608",
+    },
+    {
+      id: 33,
+      ime: "Janjetina",
+      opis: [{
+        kalorije: 243,
+        masti: 18.6,
+        ugljikohidrati: 0,
+        bjelancevine: 17.5,
+      }],
+      kolicina: "1kg",
+      cijena: 69.99,
+      show: false,
+      stanje: 0,
+      pic: "https://storage.bljesak.info/image/221298/1280x880/JanjetinaTanjur.jpg",
+    },
+    {
+      id: 34,
+      ime: "Svinjetina",
+      opis: [{
+        kalorije: 117,
+        masti: 2.3,
+        ugljikohidrati: 0,
+        bjelancevine: 22.4,
+      }],
+      kolicina: "1kg",
+      cijena: 29.99,
+      show: false,
+      stanje: 0,
+      pic: "https://gastro.24sata.hr/media/img/41/ae/93567f22e885d40e8f63.jpeg",
+    },
+    {
+      id: 35,
+      ime: "Piletina",
+      opis: [{
+        kalorije: 215,
+        masti: 15,
+        ugljikohidrati: 0,
+        bjelancevine: 18.6,
+      }],
+      kolicina: "1kg",
+      cijena: 49.99,
+      show: false,
+      stanje: 0,
+      pic: "http://www.kfc.hr/wp-content/uploads/2016/10/Komadi-piletine-1-kom_bjelovnik_597_672.jpg",
+    },
+    {
+      id: 36,
+      ime: "Bošarin",
+      opis: [{
+        kalorije: 232,
+        masti: 18.4,
+        ugljikohidrati: 0,
+        bjelancevine: 18.8,
+      }],
+      kolicina: "1kg",
+      cijena: 99.99,
+      show: false,
+      stanje: 0,
+      pic: "https://www.crogourmet365.hr/media/__sized__/image/33/b9/shutterstock_732177829-crop-c0-5__0-5-900x600-70.jpg", 
     },
   ]
 };
