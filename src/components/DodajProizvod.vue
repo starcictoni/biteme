@@ -14,7 +14,8 @@ export default {
     id: Number,
     ime: String,
     cijena: Number,
-    stanje: Number
+    stanje: Number,
+    pic: String
   },
   data() {
     return {
@@ -22,7 +23,8 @@ export default {
         itemId: this.id,
         itemIme: this.ime,
         itemStanje: 0,
-        itemCijena: this.cijena
+        itemCijena: this.cijena,
+        itemPic: this.pic
       }
     }
   },
