@@ -57,6 +57,7 @@
               :ime="grocery.ime"
               :stanje="grocery.stanje"
               :cijena="grocery.cijena"
+              :pic="grocery.pic"
             > 
             </DodajProizvod>	
             <!-- <v-btn @click="dodajCart(grocery, i)">DODAJ U KOŠARICU</v-btn> -->
