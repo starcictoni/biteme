@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app style="background: rgb(0,0,0,0) !important">
     <v-row class="justify-left">
       <v-col
         class="justify-center"
@@ -8,18 +8,18 @@
         v-for="grocery in groceries"
         :key="grocery.id"
       >
-        <v-card color="rgb(255, 0, 0, 0)" elevation="5" class="mx-auto mb-12" max-width="350">
+        <v-card color="rgb(255, 0, 0, 0)" elevation="10" class="mx-auto mb-12" max-width="350">
           <!-- Slika namirnice -->
           <v-img class="align-end justify-center" :src="grocery.pic" height="100px"></v-img>
-          <v-row class="align-center">
-            <v-col height="10px">
+          <v-row style="background: white !important" class="mx-0 align-center">
+            <v-col class="pl-0" height="10px">
               <!-- Ime namirnice -->
-              <v-card-title class="justify-left py-1 headline font-weight-bold">{{ grocery.ime }}</v-card-title>
+              <v-card-title class="justify-left py-1 title font-weight-bold">{{ grocery.ime }}</v-card-title>
             </v-col>
-            <v-col>
+            <v-col >
               <!-- Cijena po jedinici -->
               <v-card-subtitle
-                class="text-center py-1 subtitle-1 black--text font-weight-black"
+                class="text-center py-1 px-0 subtitle-1 black--text font-weight-black"
               >{{grocery.kolicina + ': '}}{{grocery.cijena + ' kn' }}</v-card-subtitle>
             </v-col>
           </v-row>
@@ -44,15 +44,25 @@
               <!-- Kolicina -->
               <v-card-actions width="15px" style="height: 74px;" class="justify-center">
                 <!-- Minus 1 nam -->
-                <v-btn @click=" grocery.stanje > 0 ? grocery.stanje-- : null" icon>
+                <v-btn class @click=" grocery.stanje > 0 ? grocery.stanje-- : null" icon>
                   <v-icon>mdi-minus</v-icon>
                 </v-btn>
 
                 <!-- Input kolicine -->
-                <v-text-field dense flat hide-details outlined class="centered-input" disabled style=" -webkit-text-fill-color: black" solo v-model="grocery.stanje"></v-text-field>
+                <v-text-field
+                  dense
+                  flat
+                  hide-details
+                  outlined
+                  class="centered-input"
+                  disabled
+                  style=" -webkit-text-fill-color: black"
+                  solo
+                  v-model="grocery.stanje"
+                ></v-text-field>
 
                 <!-- Plus 1 nam -->
-                <v-btn @click="grocery.stanje++" icon>
+                <v-btn class @click="grocery.stanje++" icon>
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </v-card-actions>
@@ -64,7 +74,6 @@
             style="background-color: #ffe600 !important"
             class="mt-n4 align-center justify-center"
           >
-          
             <v-btn class="align-center" text @click="grocery.show = !grocery.show">
               <v-card-subtitle class="pa-0">Nutritivne vrijednosti</v-card-subtitle>
               <v-icon>{{ grocery.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
