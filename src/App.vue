@@ -53,14 +53,14 @@
             >ODJAVA</v-btn>
           </v-list-item>
           <v-list-item class="justify-center mt-3">
-            <img src="bmlogo.png" width="130px"/>
+            <img src="bmlogo.png" width="130px" />
           </v-list-item>
           <v-list-item class="tile mt-1">
             <router-link class="tile" to="/namirnice">
               <v-list-item-content>Namirnice</v-list-item-content>
             </router-link>
           </v-list-item>
-          <v-divider/>
+          <v-divider />
           <v-list-item class="tile">
             <router-link class="tile" to="/recepti">
               <v-list-item-content>Recepti</v-list-item-content>
@@ -78,12 +78,10 @@
               <v-list-item-content>O nama</v-list-item-content>
             </router-link>
           </v-list-item>
-          <v-list-item>
-          </v-list-item>
-          <v-list-item>
-          </v-list-item>
+          <v-list-item></v-list-item>
+          <v-list-item></v-list-item>
           <v-list-item class="font-weight-bold caption">
-             <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
+            <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -93,6 +91,12 @@
         <v-row wrap class="justify-center">
           <v-col>
             <v-app-bar-nav-icon @click="drawer = !drawer" class="logo"></v-app-bar-nav-icon>
+            
+            
+            <v-btn text to="/kosarica" class="ma-0">
+              <v-icon>mdi-cart</v-icon>
+              {{cartCounter}}
+            </v-btn>
           </v-col>
 
           <v-col align-self="center" class="justify-center">
@@ -107,9 +111,6 @@
           </v-col>
 
           <v-col align-self="center" class="justify-center hidden-sm-and-down">
-            
-            <!-- ovo je privremeno -->
-            <v-btn light tile to="/kosarica" class="ml-auto">KOŠARICA</v-btn>
 
             <div v-if="!authenticated" class="mx-auto hidden-sm-and-down v-responsive">
               <v-btn
@@ -121,7 +122,14 @@
                 to="/prijava"
                 data-cy="signinBtn"
               >PRIJAVA</v-btn>
-              <v-btn light small tile to="/registracija" class="nav-join" data-cy="joinBtn">REGISTRACIJA</v-btn>
+              <v-btn
+                light
+                small
+                tile
+                to="/registracija"
+                class="nav-join"
+                data-cy="joinBtn"
+              >REGISTRACIJA</v-btn>
             </div>
           </v-col>
         </v-row>
@@ -153,56 +161,54 @@ export default {
   data() {
     return localStore;
   },
-//--------------------------------------------------
+  //--------------------------------------------------
   methods: {
     logout() {
       firebase.auth().signOut();
     }
   },
-//--------------------------------------------------
+  //--------------------------------------------------
   mounted() {
     let user = firebase.auth().currentUser;
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-       //debugger;
-        this.email = user.email; 
+        //debugger;
+        this.email = user.email;
         this.authenticated = true;
         db.collection("users")
-        .doc(this.email)
-        .get()
-        .then(doc => {
-          if(doc.exists) {
-            this.username = doc.data().username;
-            this.email = doc.data().email;
-            this.firstname = doc.data().ime;
-            this.lastname = doc.data().prezime;
-            this.adresa = doc.data().adresa;
-            this.photo = doc.data().url;
-            if (user.emailVerified) {
-              this.verified = true;
-              console.log(`Username: ${this.username}`);
-              console.log(`Authenticated: ${this.email} and verified`);
-            }
-            else {
-            this.verified = false;
-            console.log('Email is not verified, zasto dvaput?');
-            }
-            // svaki put kada refresham stranicu mi se prebaci na home (sb)
-            // if (this.$route.name !== "home")
-            //   this.$router.push({ name: "home" });
-          }//if(doc.exists)
+          .doc(this.email)
+          .get()
+          .then(doc => {
+            if (doc.exists) {
+              this.username = doc.data().username;
+              this.email = doc.data().email;
+              this.firstname = doc.data().ime;
+              this.lastname = doc.data().prezime;
+              this.adresa = doc.data().adresa;
+              this.photo = doc.data().url;
+              if (user.emailVerified) {
+                this.verified = true;
+                console.log(`Username: ${this.username}`);
+                console.log(`Authenticated: ${this.email} and verified`);
+              } else {
+                this.verified = false;
+                console.log("Email is not verified, zasto dvaput?");
+              }
+              // svaki put kada refresham stranicu mi se prebaci na home (sb)
+              // if (this.$route.name !== "home")
+              //   this.$router.push({ name: "home" });
+            } //if(doc.exists)
 
-          // else{   OVO TREBA SREDITI TS
-          //   console.log("Document does not exist")
-          // }
+            // else{   OVO TREBA SREDITI TS
+            //   console.log("Document does not exist")
+            // }
+          }); //then
+      }
 
-        })//then
-        }
-
-    // .catch(error => {
-    //   console.log(error);
-    // })
-  })
+      // .catch(error => {
+      //   console.log(error);
+      // })
+    });
   } //mounted
 };
 </script>
@@ -232,8 +238,8 @@ a {
 .v-btn--active:before {
   opacity: 0 !important;
 }
-.listbtn:hover{
-   background-color: #ffe600 !important;
+.listbtn:hover {
+  background-color: #ffe600 !important;
 }
 </style>
 

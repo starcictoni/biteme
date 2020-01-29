@@ -1,14 +1,11 @@
 <template>
   <v-container fluid class="backgroundimg">
-    <v-app>
-      
-            <NamCard></NamCard>
-          
 
-      <!-- <v-content>
+    <NamCard></NamCard>
+
+    <!-- <v-content>
         <router-view></router-view>
-      </v-content> -->
-    </v-app>
+    </v-content>-->
   </v-container>
 </template>
 <script>
@@ -21,8 +18,7 @@ export default {
   components: {
     HelloWorld,
     NamCard
-  },
-  
+  }
 };
 </script>
 
@@ -32,9 +28,9 @@ export default {
   padding-top: 8px;
 }
 .backgroundimg {
-    background: url('https://i.imgur.com/oJxfKdW.png');
-    background-size: contain;
-    width: 100%;
-    height: 100%;
+  background: url("https://i.imgur.com/oJxfKdW.png");
+  background-size: contain;
+  width: 100%;
+  height: 100%;
 }
 </style>

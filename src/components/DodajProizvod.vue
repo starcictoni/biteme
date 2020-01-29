@@ -11,27 +11,35 @@ import localStore from "@/localStore.js";
 
 export default {
   props: {
+    id: Number,
     ime: String,
-    stanje: Number,
-    cijena: Number
+    cijena: Number,
+    stanje: Number
   },
   data() {
     return {
-      namirnica: {
-        imeNam: this.ime,
-        stanjeNam: this.stanje,
-        cijenaNam: this.cijena
+      item: {
+        itemId: this.id,
+        itemIme: this.ime,
+        itemStanje: 0,
+        itemCijena: this.cijena
       }
     }
   },
-  methods: { //jedino ovako mogu, polje polja
+  methods: {
       dodajProizvod(){
-        console.log(this.ime, " ", this.stanje);
-        console.log(this.namirnica.imeNam);
-        console.log(this.namirnica.stanjeNam);
 
-        // stavio sam push umjesto unshift jer mi tako dodaje na kraju polja, više mi tako ima smisla ne pitajte zasto (sb)
-        localStore.kupovina.push([this.ime, this.cijena, this.stanje]);
+        //found je varijabla koja usporeduje id objekta (item) kojeg zelim spremiti sa id-evima u polje kupovina.
+        //na takav nacin izbjegavam dupliciranje objekata u košarici nego se samo dodaje kolicina
+        let found = localStore.kupovina.find(x => x.itemId == this.item.itemId)
+
+        if(found) {
+          found.itemStanje += this.stanje; // povecaj za unesenu kolicinu
+        } else if (this.stanje > 0){ //ako korisnik nije odabrao kolicinu nemoj dodat nista u kosaricu
+        localStore.cartCounter++;
+        localStore.kupovina.push(this.item);
+        this.item.itemStanje = this.stanje;
+        }
       }
   }
   

@@ -25,7 +25,7 @@
           </v-card-actions>
           
           <transition-group>
-            <div v-show="grocery.show" v-for="(opis,key) in grocery.opis" :key="key">
+            <div v-show="grocery.show" v-for="(opis,key) in grocery.opis" :key="key + 0">
               <v-card-text class="text-left textbg">Kalorije: {{opis.kalorije}}</v-card-text>
               <v-card-text class="text-left textbg">Bjelančevine: {{opis.bjelancevine}}</v-card-text>
               <v-card-text class="text-left textbg">Ugljikohidrati: {{opis.ugljikohidrati}}</v-card-text>
@@ -60,13 +60,14 @@
 
           <!-- Dodavanje namirnice u kosaricu -->
             <DodajProizvod
+              :id="grocery.id"
               :ime="grocery.ime"
-              :cijena="grocery.cijena"
               :stanje="grocery.stanje"
-
+              :cijena="grocery.cijena"
             > 
             </DodajProizvod>	
             <!-- <v-btn @click="dodajCart(grocery, i)">DODAJ U KOŠARICU</v-btn> -->
+            
         </v-card>
       </v-col>
     </v-row>
@@ -85,6 +86,8 @@ export default {
     return localStore;
   },
   methods: {
+
+    
   }
 };
 
