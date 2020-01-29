@@ -1,8 +1,8 @@
 <template>
   <span>
     <!-- {{this.username}} -->
-    <hero v-if="!authenticated"></hero>
-    <heroauth v-if="authenticated"></heroauth>
+    <hero></hero>
+    <heroauth></heroauth>
     <homekoraci></homekoraci>
     <!-- <div class="videowrapper"> OVO JE U TRENUTNO TESTNOJ FAZI 
       <div style="background-color: black" class="view hm-black-strong">

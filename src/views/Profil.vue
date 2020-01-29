@@ -1,5 +1,5 @@
 <template>
-    <v-container  fluid class="backgroundimg1" style="max-height: 100%;">
+    <v-container fill-height fluid class="backgroundimg1" style="max-height: 100%;">
     <v-row class="justify-center text-center">
       <!-- ODABIR SLIKE NEK BUDE S DESNE STRANE DOK CE OSTATAK BITI S LIJEVE -->
       <!-- REAUTENTICIRAJ KAKO BI DOBIO STARU LOZINKU, VALJDA?-->
@@ -72,7 +72,7 @@
           ></v-text-field>
           <v-btn tile type="submit" @click="updateprofile" class="ma-2" depressed style="background-color:#ffe600 !important" > Spremi </v-btn>
           <v-btn tile @click="show3 =! show3" type="submit" class="ma-2" outlined color="black"> Promjena lozinke </v-btn> 
-          <div v-if="!show3">
+          <div v-if="show3">
            
           <!-- Old password -->
             <v-text-field
@@ -115,7 +115,7 @@
           ></v-text-field>
           </div>
 
-          <form @submit.prevent="postnewimage" class="mb-5 cropper">
+          <form @submit.prevent="postnewimage" class="mb-5 mt-3 cropper">
             <v-card outlined>
             <croppa 
             :canvas-color="'default'"
