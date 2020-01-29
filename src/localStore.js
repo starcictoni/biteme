@@ -59,7 +59,7 @@ export default {
       kolicina: "kom", 
       stanje: 0, 
       show: false, 
-      pic: "https://topshophr.azureedge.net/media/catalog/product/cache/2/small_image/210x157/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_brava_cooltops.jpg"
+      pic: "https://pbs.twimg.com/media/D0lgCw0X4AEg8TX.jpg"
     },
     {
       id: '4', 
@@ -146,7 +146,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/articoka-300x300.jpg"
     },
     { 
       id: 2,
@@ -161,7 +161,7 @@ export default {
       cijena: 9.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/batat7-300x300.jpg",
     },
     {
       id: 3,
@@ -176,7 +176,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/blitva-lisnata-300x300.jpg",
     },
     {
       id: 4,
@@ -191,7 +191,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/brokula1-300x300.jpg",
     },
     {
       id: 5,
@@ -206,7 +206,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/cikla-300x300.jpg",
     },
     {
       id: 6,
@@ -221,7 +221,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/cvjetaca1-300x300.jpg",
     },
     {
       id: 7,
@@ -236,7 +236,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/luk-cesnjak-300x300.jpg",
     },
     {
       id: 8,
@@ -251,7 +251,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/endivija1-300x300.jpg",
     },
     {
       id: 9,
@@ -266,7 +266,7 @@ export default {
       cijena: 16.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/grasak2-300x300.jpg",
     },
     {
       id: 10,
@@ -281,7 +281,7 @@ export default {
       cijena: 9.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/kelj-300x300.jpg",
     },
     {
       id: 11,
@@ -296,7 +296,7 @@ export default {
       cijena: 7.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/krastavac1-300x300.jpg",
     },
     {
       id: 12,
@@ -311,7 +311,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/krumpir26-300x300.jpg",
     },
     {
       id: 13,
@@ -326,7 +326,7 @@ export default {
       cijena: 2.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/kukuruz-secerac-300x300.jpg",
     },
     {
       id: 14,
@@ -341,7 +341,7 @@ export default {
       cijena: 5.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/kupus5-300x300.jpg",
     },
     {
       id: 15,
@@ -356,7 +356,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/lovor-300x300.jpg",
     },
     {
       id: 16,
@@ -371,7 +371,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/luk7-300x300.jpg",
     },
     {
       id: 17,
@@ -386,7 +386,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/matovilac-300x300.jpg",
     },
     {
       id: 18,
@@ -401,7 +401,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/mrkva7-300x300.jpg",
     },
     {
       id: 19,
@@ -416,7 +416,7 @@ export default {
       cijena: 13.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/paprika15-300x300.jpg",
     },
     {
       id: 20,
@@ -431,7 +431,7 @@ export default {
       cijena: 16.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/patlidjan-300x300.jpg",
     },
     {
       id: 21,
@@ -446,7 +446,7 @@ export default {
       cijena: 15.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/persin1-300x300.jpg",
     },
     {
       id: 22,
@@ -461,7 +461,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/radic3-300x300.jpg",
     },
     {
       id: 23,
@@ -476,7 +476,7 @@ export default {
       cijena: 11.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rajcica32-300x300.jpg",
     },
     {
       id: 24,
@@ -491,7 +491,7 @@ export default {
       cijena: 19.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rukola-300x300.jpg",
     },
     {
       id: 25,
@@ -506,7 +506,7 @@ export default {
       cijena: 23.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/ruzmarin1-300x300.jpg",
     },
     {
       id: 26,
@@ -521,7 +521,7 @@ export default {
       cijena: 4.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rotkvica1-300x300.jpg",
     },
     {
       id: 27,
@@ -536,7 +536,7 @@ export default {
       cijena: 12.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/salata14-300x300.jpg",
     },
     {
       id: 28,
@@ -551,7 +551,7 @@ export default {
       cijena: 16.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/spinat1-300x300.jpg",
     },        
     {
       id: 29,
@@ -566,7 +566,7 @@ export default {
       cijena: 8.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/tikva-300x300.jpg",
     },
     {
       id: 30,
@@ -581,7 +581,7 @@ export default {
       cijena: 49.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://dobartek.spar.hr/files/images/novosti/LIFESTYLE/2017/680x370-7/Meso.jpg",
     },
     {
       id: 31,
@@ -596,7 +596,7 @@ export default {
       cijena: 69.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://rtl-static.cdn.sysbee.net/image/nemasna-junetina-meso-od-zivotinja-hranjenih-travom-sadrzi-zdrave-omega-3-masne-kiseline-koje-cuvaju-zdravlje-srca-i-kardiovaskularnog-sustava-d6da9cc5db3bcbef90eb08b8cba61b36_view_article_new.jpg?v=22",
     },
     {
       id: 32,
@@ -611,7 +611,7 @@ export default {
       cijena: 89.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "http://stancija-kovacici.hr/images/teletina-ispod-sa%C4%8Da334x232.jpg?crc=69723608",
     },
     {
       id: 33,
@@ -626,7 +626,7 @@ export default {
       cijena: 69.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://storage.bljesak.info/image/221298/1280x880/JanjetinaTanjur.jpg",
     },
     {
       id: 34,
@@ -641,7 +641,7 @@ export default {
       cijena: 29.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "https://gastro.24sata.hr/media/img/41/ae/93567f22e885d40e8f63.jpeg",
     },
     {
       id: 35,
@@ -656,7 +656,7 @@ export default {
       cijena: 49.99,
       show: false,
       stanje: 0,
-      //pic: null,
+      pic: "http://www.kfc.hr/wp-content/uploads/2016/10/Komadi-piletine-1-kom_bjelovnik_597_672.jpg",
     },
     {
       id: 36,
@@ -671,7 +671,7 @@ export default {
       cijena: 99.99,
       show: false,
       stanje: 0,
-      //pic: null, 
+      pic: "https://www.crogourmet365.hr/media/__sized__/image/33/b9/shutterstock_732177829-crop-c0-5__0-5-900x600-70.jpg", 
     },
   ]
 };
