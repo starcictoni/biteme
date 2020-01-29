@@ -5,7 +5,7 @@
         class="justify-center"
         sm="12"
         md="3"
-        v-for="(grocery, i) in groceries"
+        v-for="grocery in groceries"
         :key="grocery.id"
       >
         <v-card color="rgb(255, 0, 0, 0)" elevation="5" class="mx-auto mb-12" max-width="350">
@@ -37,13 +37,14 @@
                 :ime="grocery.ime"
                 :stanje="grocery.stanje"
                 :cijena="grocery.cijena"
+                :pic="grocery.pic"
               ></DodajProizvod>
             </v-col>
             <v-col cols="5">
               <!-- Kolicina -->
               <v-card-actions width="15px" style="height: 74px;" class="justify-center">
                 <!-- Minus 1 nam -->
-                <v-btn class="" @click=" grocery.stanje > 0 ? grocery.stanje-- : null" icon>
+                <v-btn @click=" grocery.stanje > 0 ? grocery.stanje-- : null" icon>
                   <v-icon>mdi-minus</v-icon>
                 </v-btn>
 
@@ -51,7 +52,7 @@
                 <v-text-field dense flat hide-details outlined class="centered-input" disabled style=" -webkit-text-fill-color: black" solo v-model="grocery.stanje"></v-text-field>
 
                 <!-- Plus 1 nam -->
-                <v-btn :id="grocery.ime + i" class="" @click="grocery.stanje++" icon>
+                <v-btn @click="grocery.stanje++" icon>
                   <v-icon>mdi-plus</v-icon>
                 </v-btn>
               </v-card-actions>
