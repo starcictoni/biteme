@@ -5,6 +5,7 @@
         <thead>
           <tr>
             <th class="text-left">Namirnica</th>
+            <th></th>
             <th class="text-left">Cijena/Jedinica</th>
             <th class="text-left">Količina</th>
             <th class="text-left">Ukupna cijena</th>
@@ -12,8 +13,9 @@
         </thead>
         <tbody>
           <tr v-for="item in kupovina" :key="item.itemId">
-            <td>{{ item.itemIme }}</td>
-            <td>{{ item.itemCijena }}</td>
+            <td width="100px" class="py-2"><v-img  :src="item.itemPic" width="50px" ></v-img></td>    
+            <td> {{ item.itemIme }}</td>
+            <td>{{ item.itemCijena + " kn" }}</td>
             <td>{{ item.itemStanje }}</td>
           </tr>
         </tbody>
