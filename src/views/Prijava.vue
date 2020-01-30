@@ -56,7 +56,6 @@
           </div>
           <div class="separator"> ili </div>
           <div class="justify-center">
-            <v-btn tile class="ma-2" outlined color="primary"> Facebook </v-btn>
             <v-btn tile @click.prevent="goosignin" class="ma-2" outlined color="red darken-3"> Google </v-btn>
           </div>           
           </v-form>
