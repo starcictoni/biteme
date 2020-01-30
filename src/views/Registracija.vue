@@ -1,5 +1,5 @@
 <template>
-  <v-container fill-height fluid class="backgroundimg" style="max-height: 100%;">
+  <v-container fill-height fluid class="justify-center backgroundimg" style="max-height: 100%;">
     <v-row class="justify-center">
       <v-col cols="12" sm="9" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 mb-12 text-center">
@@ -223,5 +223,6 @@ export default {
 }
 .regbtn:hover {
   background-color: #ffe600 !important;
+  border-color: white;
 }
 </style>

@@ -6,7 +6,7 @@
           <tr>
             <th class="text-center">Namirnica</th>
             <th></th>
-            <th class="text-center">Cijena/Jedinica</th>
+            <th class="text-center">Cijena / Jedinica</th>
             <th class="text-center">Količina</th>
             <th class="text-center">Ukupna cijena</th>
             <th class="text-center">
@@ -16,13 +16,19 @@
             </th>
           </tr>
         </thead>
-        <tbody>
+        <!-- Ako je kosarica prazna pokazi poruku -->
+        <tbody v-if="kupovina === undefined || kupovina.length == 0" >
+            <p class="font-weight-black text-center mt-5">KOŠARICA JE PRAZNA</p>
+        </tbody>
+
+        <tbody v-else>
           <tr class="text-center" v-for="(item, index) in kupovina" :key="item.itemId">
             <td width="100px" class="py-2">
               <v-img :src="item.itemPic" width="50px"></v-img>
             </td>
             <td class="text-left">{{ item.itemIme }}</td>
-            <td>{{ item.itemCijena + " kn" }}</td>
+            <td v-if="item.itemKolicina">{{ item.itemCijena + " kn" + ' / ' + item.itemKolicina }}</td>
+            <td v-else>{{ item.itemCijena + " kn"}}</td>
             <td>{{ item.itemStanje }}</td>
             <td>{{ item.itemStanje * item.itemCijena + " kn"}}</td>
             <td>
