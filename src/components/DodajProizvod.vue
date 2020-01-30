@@ -6,7 +6,7 @@
       <!-- Error u slucaju kada je kolicina nula a korisnik stisne dodaj u kosaricu   -->
       <v-snackbar color="red" v-model="errorCart">
         {{ errorTekst }}
-        <v-btn text @click="errorCart = false">Zatvori</v-btn>
+        <v-btn color="red" text @click="errorCart = false">Zatvori</v-btn>
       </v-snackbar>
       <!-- Poruka za uspjesno dodavanje u kosaricu -->
       <v-snackbar v-model="addCart">
@@ -65,7 +65,7 @@ export default {
   }
 };
 </script>
-<style>
+<style lang="scss" scoped>
 .dodajbtn:hover {
   background-color: black !important;
   -webkit-text-fill-color: white !important;
