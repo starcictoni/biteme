@@ -38,6 +38,7 @@
                 :stanje="grocery.stanje"
                 :cijena="grocery.cijena"
                 :pic="grocery.pic"
+                :kolicina="grocery.kolicina"
               ></DodajProizvod>
             </v-col>
             <v-col cols="5">
