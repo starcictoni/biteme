@@ -5,6 +5,27 @@
 
       <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
         <v-list class="pt-0" v-if="!authenticated">
+           <v-list-item style="background-color: black" hidden-md-and-up height="105px" class="justify-center mb-0">
+            <v-btn
+              retain-focus-on-click
+              text
+              dark
+              tile
+              small
+              class="font-weight-black listbtn"
+              to="/Prijava"
+            >PRIJAVA</v-btn>
+            <v-btn
+              retain-focus-on-click
+              text
+              small
+              dark
+              tile
+              class="font-weight-black listbtn"
+              @click="logout"
+              to="/Registracija"
+            >REGISTRACIJA</v-btn>
+            </v-list-item>
           <v-list-item class="justify-center">
             <img src="bmlogo.png" width="130px" />
           </v-list-item>
@@ -18,6 +39,12 @@
             <router-link class="tile" to="/trgovina">
               <v-list-item-content>Trgovina</v-list-item-content>
             </router-link>
+          </v-list-item>
+          <v-list-item/><v-list-item/><v-list-item/><v-list-item/><v-list-item/><v-list-item/>
+          <v-list-item style="background-color: #ffe600" class="font-weight-bold caption">
+            <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
+          </v-list-item > 
+          <v-list-item style="background-color: #ffe600" class="justify-center mt-n3"> <v-icon size="33" class="mediaicon2">mdi-facebook</v-icon><v-icon size="33" class="mx-2 mediaicon2">mdi-instagram</v-icon><v-icon size="33" class="mediaicon2">mdi-twitter-circle</v-icon>
           </v-list-item>
         </v-list>
 
@@ -245,13 +272,21 @@ a {
 }
 .listbtn:hover {
   background-color: #ffe600 !important;
+  -webkit-text-fill-color: black;
 }
 .mediaicon{
  -webkit-text-fill-color: black;
 }
+.mediaicon2{
+ -webkit-text-fill-color: black;
+}
+
 .mediaicon:hover{
   -webkit-text-fill-color: #ffe600 !important;
   font-size: 40px !important;
+}
+.mediaicon2:hover{
+ font-size: 40px !important;
 }
 </style>
 

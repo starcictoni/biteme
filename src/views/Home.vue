@@ -5,6 +5,7 @@
     <heroauth></heroauth>
     <homekoraci></homekoraci>
     <homeimg></homeimg>
+    <homeeko></homeeko>
     
     
     <!-- <div class="videowrapper"> OVO JE U TRENUTNO TESTNOJ FAZI 
@@ -28,6 +29,7 @@ import hero from "@/components/Hero";
 import heroauth from "@/components/HeroAuth";
 import homekoraci from "@/components/HomeKoraci";
 import homeimg from "@/components/HomeImg";
+import homeeko from "@/components/HomeEko";
 import localStore from "@/localStore.js";
 
 export default {
@@ -36,7 +38,8 @@ export default {
     hero,
     homekoraci,
     heroauth,
-    homeimg
+    homeimg,
+    homeeko
   },
   data() {
     return localStore;

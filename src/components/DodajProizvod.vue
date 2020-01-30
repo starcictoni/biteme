@@ -4,9 +4,9 @@
       <v-btn class="dodajbtn" tile depressed outlined @click="dodajProizvod()">DODAJ U KOŠARICU</v-btn>
 
       <!-- Error u slucaju kada je kolicina nula a korisnik stisne dodaj u kosaricu   -->
-      <v-snackbar color="red" v-model="errorCart">
+      <v-snackbar color="white" style=" -webkit-text-fill-color: black !important;" v-model="errorCart">
         {{ errorTekst }}
-        <v-btn text @click="errorCart = false">Zatvori</v-btn>
+        <v-btn text color="black" @click="errorCart = false">Zatvori</v-btn>
       </v-snackbar>
       <!-- Poruka za uspjesno dodavanje u kosaricu -->
       <v-snackbar v-model="addCart">
@@ -38,7 +38,7 @@ export default {
         itemPic: this.pic
       },
       errorCart: false,
-      errorTekst: "nema sto dodati bato",
+      errorTekst: "Prvo odaberite količinu",
       addCart: false,
       dodanoTekst: "Dodano u košaricu"
     };

@@ -28,7 +28,7 @@
             </v-img>
             <v-card-text class="text--primary text-center">
                 <p class="headline font-weight-black text--primary">Dostava</p>
-              <div>Odabrano ti šaljemo - kad želiš i gdje želiš! 👌</div>
+              <div>Odabrano ti šaljemo - kad želiš i gdje želiš! 👉</div>
             </v-card-text>
           </v-card>
           <v-card class="mx-auto md-50px" max-width="200" max-height="300" flat tile>
@@ -40,8 +40,8 @@
             <v-icon class="mx-auto" size="100" color="black">mdi-pasta</v-icon>
             </v-img>
             <v-card-text class="text--primary text-center">
-                <p class="headline font-weight-black text--primary">Jedi ???</p>
-              <div> Uživaj u domaćem, svježem pripremljenom obroku.</div>
+                <p class="headline font-weight-black text--primary">Uživaj!</p>
+              <div> Uživaj u domaćem, svježem pripremljenom obroku. 👌</div>
             </v-card-text>
           </v-card>
         </v-row>

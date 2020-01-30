@@ -1,15 +1,15 @@
 <template>
-  <v-container fill-height fluid class="backgroundimg" style="max-height: 100%;">
+  <v-container fill-height fluid class="justify-center backgroundimg" style="max-height: 100%;">
     <v-row class="justify-center">
-      <v-col cols="6" md="5">
+      <v-col cols="12" md="5">
         <v-sheet elevation="5" class="pa-12 pt-12 text-center">
           <v-row class="justify-center align-center">
             <v-avatar tile height="auto" width="100px" class="mb-5">
               <img src="logoletter.png" alt="LOGO">
             </v-avatar>
           </v-row>
-        <h3 class="dobrodosli">Neki lijepi ugodni pozdrav</h3>
-        <h3 class="idipavidi">Neki razlog zasto bi se covjek ponovno prijavio</h3>
+        <h3 class="dobrodosli">Dobrodošao natrag!</h3>
+        <h3 class="idipavidi">Prijavi se u svoj Bite.me račun.</h3>
           <v-form @submit.prevent="signin">
 
           <!-- Email -->

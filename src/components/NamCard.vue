@@ -10,7 +10,7 @@
       >
         <v-card color="rgb(255, 0, 0, 0)" elevation="10" class="mx-auto mb-12" max-width="350">
           <!-- Slika namirnice -->
-          <v-img class="align-end justify-center" :src="grocery.pic" height="100px"></v-img>
+          <v-img class="align-end justify-center" :src="grocery.pic" height="140px"></v-img>
           <v-row style="background: white !important" class="mx-0 align-center">
             <v-col class="pl-0" height="10px">
               <!-- Ime namirnice -->
@@ -80,17 +80,18 @@
             </v-btn>
           </v-card-actions>
 
-          <transition-group>
+          <transition-group style="background-color: rgb(255, 0, 0) !important">
             <div
               class="text-center"
               v-show="grocery.show"
               v-for="(opis,key) in grocery.opis"
               :key="key + 0"
+              style="background-color: rgb(255, 255, 255, 0.5) !important"
             >
-              <v-card-text class="textbg">Kalorije: {{opis.kalorije}}</v-card-text>
-              <v-card-text class="textbg">Bjelančevine: {{opis.bjelancevine}}</v-card-text>
-              <v-card-text class="textbg">Ugljikohidrati: {{opis.ugljikohidrati}}</v-card-text>
-              <v-card-text class="textbg">Masti: {{opis.masti}}</v-card-text>
+              <v-card-text class="py-1 overline font-weight-black">Kalorije: {{opis.kalorije}}</v-card-text>
+              <v-card-text class="py-1 overline font-weight-black">Bjelančevine: {{opis.bjelancevine}}</v-card-text>
+              <v-card-text class="py-1 overline font-weight-black">Ugljikohidrati: {{opis.ugljikohidrati}}</v-card-text>
+              <v-card-text class="py-1 overline font-weight-black">Masti: {{opis.masti}}</v-card-text>
             </div>
           </transition-group>
         </v-card>
@@ -116,4 +117,5 @@ export default {
 .centered-input input {
   text-align: center;
 }
+
 </style>
