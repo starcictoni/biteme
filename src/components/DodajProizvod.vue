@@ -26,7 +26,8 @@ export default {
     ime: String,
     cijena: Number,
     stanje: Number,
-    pic: String
+    pic: String,
+    kolicina: String
   },
   data() {
     return {
@@ -35,7 +36,8 @@ export default {
         itemIme: this.ime,
         itemStanje: 0,
         itemCijena: this.cijena,
-        itemPic: this.pic
+        itemPic: this.pic,
+        itemKolicina: this.kolicina
       },
       errorCart: false,
       errorTekst: "nema sto dodati bato",
