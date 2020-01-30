@@ -116,7 +116,8 @@
               <v-list-item-content>O nama</v-list-item-content>
             </router-link>
           </v-list-item>
-          <v-list-item class="overline"><v-alert v-if="!verified">Račun još nije potvrđen</v-alert></v-list-item>
+          <v-list-item></v-list-item>
+          <v-list-item class="overline align-center"><v-icon>mdi-information</v-icon><v-alert class="pb-0" v-if="!verified">Račun još nije potvrđen</v-alert></v-list-item>
           <v-list-item></v-list-item>
           <v-list-item class="font-weight-bold caption">
             <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>

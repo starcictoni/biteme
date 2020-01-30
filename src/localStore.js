@@ -801,7 +801,7 @@ export default {
     tezina: "jednostavno",
     opis: "full jednostavno",
     brojOsoba: "4 osobe",
-    pic: "https://coolinarika.azureedge.net/images/_variations/1/8/187ce6f508a4ffcc7cd154cafc3b5cdf_header.jpg?v=1",
+    pic: "https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_344/26548_sfs-sirloin-tips-with-steakhouse-creamed-spinach-014",
     show: false,
     namirnice: [
       {
