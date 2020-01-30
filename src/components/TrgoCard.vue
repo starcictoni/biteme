@@ -1,8 +1,8 @@
 <template>
-  <v-app style="background: white !important">
+  <v-app style="background: rgb(255, 230, 0, 0.7) !important">
     <v-row class="justify-left">
       <v-col class="justify-center" sm="12" md="4" v-for="(item,i) in storeItems" :key="item.id">
-        <v-card color="rgb(0, 0, 0, 0)" elevation="3" class="mx-auto mb-12" width="350">
+        <v-card style="border-color: black" color="white" elevation="10" class="mx-auto mb-12" width="450">
           <v-img contain class="align-end justify-center" :src="item.pic" height="200px"></v-img>
           <!-- Slika proizvoda -->
           <v-row class="mx-0 align-center">

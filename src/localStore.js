@@ -688,26 +688,46 @@ export default {
     pic: "https://coolinarika.azureedge.net/images/_variations/a/1/a1b3cb9019e75f6838655c7e6644345d_header.jpg?v=11",
     namirnice: [
       {
-        //id
-        //ime
-        //cijena
-        //stanje
-        //pic
+        id: 36,
+        ime: "Boškarin",
+        cijena: 99.99,
+        stanje: 1,
+        pic: "https://www.crogourmet365.hr/media/__sized__/image/33/b9/shutterstock_732177829-crop-c0-5__0-5-900x600-70.jpg",
       },
       {
-        //ime
-        //cijena
-        //stanje
+        id: 23,
+        ime: "Rajčica",
+        cijena: 11.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rajcica32-300x300.jpg",
       },
       {
-        //ime
-        //cijena
-        //stanje
+        id: 18,
+        ime: "Mrkva",
+        cijena: 1.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/mrkva7-300x300.jpg",
       },
       {
-        //ime
-        //cijena
-        //stanje
+        id: 16,
+        ime: "Luk",
+        cijena: 8.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/luk7-300x300.jpg",
+      },
+      {
+        id: 27,
+        ime: "Zel. salata",
+        cijena: 12.99,
+        stanje: 1,
+        pic:"https://cdn.agroklub.com/upload/images/plant-specie/thumb/salata14-300x300.jpg",
+      },
+      {
+        id: 17,
+        ime: "Matovilac",
+        cijena: 19.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/matovilac-300x300.jpg",
       },
     ],
   },
@@ -723,19 +743,53 @@ export default {
     show: false,
     namirnice: [
       {
-        //ime
-        //cijena
-        //stanje
+        id: 34,
+        ime: "Svinjetina",
+        cijena: 29.99,
+        stanje: 1,
+        pic: "https://gastro.24sata.hr/media/img/41/ae/93567f22e885d40e8f63.jpeg",
       },
       {
-        //ime
-        //cijena
-        //stanje
+        id: 16,
+        ime: "Luk",
+        cijena: 8.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/luk7-300x300.jpg",
       },
       {
-        //ime
-        //cijena
-        //stanje
+        id: 12,
+        ime: "Krumpir",
+        cijena: 4.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/krumpir26-300x300.jpg",
+      },
+      {
+        id: 27,
+        ime: "Zel. salata",
+        cijena: 12.99,
+        stanje: 1,
+        pic:"https://cdn.agroklub.com/upload/images/plant-specie/thumb/salata14-300x300.jpg",
+      },
+      {
+        id: 17,
+        ime: "Matovilac",
+        cijena: 19.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/matovilac-300x300.jpg",
+      },
+      {
+        id: 24,
+        ime: "Rukola",
+        cijena: 19.99,
+        stanje: 1,
+        pic :"https://cdn.agroklub.com/upload/images/plant-specie/thumb/rukola-300x300.jpg",
+      },
+      {
+        id: 25,
+        ime: "Ružmarin",
+        cijena: 23.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/ruzmarin1-300x300.jpg",
       },
     ],
   },
@@ -751,19 +805,46 @@ export default {
     show: false,
     namirnice: [
       {
-        //ime
-        //cijena
-        //stanje
+        id: 31,
+        ime: "Junetina",
+        cijena: 69.99,
+        stanje: 1,
+        pic: "https://rtl-static.cdn.sysbee.net/image/nemasna-junetina-meso-od-zivotinja-hranjenih-travom-sadrzi-zdrave-omega-3-masne-kiseline-koje-cuvaju-zdravlje-srca-i-kardiovaskularnog-sustava-d6da9cc5db3bcbef90eb08b8cba61b36_view_article_new.jpg?v=22",
       },
       {
-        //ime
-        //cijena
-        //stanje
+        id: 28,
+        ime: "Špinat",
+        cijena: 16.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/spinat1-300x300.jpg",
       },
       {
-        //ime
-        //cijena
-        //stanje
+        id: 8,
+        ime: "Endivija",
+        cijena: 8.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/endivija1-300x300.jpg"
+      },
+      {
+        id: 22,
+        ime: "Radič",
+        cijena: 11.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/radic3-300x300.jpg",
+      },
+      {
+        id: 23,
+        ime: "Rajčica",
+        cijena: 11.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/rajcica32-300x300.jpg",
+      },
+      {
+        id: 15,
+        ime: "Lovor",
+        cijena: 8.99,
+        stanje: 1,
+        pic: "https://cdn.agroklub.com/upload/images/plant-specie/thumb/lovor-300x300.jpg",
       },
     ],
   }

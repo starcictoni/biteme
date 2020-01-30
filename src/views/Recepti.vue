@@ -42,7 +42,11 @@
             <div v-show="recipe.show">
               <v-row>
                 <v-col class="ma-5"> <!-- Trebati ce v-for kao što je ispod -->
-                   Namirnice 
+                   <div v-for="(namirnice,key) in recipe.namirnice" :key="key + 0"> 
+                      <v-card-text class="text-left py-1">{{namirnice.ime}}</v-card-text>
+                
+                   </div> 
+              
                 </v-col>
 
                 <v-col> <!-- Opis -->
@@ -50,16 +54,17 @@
                 </v-col>
 
                 <!-- Gumb Dodaj u košaricu -->
-
-              <!-- <div v-show="grocery.show" v-for="(opis,key) in grocery.opis" :key="key + 0"> -->
-                <!-- <v-card-text class="text-left textbg">Kalorije: </v-card-text>
-                <v-card-text class="text-left textbg">Bjelančevine: </v-card-text>
-                <v-card-text class="text-left textbg">Ugljikohidrati: </v-card-text>
-                <v-card-text class="text-left textbg">Masti: </v-card-text> -->
-              <!-- </div> {{opis.kalorije}} {{opis.bjelancevine}} {{opis.ugljikohidrati}} {{opis.masti}}-->
+                
               </v-row>
             </div>
 
+              <!-- <DodajProizvod
+                :id="recipe.namirnice.id"
+                :ime="recipe.namirnice.ime"
+                :stanje="recipe.namirnice.stanje"
+                :cijena="recipe.namirnice.cijena"
+                :pic="recipe.namirnice.pic"
+              ></DodajProizvod> -->
 
         <!-- <DodajProizvod
             :id="item.id"
@@ -77,10 +82,12 @@
 </template>
 <script>
 import localStore from "@/localStore.js";
+import DodajProizvod from "@/components/DodajProizvod.vue";
 
 export default {
   name: "recepti",
-  components: {},
+  components: {DodajProizvod
+  },
   methods: {
 
   },
