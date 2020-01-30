@@ -18,7 +18,7 @@
         </thead>
         <!-- Ako je kosarica prazna pokazi poruku -->
         <tbody v-if="kupovina === undefined || kupovina.length == 0" >
-            <p class="font-weight-black text-center mt-5">KOSARICA JE PRAZNA</p>
+            <p class="font-weight-black text-center mt-5">KOŠARICA JE PRAZNA</p>
         </tbody>
 
         <tbody v-else>
