@@ -527,7 +527,7 @@ export default {
     },
     {
       id: 27,
-      ime: "Zelena salata",
+      ime: "Zel. salata",
       opis: [{
         kalorije: 14,
         masti: 0.2,
