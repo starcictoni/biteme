@@ -7,7 +7,6 @@
             <v-card-title>{{recipe.ime}}</v-card-title>
             <v-card-subtitle class="mt-1">
               <v-row>
-                <v-divider />
                 <div class="ml-4" v-if="recipe.ikona == 3">
                     <v-icon class="">mdi-speedometer</v-icon>
                     {{recipe.tezina}}
