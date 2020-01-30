@@ -20,20 +20,23 @@
                 >
                 </v-text-field>
                     <div class=" text-center pt-0 pb-0 mt-3">
-                    <v-btn tile @click.prevent="resend" v-model="validate" type="submit" class="mt-0 ma-2" outlined color="black"> Pošalji </v-btn>
+                    <v-btn tile @click.prevent="resend"  type="submit" class="mt-0 ma-2" outlined color="black"> Pošalji </v-btn>
                     </div>
                  <div>   
-                    <div v-if="validate">
-                      <v-alert v-model="success" tile type="success">
-                        {{success1}}
+                  
+                    <div v-if="success">
+                      <v-alert tile type="success">
+                        {{successtext}}
                       </v-alert>
                     </div>
-                    <div v-if="validate">
-                      <v-alert v-model="error1" tile type="error">
-                        {{error11}}
+                    <div v-if="error1">
+                      <v-alert tile type="error">
+                        {{errortext}}
                       </v-alert>
-                      <v-alert v-model="error2" tile type="error">
-                        {{error21}}
+                    </div>
+                    <div v-if="error2">
+                      <v-alert tile type="error">
+                        {{errortext2}}
                       </v-alert>
                     </div>
                 </div>
@@ -50,38 +53,42 @@ export default {
     data () {
       return {
         email: "",
-        error11: "Email je nevažeći.",
-        error21: "Korisnik nije pronađen.",
-        success1: "Email je poslan.",
+        errortext: "Email je nevažeći.",
+        errortext2: "Korisnik nije pronađen.",
+        successtext: "Email je poslan.",
         error1: false,
         error2: false,
-        success: true,
-        validate: false,
+        success: false,
       }
     },
     methods: {
         resend () {
+          console.log(this.success);
+          console.log(this.error1);
+          console.log(this.error2);
             var auth = firebase.auth();
             var emailAddress = this.email;
-            auth.sendPasswordResetEmail(emailAddress).then(function() {
-            // Email sent
+            auth.sendPasswordResetEmail(emailAddress)
+            .then(function(success) {
+                // Email sent
                 //poziv successa
-                console.log("Mail je poslan");
-                this.validate = true;
-            }).catch(function(error) {
+                success=true;
+                alert("Email je poslan");
+            }).catch(function(error, error1, error2) {
                         var errorCode = error.code;
                         var errorMessage = error.message;
                         // [START_EXCLUDE]
                         if (errorCode == 'auth/invalid-email') {
-                          error2=true;
+                          error1=true;
                           alert(errorMessage);
                         } else if (errorCode == 'auth/user-not-found') {
-                          error1=true;
+                          error2=true;
                           alert(errorMessage);
                         }
                         console.log(error);
                         // [END_EXCLUDE]
                       });
+
         }
     }
 }

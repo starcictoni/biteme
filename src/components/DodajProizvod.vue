@@ -50,7 +50,6 @@ export default {
       //found je varijabla koja usporeduje id objekta (item) kojeg zelim spremiti sa id-evima u polje kupovina.
       //na takav nacin izbjegavam dupliciranje objekata u košarici nego se samo dodaje kolicina
       let found = localStore.kupovina.find(x => x.itemId == this.item.itemId);
-
       if (found) {
         this.addCart = true;
         found.itemStanje += this.stanje; // povecaj za unesenu kolicinu
@@ -61,7 +60,10 @@ export default {
         localStore.kupovina.push(this.item);
         this.item.itemStanje = this.stanje;
       } else {
+        console.log(this.stanje)
            this.errorCart = true;
+                 
+
       }
     }
   }
