@@ -6,7 +6,7 @@
             Započnite godinu zdravo
             </div>
             <div style="-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #000000;" class="display-1 font-weight-black white--text text-center">
-            Ovaj tjedan u Bite.me zeleno nesto
+            uz Bite.me ponudu sezonskog povrća!
             </div>
             <v-btn fab large color="#ffe600" class="mt-5"  @click="$vuetify.goTo('.white', [500, 0, 'easeInOutCubic'])">
             <v-icon large color="black">mdi-chevron-down</v-icon>

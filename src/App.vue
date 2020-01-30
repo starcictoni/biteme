@@ -2,17 +2,16 @@
   <v-app id="app" style="background-color: white">
     <span>
       <!-- Drawer -->
-
       <v-navigation-drawer temporary app v-model="drawer" light disable-resize-watcher>
         <v-list class="pt-0" v-if="!authenticated">
-           <v-list-item style="background-color: black" hidden-md-and-up height="105px" class="justify-center mb-0">
+          <v-list-item style="background-color: black" height="105px" class="justify-center mb-0">
             <v-btn
               retain-focus-on-click
               text
               dark
               tile
               small
-              class="font-weight-black listbtn"
+              class="font-weight-black listbtn hidden-md-and-up"
               to="/Prijava"
             >PRIJAVA</v-btn>
             <v-btn
@@ -21,11 +20,11 @@
               small
               dark
               tile
-              class="font-weight-black listbtn"
+              class="font-weight-black listbtn hidden-md-and-up"
               @click="logout"
               to="/Registracija"
             >REGISTRACIJA</v-btn>
-            </v-list-item>
+          </v-list-item>
           <v-list-item class="justify-center">
             <img src="bmlogo.png" width="130px" />
           </v-list-item>
@@ -40,17 +39,45 @@
               <v-list-item-content>Trgovina</v-list-item-content>
             </router-link>
           </v-list-item>
-          <v-list-item/><v-list-item/><v-list-item/><v-list-item/><v-list-item/><v-list-item/>
+          <v-list-item />
+          <v-list-item />
+          <v-list-item />
+          <v-list-item />
+          <v-list-item />
+          <v-list-item />
           <v-list-item style="background-color: #ffe600" class="font-weight-bold caption">
             <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
-          </v-list-item > 
-          <v-list-item style="background-color: #ffe600" class="justify-center mt-n3"> <v-icon size="33" class="mediaicon2">mdi-facebook</v-icon><v-icon size="33" class="mx-2 mediaicon2">mdi-instagram</v-icon><v-icon size="33" class="mediaicon2">mdi-twitter-circle</v-icon>
+          </v-list-item>
+          <v-list-item style="background-color: #ffe600" class="justify-center mt-n3">
+            <v-icon size="33" class="mediaicon2">mdi-facebook</v-icon>
+            <v-icon size="33" class="mx-2 mediaicon2">mdi-instagram</v-icon>
+            <v-icon size="33" class="mediaicon2">mdi-twitter-circle</v-icon>
           </v-list-item>
         </v-list>
 
-        <v-list v-if="authenticated">
-          <!--  <v-list-item two-line></v-list-item> -->
-          <v-list-item two-line style="background-color: #ffe600">
+        <v-list class="pt-0" v-if="authenticated">
+          <v-list-item class="justify-center" style="background-color: black">
+            <v-btn
+              retain-focus-on-click
+              text
+              dark
+              tile
+              small
+              class="listbtn"
+              to="/Profil"
+            >TVOJ PROFIL</v-btn>
+            <v-btn
+              retain-focus-on-click
+              text
+              small
+              dark
+              tile
+              class="listbtn"
+              @click="logout"
+              to="/"
+            >ODJAVA</v-btn>
+          </v-list-item>
+          <v-list-item class="mt-2" two-line style="background-color: #ffe600">
             <v-list-item-avatar class="mr-3">
               <img :src="photo || 'def-pic.jpg'" />
             </v-list-item-avatar>
@@ -59,27 +86,12 @@
               <v-list-item-subtitle>Logged In</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item height="105px" class="justify-center mt-1 mb-n4">
-            <v-btn
-              retain-focus-on-click
-              text
-              tile
-              small
-              class="font-weight-black listbtn"
-              to="/Profil"
-            >TVOJ PROFIL</v-btn>
-            <v-btn
-              retain-focus-on-click
-              text
-              small
-              tile
-              class="font-weight-black listbtn"
-              @click="logout"
-              to="/"
-            >ODJAVA</v-btn>
-          </v-list-item>
           <v-list-item class="justify-center mt-3">
-            <img src="bmlogo.png" width="130px" />
+            <router-link to="/">
+              <v-list-item-content>
+                <img src="bmlogo.png" width="130px" />
+              </v-list-item-content>
+            </router-link>
           </v-list-item>
           <v-list-item class="tile mt-1">
             <router-link class="tile" to="/namirnice">
@@ -109,7 +121,10 @@
           <v-list-item class="font-weight-bold caption">
             <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
           </v-list-item>
-          <v-list-item class="justify-center mt-n3"> <v-icon size="33" class="mediaicon">mdi-facebook</v-icon><v-icon size="33" class="mx-2 mediaicon">mdi-instagram</v-icon><v-icon size="33" class="mediaicon">mdi-twitter-circle</v-icon>
+          <v-list-item class="justify-center mt-n3">
+            <v-icon size="33" class="mediaicon">mdi-facebook</v-icon>
+            <v-icon size="33" class="mx-2 mediaicon">mdi-instagram</v-icon>
+            <v-icon size="33" class="mediaicon">mdi-twitter-circle</v-icon>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -119,9 +134,13 @@
         <v-row wrap class="justify-center">
           <v-col>
             <v-app-bar-nav-icon @click="drawer = !drawer" class="logo"></v-app-bar-nav-icon>
-            
-            
-            <v-btn text to="/kosarica" class="ma-0">
+
+            <v-btn
+              text
+              to="/kosarica"
+              v-bind:class="[cartCounter ? '' : 'hidden-sm-and-up']"
+              class="ma-0"
+            >
               <v-icon>mdi-cart</v-icon>
               {{cartCounter}}
             </v-btn>
@@ -139,7 +158,6 @@
           </v-col>
 
           <v-col align-self="center" class="justify-center hidden-sm-and-down">
-
             <div v-if="!authenticated" class="mx-auto hidden-sm-and-down v-responsive">
               <v-btn
                 retain-focus-on-click
@@ -161,17 +179,6 @@
             </div>
           </v-col>
         </v-row>
-
-        <!-- <v-spacer class="hidden-md-and-up"></v-spacer>
-        <v-spacer class="hidden-sm-and-down"></v-spacer>-->
-        <!-- 
-        <v-spacer class="hidden-sm-and-down"></v-spacer>-->
-
-        <!-- <div v-if="authenticated" class="hidden-sm-and-down">
-        <v-alert v-if="!verified" type="error">Nije autenticiran</v-alert>-->
-        <!-- <v-btn retain-focus-on-click text to="/Profil">PROFIL</v-btn>
-          <v-btn outlined retain-focus-on-click tile color="white" @click.prevent="logout" to="/" data-cy="logout">ODJAVA</v-btn>
-        </div>-->
       </v-app-bar>
     </span>
 
@@ -192,11 +199,10 @@ export default {
   //--------------------------------------------------
   methods: {
     logout() {
-      
       console.log("pozvao je odjavu");
       firebase.auth().signOut();
-       this.authenticated = false;
-       this.drawer = false;
+      this.authenticated = false;
+      this.drawer = false;
     }
   },
   //--------------------------------------------------
@@ -274,19 +280,19 @@ a {
   background-color: #ffe600 !important;
   -webkit-text-fill-color: black;
 }
-.mediaicon{
- -webkit-text-fill-color: black;
+.mediaicon {
+  -webkit-text-fill-color: black;
 }
-.mediaicon2{
- -webkit-text-fill-color: black;
+.mediaicon2 {
+  -webkit-text-fill-color: black;
 }
 
-.mediaicon:hover{
+.mediaicon:hover {
   -webkit-text-fill-color: #ffe600 !important;
   font-size: 40px !important;
 }
-.mediaicon2:hover{
- font-size: 40px !important;
+.mediaicon2:hover {
+  font-size: 40px !important;
 }
 </style>
 

@@ -11,7 +11,7 @@
             <th class="text-center">Ukupna cijena</th>
             <th class="text-center">
               <v-btn @click="izbrisiSve()" class="izbrisiSve" depressed tile outlined>
-                Izbrisi sve
+                Izbriši sve
               </v-btn>
             </th>
           </tr>

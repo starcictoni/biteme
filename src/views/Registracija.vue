@@ -8,7 +8,7 @@
               <img src="logoletter.png" alt="LOGO">
             </v-avatar>
           </v-row>
-        <h3 class="dobrodosli-reg">Neki lijepi ugodni pozdrav</h3>
+        <h3 class="dobrodosli-reg">Dobrodošli na Bite.me!</h3>
         <v-form @submit.prevent="signup">
           <!-- Username -->
 

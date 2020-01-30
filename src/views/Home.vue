@@ -1,27 +1,12 @@
 <template>
   <span>
-    <!-- {{this.username}} -->
     <hero></hero>
     <heroauth></heroauth>
     <homekoraci></homekoraci>
     <homeimg></homeimg>
-    <homeeko></homeeko>
-    
-    
-    <!-- <div class="videowrapper"> OVO JE U TRENUTNO TESTNOJ FAZI 
-      <div style="background-color: black" class="view hm-black-strong">
-        <video stlyle="color: black" class="video-fluid videocrop" autoplay loop muted>
-          <source
-            src="https://storage.googleapis.com/coverr-main/mp4%2F4X4-in-Vinyard.mp4"
-            type="video/mp4"
-          />
-        </video>
-      </div>
-      <div style="color: black" justify="center" class="overlay"><h3 class="h3-responsive align-center justify-center">Light mask</h3></div>
-
-    </div>
-    <homekoraci></homekoraci> -->
-  </span>
+    <homeeko></homeeko>  
+  </span
+  >
 </template>
 
 <script>
