@@ -1,6 +1,7 @@
 export default {
     authenticated: false,
     verified: false,
+    search:'',
     username: "",
     email: "",
     drawer: false,
@@ -661,7 +662,7 @@ export default {
     },
     {
       id: 36,
-      ime: "Bošarin",
+      ime: "Boškarin",
       opis: [{
         kalorije: 232,
         masti: 18.4,
@@ -674,7 +675,99 @@ export default {
       stanje: 0,
       pic: "https://www.crogourmet365.hr/media/__sized__/image/33/b9/shutterstock_732177829-crop-c0-5__0-5-900x600-70.jpg", 
     },
-  ]
+  ],
+  recepies: [{
+    id: 46,
+    ime: "Šugo od boškarina",
+    vrijeme: "180min",
+    ikona: 3,
+    tezina: "teško",
+    opis: "nije jednostavno",
+    brojOsoba: "8 osoba",
+    show: false,
+    pic: "https://coolinarika.azureedge.net/images/_variations/a/1/a1b3cb9019e75f6838655c7e6644345d_header.jpg?v=11",
+    namirnice: [
+      {
+        //id
+        //ime
+        //cijena
+        //stanje
+        //pic
+      },
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+    ],
+  },
+  {
+    id: 47,
+    ime: "Nedjeljni ručak",
+    vrijeme: "120min",
+    ikona: 2,
+    tezina: "složeno",
+    opis: "ne bas full jednostavno",
+    brojOsoba: "4 osobe",
+    pic: "https://coolinarika.azureedge.net/images/_variations/d/2/d233b4d475d2def0eedc5a30f9dd27b4_header.jpg?v=3",
+    show: false,
+    namirnice: [
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+    ],
+  },
+  {
+    id: 48,
+    ime: "Juneće meso sa špinatom",
+    vrijeme: "40min",
+    ikona: 1,
+    tezina: "jednostavno",
+    opis: "full jednostavno",
+    brojOsoba: "4 osobe",
+    pic: "https://coolinarika.azureedge.net/images/_variations/1/8/187ce6f508a4ffcc7cd154cafc3b5cdf_header.jpg?v=1",
+    show: false,
+    namirnice: [
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+      {
+        //ime
+        //cijena
+        //stanje
+      },
+    ],
+  }
+  ],
 };
 
 
