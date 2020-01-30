@@ -104,7 +104,7 @@
               <v-list-item-content>O nama</v-list-item-content>
             </router-link>
           </v-list-item>
-          <v-list-item></v-list-item>
+          <v-list-item class="overline"><v-alert v-if="!verified">Račun još nije potvrđen</v-alert></v-list-item>
           <v-list-item></v-list-item>
           <v-list-item class="font-weight-bold caption">
             <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
@@ -167,8 +167,8 @@
         <!-- 
         <v-spacer class="hidden-sm-and-down"></v-spacer>-->
 
-        <!-- <div v-if="authenticated" class="hidden-sm-and-down">
-        <v-alert v-if="!verified" type="error">Nije autenticiran</v-alert>-->
+        <!-- <div v-if="authenticated" class="hidden-sm-and-down"> -->
+        
         <!-- <v-btn retain-focus-on-click text to="/Profil">PROFIL</v-btn>
           <v-btn outlined retain-focus-on-click tile color="white" @click.prevent="logout" to="/" data-cy="logout">ODJAVA</v-btn>
         </div>-->
