@@ -10,15 +10,13 @@
             <th class="text-center">Količina</th>
             <th class="text-center">Ukupna cijena</th>
             <th class="text-center">
-              <v-btn @click="izbrisiSve()" class="izbrisiSve" depressed tile outlined>
-                Izbrisi sve
-              </v-btn>
+              <v-btn @click="izbrisiSve()" class="izbrisiSve" depressed tile outlined>Izbrisi sve</v-btn>
             </th>
           </tr>
         </thead>
         <!-- Ako je kosarica prazna pokazi poruku -->
-        <tbody v-if="kupovina === undefined || kupovina.length == 0" >
-            <p class="font-weight-black text-center mt-5">KOŠARICA JE PRAZNA</p>
+        <tbody v-if="kupovina === undefined || kupovina.length == 0">
+          <p class="font-weight-black text-center mt-5">KOŠARICA JE PRAZNA</p>
         </tbody>
 
         <tbody v-else>
@@ -44,10 +42,11 @@
           <td />
           <td />
           <th class="text-center">Ukupan iznos: {{iznos()}} kn</th>
-          <td class="text-center">
-            <v-btn class="placanje" tile depressed>
-                Plaćanje
-            </v-btn>
+          <td v-if="!authenticated" class="text-center">
+            <v-btn to="/Prijava" class="placanje" tile depressed>Plaćanje</v-btn>
+          </td>
+          <td v-else class="text-center">
+            <v-btn class="placanje" tile depressed>Plaćanje</v-btn>
           </td>
         </tr>
       </template>
@@ -94,16 +93,16 @@ export default {
   height: 100%;
 }
 .izbrisiSve:hover {
-  background-color:#ffe600 !important;
+  background-color: #ffe600 !important;
   -webkit-text-fill-color: black !important;
   border-color: white !important;
 }
 .placanje {
-  background-color:#ffe600 !important;
+  background-color: #ffe600 !important;
   -webkit-text-fill-color: black !important;
 }
 .placanje:hover {
-  background-color:black !important;
+  background-color: black !important;
   -webkit-text-fill-color: white !important;
 }
 </style>

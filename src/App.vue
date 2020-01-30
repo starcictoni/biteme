@@ -197,6 +197,10 @@ export default {
       firebase.auth().signOut();
        this.authenticated = false;
        this.drawer = false;
+        while (this.kupovina.length) {
+          this.kupovina.pop();
+        }
+      localStore.cartCounter = 0;
     }
   },
   //--------------------------------------------------
