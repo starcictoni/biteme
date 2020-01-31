@@ -112,7 +112,6 @@ export default {
               .then(function(result) {
               var token = result.credential.accessToken;  // This gives you a Google Access Token. You can use it to access the Google API.
               var user = result.user;  // The signed-in user info.
-              // ...
               })
               .catch(function(error) {
               // Handle Errors here.

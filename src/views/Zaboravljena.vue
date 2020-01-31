@@ -22,26 +22,8 @@
                     <div class=" text-center pt-0 pb-0 mt-3">
                     <v-btn tile @click.prevent="resend"  type="submit" class="mt-0 ma-2" outlined color="black"> Pošalji </v-btn>
                     </div>
-                 <div>   
-                  
-                    <div v-if="success">
-                      <v-alert tile type="success">
-                        {{successtext}}
-                      </v-alert>
-                    </div>
-                    <div v-if="error1">
-                      <v-alert tile type="error">
-                        {{errortext}}
-                      </v-alert>
-                    </div>
-                    <div v-if="error2">
-                      <v-alert tile type="error">
-                        {{errortext2}}
-                      </v-alert>
-                    </div>
-                </div>
                 </v-form>
-                </v-sheet>
+          </v-sheet>
       </v-col>
     </v-row>
   </v-container>
@@ -53,42 +35,27 @@ export default {
     data () {
       return {
         email: "",
-        errortext: "Email je nevažeći.",
-        errortext2: "Korisnik nije pronađen.",
-        successtext: "Email je poslan.",
-        error1: false,
-        error2: false,
-        success: false,
       }
     },
     methods: {
         resend () {
-          console.log(this.success);
-          console.log(this.error1);
-          console.log(this.error2);
             var auth = firebase.auth();
             var emailAddress = this.email;
             auth.sendPasswordResetEmail(emailAddress)
             .then(function(success) {
                 // Email sent
-                //poziv successa
-                success=true;
                 alert("Email je poslan");
             }).catch(function(error, error1, error2) {
                         var errorCode = error.code;
                         var errorMessage = error.message;
-                        // [START_EXCLUDE]
                         if (errorCode == 'auth/invalid-email') {
-                          error1=true;
+
                           alert(errorMessage);
                         } else if (errorCode == 'auth/user-not-found') {
-                          error2=true;
                           alert(errorMessage);
                         }
                         console.log(error);
-                        // [END_EXCLUDE]
                       });
-
         }
     }
 }

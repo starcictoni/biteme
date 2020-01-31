@@ -2,7 +2,6 @@
   <v-container>
     <v-card-actions class="justify-center pa-0">
       <v-btn class="dodajbtn" tile depressed outlined @click="dodajProizvod()">DODAJ U KOŠARICU</v-btn>
-
       <!-- Error u slucaju kada je kolicina nula a korisnik stisne dodaj u kosaricu   -->
       <v-snackbar color="white" style=" -webkit-text-fill-color: black !important;" v-model="errorCart">
         {{ errorTekst }}
@@ -54,7 +53,6 @@ export default {
         this.addCart = true;
         found.itemStanje += this.stanje; // povecaj za unesenu kolicinu
       } else if (this.stanje > 0) {
-        //ako korisnik nije odabrao kolicinu nemoj dodat nista u kosaricu
         this.addCart = true;
         localStore.cartCounter++;
         localStore.kupovina.push(this.item);
@@ -62,8 +60,6 @@ export default {
       } else {
         console.log(this.stanje)
            this.errorCart = true;
-                 
-
       }
     }
   }

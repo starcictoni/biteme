@@ -1,25 +1,14 @@
 <template>
     <v-container fill-height fluid class="backgroundimg1" style="max-height: 100%;">
     <v-row class="justify-center text-center">
-      <!-- ODABIR SLIKE NEK BUDE S DESNE STRANE DOK CE OSTATAK BITI S LIJEVE -->
-      <!-- REAUTENTICIRAJ KAKO BI DOBIO STARU LOZINKU, VALJDA?-->
         <v-col cols="11" md="6">
-          <!-- <v-sheeet elevation="12" class="pa-12 pt-12 mb-12 text-center"> -->
+
             <h3 class="dobrodosli">Uredi svoj profil</h3>
-            <h3 class="idipavidi">Sve će biti u redu</h3>
+            <h3 class="idipavidi">Ali nemoj previše</h3>
             <v-avatar class="mb-12" size="180" >
               <img :src="photo || 'def-pic.jpg'" alt="LOGO"> <!-- User photo -->
             </v-avatar>
-            <!-- <v-btn class="mt-8 mb-1" block color="secondary" dark>Uredite profil</v-btn> -->
-            <!-- <div class="separator mt-3 mb-3"> </div> -->
 
-            <!-- Ovaj dio se salje u storage -->
-            <!-- {{username}}
-            {{firstname}}
-            {{lastname}}
-            {{adresa}} -->
-          
-            
             <!--First name -->
             <v-text-field
             v-model="firstname"
@@ -94,7 +83,6 @@
             @click:append="show2 = !show2"
           ></v-text-field> 
           
-          <!-- Ovo se ne salje na bazu -->
           <!-- newPassword -->
           <v-text-field
             v-model="newPassword"
@@ -126,13 +114,9 @@
             ></croppa>
             </v-card>
           </form>
-          <!-- </div> -->
           <div>
             <v-btn tile type="submit" @click="postnewimage" class="ma-2" outlined color="black"> Promijeni profilnu </v-btn>
           </div>
-
-            
-
         </v-col>
     </v-row>
 
@@ -146,10 +130,7 @@ export default {
     data() {
       return localStore;
 },
-
-
 mounted() {
-  console.log("Pozvan je profil mounted");
   var user = firebase.auth().currentUser;
 
   db.collection("users")
@@ -167,10 +148,6 @@ mounted() {
       console.log("Document does not exist")
     }
     })
-    // .catch(error => {
-    //   console.log(error);
-    // })
-
 },
   methods: {
     postnewimage() {

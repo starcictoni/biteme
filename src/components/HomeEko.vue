@@ -1,17 +1,25 @@
 <template>
-  <v-container fill-width fluid class="justify-center mt-12 ekobg" style=" height: 60vh; max-width: 80%">
+  <v-container
+    fill-width
+    fluid
+    class="justify-center mt-12 ekobg"
+    style=" height: 60vh; max-width: 80%"
+  >
     <div fill-height style="height: 60vh;">
       <v-row class="mt-8 mb-0 py-0 justify-center align-center text-center">
-        <v-col cols="10" >
-          <div v-bind:class="[$vuetify.breakpoint.mdAndUp ? 'display-2' : 'headline']"
+        <v-col cols="10">
+          <div
+            v-bind:class="[$vuetify.breakpoint.mdAndUp ? 'display-2' : 'headline']"
             height="100%"
             class="mb-12 font-weight-bold black--text text-center"
           >Koristeći Bite.me, pomažete lokalnom gospodarstvu i čuvate okoliš!</div>
-
-          <div v-bind:class="[$vuetify.breakpoint.mdAndUp ? 'title' : 'subtitle-2']"
+          <div
+            v-bind:class="[$vuetify.breakpoint.mdAndUp ? 'title' : 'subtitle-2']"
             class="mb-4 font-weight-bold"
           >Surađujući sa obiteljskim poljoprivrednim gospodarstvima i malim tvrtkama, na vaš stol stavljamo isključivo svježu hranu i namirnice ekološkoga uzgoja.</div>
-          <div v-bind:class="[$vuetify.breakpoint.mdAndUp ? 'title' : 'subtitle-2']" >Tako eliminiramo posrednike, a samim time i nepotrebno zagađenje.</div>
+          <div
+            v-bind:class="[$vuetify.breakpoint.mdAndUp ? 'title' : 'subtitle-2']"
+          >Tako eliminiramo posrednike, a samim time i nepotrebno zagađenje.</div>
         </v-col>
       </v-row>
     </div>
@@ -31,7 +39,6 @@ export default {
   background-position: center center;
   z-index: 0;
   border: 20px solid #ffe600;
-
 }
 .overlay {
   position: relative;

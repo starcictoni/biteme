@@ -1,5 +1,5 @@
 <template>
-  <v-app background="">
+  <v-app background>
       <v-container fluid class="trgbackground">
         <TrgoCard></TrgoCard>
       </v-container>

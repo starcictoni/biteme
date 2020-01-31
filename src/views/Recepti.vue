@@ -51,7 +51,6 @@
                 :key="key + 0"
               >
                 <v-col class="my-0">
-                  <!-- Trebati ce v-for kao što je ispod -->
                   <v-card-text class="text-left py-1">{{namirnice.ime}}</v-card-text>
                 </v-col>
                 <v-col class="py-0">
@@ -77,7 +76,9 @@ import DodajProizvod from "@/components/DodajProizvod.vue";
 
 export default {
   name: "recepti",
-  components: { DodajProizvod },
+  components: { 
+    DodajProizvod 
+    },
   methods: {},
   data() {
     return localStore;

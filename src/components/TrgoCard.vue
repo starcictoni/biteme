@@ -2,7 +2,13 @@
   <v-app style="background: rgb(255, 230, 0, 0.7) !important">
     <v-row class="justify-left">
       <v-col class="justify-center" sm="12" md="4" v-for="(item,i) in storeItems" :key="item.id">
-        <v-card style="border-color: black" color="white" elevation="10" class="mx-auto mb-12" width="450">
+        <v-card
+          style="border-color: black"
+          color="white"
+          elevation="10"
+          class="mx-auto mb-12"
+          width="450"
+        >
           <v-img contain class="align-end justify-center" :src="item.pic" height="200px"></v-img>
           <!-- Slika proizvoda -->
           <v-row class="mx-0 align-center">
@@ -19,7 +25,6 @@
               </v-card-subtitle>
             </v-col>
           </v-row>
-
           <v-row
             style="background-color: #ffe600 !important"
             class="mb-0"
@@ -37,7 +42,6 @@
               ></DodajProizvod>
               <!-- Dodaj nesto -->
             </v-col>
-
             <v-col cols="5">
               <v-card-actions width="15px" style="height: 74px;" class="justify-center">
                 <!-- Kolicina -->
@@ -64,7 +68,6 @@
               </v-card-actions>
             </v-col>
           </v-row>
-
           <v-card-actions class="justify-center">
             <!-- Show more/opis -->
             <v-btn text @click="item.show =! item.show">
@@ -91,7 +94,6 @@ export default {
   data() {
     return localStore;
   },
-  methods: {}
 };
 </script>
 

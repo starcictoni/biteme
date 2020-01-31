@@ -135,11 +135,6 @@ export default {
   },//data
   methods: {
     signup () {
-      console.log("Pozvao je signup");
-      console.log(this.username);
-      console.log(this.email);
-      console.log(this.password);
-      console.log(this.password2);
       var user = firebase.auth().currentUser;
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
           .then()

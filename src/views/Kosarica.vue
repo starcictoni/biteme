@@ -65,7 +65,6 @@ export default {
     return localStore;
   },
   methods: {
-    //brisanje itema
     izbrisiItem(id) {
       this.kupovina.splice(id, 1); //id oznacava gdje se nalazi objekt u polje kupovina, 1 je broj elemenata za brisati
       localStore.cartCounter--;

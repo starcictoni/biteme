@@ -15,7 +15,6 @@ import heroauth from "@/components/HeroAuth";
 import homekoraci from "@/components/HomeKoraci";
 import homeimg from "@/components/HomeImg";
 import homeeko from "@/components/HomeEko";
-import localStore from "@/localStore.js";
 
 export default {
   name: "home",
@@ -26,11 +25,10 @@ export default {
     homeimg,
     homeeko
   },
-  data() {
-    return localStore;
-  }
+
 };
 </script>
+
 <style lang="scss">
 .videowrapper {
   width: 100%;

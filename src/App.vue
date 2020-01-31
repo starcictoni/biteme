@@ -117,7 +117,10 @@
             </router-link>
           </v-list-item>
           <v-list-item></v-list-item>
-          <v-list-item v-if="!verified" class="overline align-center"><v-icon>mdi-information</v-icon><v-alert class="pb-0">Račun još nije potvrđen</v-alert></v-list-item>
+          <v-list-item v-if="!verified" class="overline align-center">
+            <v-icon>mdi-information</v-icon>
+            <v-alert class="pb-0">Račun još nije potvrđen</v-alert>
+          </v-list-item>
           <v-list-item></v-list-item>
           <v-list-item class="font-weight-bold caption">
             <v-list-item-content class="justify-center">Prijavite se na newsletter</v-list-item-content>
@@ -200,13 +203,12 @@ export default {
   //--------------------------------------------------
   methods: {
     logout() {
-      console.log("pozvao je odjavu");
       firebase.auth().signOut();
-       this.authenticated = false;
-       this.drawer = false;
-        while (this.kupovina.length) {
-          this.kupovina.pop();
-        }
+      this.authenticated = false;
+      this.drawer = false;
+      while (this.kupovina.length) {
+        this.kupovina.pop();
+      }
       localStore.cartCounter = 0;
     }
   },
@@ -235,22 +237,11 @@ export default {
                 console.log(`Authenticated: ${this.email} and verified`);
               } else {
                 this.verified = false;
-                console.log("Email is not verified, zasto dvaput?");
+                console.log("Email is not verified");
               }
-              // svaki put kada refresham stranicu mi se prebaci na home (sb)
-              // if (this.$route.name !== "home")
-              //   this.$router.push({ name: "home" });
             } //if(doc.exists)
-
-            // else{   OVO TREBA SREDITI TS
-            //   console.log("Document does not exist")
-            // }
           }); //then
       }
-
-      // .catch(error => {
-      //   console.log(error);
-      // })
     });
   } //mounted
 };

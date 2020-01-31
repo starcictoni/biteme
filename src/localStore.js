@@ -123,16 +123,6 @@ export default {
       show: false, 
       pic: "https://www.oven-racks.com/img/black-baking-tray.jpg"
     },
-    // {
-    //   id: '10', 
-    //   ime: "Tanjuri", 
-    //   cijena: 259.90, 
-    //   opis: "Neka kvalitetno posuđe bude temelj vaše kuhinje! Bez alata nema zanata, a bez kvalitetnog posuđa nema vrhunske kuhinje! Set uključuje 12 tanjura", 
-    //   kolicina: "kom", 
-    //   stanje: 0, 
-    //   show: false, 
-    //   pic: "http://freefoodphotos.com/imagelibrary/crockery_cookware/slides/clean_plates.jpg"
-    // },
   ],
   groceries: [
     {

@@ -1,13 +1,9 @@
 <template>
   <v-container fluid class="backgroundimg">
-
     <NamCard></NamCard>
-
-    <!-- <v-content>
-        <router-view></router-view>
-    </v-content>-->
   </v-container>
 </template>
+
 <script>
 import NamCard from "@/components/NamCard.vue";
 

@@ -1,13 +1,7 @@
 <template>
   <v-app style="background: rgb(0,0,0,0) !important">
     <v-row class="justify-left">
-      <v-col
-        class="justify-center"
-        sm="12"
-        md="3"
-        v-for="grocery in groceries"
-        :key="grocery.id"
-      >
+      <v-col class="justify-center" sm="12" md="3" v-for="grocery in groceries" :key="grocery.id">
         <v-card color="rgb(255, 0, 0, 0)" elevation="10" class="mx-auto mb-12" max-width="350">
           <!-- Slika namirnice -->
           <v-img class="align-end justify-center" :src="grocery.pic" height="140px"></v-img>
@@ -16,7 +10,7 @@
               <!-- Ime namirnice -->
               <v-card-title class="justify-left py-1 title font-weight-bold">{{ grocery.ime }}</v-card-title>
             </v-col>
-            <v-col >
+            <v-col>
               <!-- Cijena po jedinici -->
               <v-card-subtitle
                 class="text-center py-1 px-0 subtitle-1 black--text font-weight-black"
@@ -48,7 +42,6 @@
                 <v-btn class @click=" grocery.stanje > 0 ? grocery.stanje-- : null" icon>
                   <v-icon>mdi-minus</v-icon>
                 </v-btn>
-
                 <!-- Input kolicine -->
                 <v-text-field
                   dense
@@ -69,7 +62,6 @@
               </v-card-actions>
             </v-col>
           </v-row>
-
           <!-- Show more/nutritivne vrijednosti -->
           <v-card-actions
             style="background-color: #ffe600 !important"
@@ -80,7 +72,6 @@
               <v-icon>{{ grocery.show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
             </v-btn>
           </v-card-actions>
-
           <transition-group style="background-color: rgb(255, 0, 0) !important">
             <div
               class="text-center"
@@ -90,8 +81,12 @@
               style="background-color: rgb(255, 255, 255, 0.5) !important"
             >
               <v-card-text class="py-1 overline font-weight-black">Kalorije: {{opis.kalorije}}</v-card-text>
-              <v-card-text class="py-1 overline font-weight-black">Bjelančevine: {{opis.bjelancevine}}</v-card-text>
-              <v-card-text class="py-1 overline font-weight-black">Ugljikohidrati: {{opis.ugljikohidrati}}</v-card-text>
+              <v-card-text
+                class="py-1 overline font-weight-black"
+              >Bjelančevine: {{opis.bjelancevine}}</v-card-text>
+              <v-card-text
+                class="py-1 overline font-weight-black"
+              >Ugljikohidrati: {{opis.ugljikohidrati}}</v-card-text>
               <v-card-text class="py-1 overline font-weight-black">Masti: {{opis.masti}}</v-card-text>
             </div>
           </transition-group>
@@ -118,5 +113,4 @@ export default {
 .centered-input input {
   text-align: center;
 }
-
 </style>
